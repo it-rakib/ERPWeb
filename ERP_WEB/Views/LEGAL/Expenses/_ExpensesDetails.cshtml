@@ -1,0 +1,92 @@
+﻿@Scripts.Render("~/Scripts/LEGAL/Expenses/ExpensesDetails.js")
+
+<div class="bs-example">
+    <div class="well well-sm">Expenses Details</div>
+    <div class="row" style="margin-bottom:0px !important;">
+        <div class="col-md-12 col-xs-12 centerAlign">
+            <ul class="list-group" style="margin-bottom:2px !important;">
+                <li class="list-group-item rightAlign">
+                    <button id="btnSave" class="k-button-success" type="button"><span class="glyphicon glyphicon-floppy-disk"></span>Save</button>
+                    <button id="btnClearAll" class="k-button-danger" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span>Clear</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="menuDetailsDiv" class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="form-horizontal">
+                <div class="row" style="margin-top:5px;">
+                    <div class="col-md-6" style="margin-left: -39px;">
+                        <div class="col-md-2">
+                            <label class="col-md-12 col-xs-12 control-label" for="txtSearchKey" style="line-height: 14px;">Select File:</label>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0; margin-left:-23px;">
+                            <div class="input-group add-on">
+                                <input type="hidden" id="hdnExpenseId" value="0" />
+                                <input type="hidden" id="hdnFileMasterId" value="0" />
+                                <input type="text" placeholder="Type here..." class="form-control" style="width: 100%; height: 28px;" name="Style" id="txtSearchKey" />
+                                <div class="input-group-btn">
+                                    <button class="btn btn-info" type="button" id="btnSearchStyle"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5" style="margin-left: -24px;">
+                            <input type="text" id="cboCaseFile" style="width: 75%; height: 28px;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="txtRegNo" style="margin-bottom: 6px;">Reg No:</label>
+                            <div>
+                                <input type="text" placeholder="Reg No" name="txtRegNo" id="txtRegNo" class="form-control" disabled style="width: 60%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="txtCourt" style="margin-bottom: 6px;">Court:</label>
+                            <div>
+                                <input type="text" placeholder="Court" name="txtCourt" id="txtCourt" class="form-control" disabled style="width: 60%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="txtExpenseNm" style="margin-bottom: 6px;">Expense Name:</label>
+                            <div>
+                                <input type="text" placeholder="Expense Name" name="txtExpenseNm" id="txtExpenseNm" class="form-control" style="width: 60%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" style="margin-bottom: 6px;" for="txtNextDate">Expense Date:</label>
+                            <div>
+                                <input id="txtExpenseDate" type="text" placeholder="Expense Date" name="txtExpenseDate" style="width: 60%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label class="control-label" for="txtCaseNo" style="margin-bottom: 6px;">Case No:</label>
+                            <div>
+                                <input type="text" placeholder="Case No" name="txtCaseNo" id="txtCaseNo" disabled class="form-control" style="width: 60%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="txtExpenseAmnt" style="margin-bottom: 6px;">Expense Amount:</label>
+                            <div>
+                                <input type="text" placeholder="Expense Amount" name="txtExpenseAmnt" id="txtExpenseAmnt" class="form-control" style="width: 60%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px;" for="txtDiscription">Description:</label>
+                            <div class="">
+                                <textarea placeholder="Short Description" name="txtDiscription" id="txtDiscription" style="width: 60%; height: 84px; resize: none;" required validationmessage="*" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

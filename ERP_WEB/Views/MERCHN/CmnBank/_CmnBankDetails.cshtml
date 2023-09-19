@@ -1,0 +1,106 @@
+﻿@Scripts.Render("~/Scripts/MERCHN/CmnBank/CmnBankDetails.js")
+<div class="bs-example">
+    <div class="well well-sm">Bank Details</div>
+    <div id="menuDetailsDiv" class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="hidden" id="hdnBankId" value="00000000-0000-0000-0000-000000000000" />
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtBankName">Bank Name:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input type="text" placeholder="Bank Name" name="txtBankName" id="txtBankName" class="form-control" required validationmessage="Required" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtAddress1">Address1:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <textarea type="text" placeholder="Address1" name="txtAddress1" id="txtAddress1" style="margin-top:2px;" class="form-control" required validationmessage="Required" ></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtAddress2">Address2:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <textarea type="text" placeholder="Address2" name="txtAddress2" id="txtAddress2" style="margin-top:2px;" class="form-control"> </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtAddress3">Address3:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <textarea type="text" placeholder="Address3" name="txtAddress3" id="txtAddress3" style="margin-bottom:2px;" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <input type="hidden" id="hdnBranchId" value="00000000-0000-0000-0000-000000000000" />
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbBranch">Branch:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input id="cmbBranch" placeholder="Select Branch..." style="width: 100%; height:28px;" required validationmessage="Required" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtPhoneNo">Phone No:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input type="text" placeholder="Phone No...." name="txtPhoneNo" id="txtPhoneNo" class="form-control" style="margin-top:2px;" required validationmessage="Required" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtFaxNo">Fax No:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input type="text" placeholder="Fax No...." name="txtFaxNo" id="txtFaxNo" class="form-control" style="margin-top:2px;"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtEmail">Email:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input type="text" placeholder="Email...." name="txtEmail" id="txtEmail" class="form-control" style="margin-top:2px;" required validationmessage="Required" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtContractPerson">Contract Person:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input type="text" placeholder="Contract Person...." name="txtContractPerson" id="txtContractPerson" class="form-control" style="margin-top:2px;" required validationmessage="Required" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="chkIsFacilityOptional" style="margin-bottom : 2px;">Is FacilityOptional:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input type="checkbox" id="chkIsFacilityOptional">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4" for="txtAreaRemarks" style="margin-bottom : 2px;">Remarks:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <textarea id="txtAreaRemarks" style="width: 100%; height: 80px;" ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <ul class="list-group ">
+                        <li class="list-group-item centerAlign">
+                            <button id="btnSave" class="btn btn-primary" type="button">Save</button>
+                            <button id="btnClearAll" class="btn btn-primary">Clear</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

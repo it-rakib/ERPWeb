@@ -1,0 +1,194 @@
+﻿@Scripts.Render("~/Scripts/Land/LandInfoView/LandInfoViewDetails.js")
+
+
+
+
+<div class="bs-example">
+    <div class="well well-sm">Main Information of Land</div>
+
+    <div class="row" style="margin-bottom: 0px !important;">
+        <div class="col-md-12 col-xs-12 centerAlign">
+            <ul class="list-group " style="margin-bottom: 2px !important;">
+                <li class="list-group-item rightAlign">
+                    <button id="btnCancelApplication" class="k-button-danger" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="includedContent">
+        <div id="bodyTab">
+            <ul>
+                <li id="tabDeedDetails" class="k-state-active">
+                    <b>Deed Details</b>
+                </li>
+
+                <li id="tabDeedDocument">
+                    <b>Deed Document</b>
+                </li>
+            </ul>
+            <div class="col-md-12 displayNone" id="divLandDetails">
+
+                <input type="hidden" id="hdnLandMasterId" value="00000000-0000-0000-0000-000000000000" />
+                <div style="border-style: solid; border-color: #286090;">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3">
+                            <label class="col-md-12 col-xs-12 control-label" for="lblLandOwnerType" style="line-height: 20px;">Basis of Ownership:</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9">
+                            <div id="LandOwnerType">
+
+                            </div>
+                            <div class="form-group">
+                                <div class="LandOwnerTypeOther displayNone" id="divLandOwnerTypeOtherRemarks">
+                                    <input type="text" placeholder="If other please write..." name="txtOtherRemarks" id="txtOtherRemarks" style="width: 20%; height: 28px;" required validationmessage="*" class="form-control" disabled />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbCmnDivision">Division</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnDivision" disabled="disabled" placeholder="--Select Division--" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtDeedNo">Deed No</label>
+                            <div class="">
+                                <input type="text" disabled="disabled" placeholder="Deed No" name="txtDeedNo" id="txtDeedNo" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbCmnDistrict">District</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnDistrict" disabled="disabled" placeholder="--Select District--" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtEntryDate">Date</label>
+                            <div class="">
+                                <input id="txtEntryDate" disabled="disabled" type="text" placeholder="Date" name="txtEntryDate" style="width: 80%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbCmnUpozila">Upazila/Thana</label>
+                            <div class="">
+                                <input id="cmbCmnUpozila" disabled="disabled" placeholder="--Select Upozila--" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtTotalLandAmount">Total Area of Land (Decimal)</label>
+                            <div class="">
+                                <input type="text" disabled="disabled" placeholder="Total Land Amount (Acres)" name="txtTotalLandAmount" id="txtTotalLandAmount" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbSubRegOffice">Sub-Register Office</label>
+                            <div class="">
+                                <input id="cmbSubRegOffice" disabled="disabled" placeholder="--Sub-Register Office Name--" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:12px;">
+                            <input type="checkbox" id="chkIsBayna" name="chkIsBayna" value="chkIsBayna">
+                            <label for="chkIsBayna"> Is Bayna?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="well well-sm">Land Cost Information</div>
+                <div class="row">
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtLandPurchaseAmount">Price of Land(Deed)</label>
+                            <div class="">
+                                <input type="text" disabled placeholder="Price of Land(Deed)" name="txtLandPurchaseAmount" id="txtLandPurchaseAmount" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtLandRegAmount">Registration Cost</label>
+                            <div class="">
+                                <input type="text" disabled placeholder="Registration Cost" name="txtLandRegAmount" id="txtLandRegAmount" style="width: 80%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtLandDevelopmentAmount">Development Cost</label>
+                            <div class="">
+                                <input type="text" disabled placeholder="Land Development Cost" name="txtLandDevelopmentAmount" id="txtLandDevelopmentAmount" style="width: 80%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtLandOtherAmount">Other Cost</label>
+                            <div class="">
+                                <input type="text" disabled placeholder="Other Cost" name="txtLandOtherAmount" id="txtLandOtherAmount" style="width: 80%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="DivSalerInfo" class="well well-sm">Seller Information</div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="bs-example">
+                            <div class="panel-body">
+                                <div id="grdSalerInfoViewSummary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="DivLandDetailsInfo" class="well well-sm">Detail's of Land</div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="text-center">
+                            <h5><b>Owner Information</b></h5>
+                        </div>
+                        <div class="bs-example">
+                            <div class="panel-body">
+                                <div id="grdOwnerDetailViewSummary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="text-center">
+                            <h5><b>Khatian Information</b></h5>
+                        </div>
+                        <div class="bs-example">
+                            <div class="panel-body">
+                                <div id="grdKhatianDetailViewSummary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 displayNone" id="divDeedDocuments">
+                <div class="panel-body">
+                    <div class="row" style="margin-top: 1px;">
+                        <div class="col-md-12 col-xs-12">
+                            @Html.Partial("../Land/LandInfoView/_UploadDeedDocument")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

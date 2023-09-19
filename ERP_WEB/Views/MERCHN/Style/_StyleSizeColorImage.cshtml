@@ -1,0 +1,57 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/Style/StyleSizeColorImage.js?" + @jsVer)
+
+<div class="col-md-4" style="display:none;">
+    <div style="border: 1px solid #F5F5F5;">
+        <select id="cboColor" class="comboBox"></select>
+        <table id="tblColor" class="table table-bordered table-striped customTable" style="text-align: center; font-weight: bold; font-size: 18px;">
+            <thead>
+                <tr>
+                    <th>Color</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+<div class="col-md-4" style="display:none;">
+    <div style="border: 1px solid #F5F5F5;">
+        <select id="cboSize" class="comboBox"></select>
+        <table id="tblSize" class="table table-bordered table-striped customTable" style="text-align: center; font-weight: bold; font-size: 18px;">
+            <thead>
+                <tr>
+                    <th>Size</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="divImageUpload">
+                <label class="lblUploadHeader">
+                    <span>Front Part</span>
+                </label>
+                <label class="lblUploadBody">
+                    <input id="txtFrontPart" type="file" style="display:none;" />
+                    <img id="imgFrontPart" src="~/Images/clickHereToUpload.png" docType="4be83b29-0bc9-4fe1-b314-1f93b19b92ba" />
+                </label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="divImageUpload">
+                <label class="lblUploadHeader">
+                    <span>Back Part</span>
+                </label>
+                <label class="lblUploadBody">
+                    <input id="txtBackPart" type="file" style="display:none;" placeholder="abc" />
+                    <img id="imgBackPart" src="~/Images/clickHereToUpload.png" docType="02dca355-0dbf-4115-a11b-39d0ec9e25af" />
+                </label>
+            </div>
+        </div>  
+    </div>
+</div>

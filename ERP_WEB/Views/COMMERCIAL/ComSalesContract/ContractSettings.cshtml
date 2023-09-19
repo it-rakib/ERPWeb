@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Contract Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Dashboard/DashboardMain.css" rel="stylesheet" />
+<style type="text/css">
+    .ob-center {
+        text-align: center !important;
+    }
+
+    .k-content {
+        background-color: white !important;
+    }
+
+    .k-tabstrip > .k-content {
+        display: none;
+        overflow: hidden;
+    }
+
+    tbody tr:hover {
+        cursor: pointer
+    }
+
+</style>
+
+@Scripts.Render("~/Scripts/COMMERCIAL/ComSalesContract/ContractSettings.js")
+@Scripts.Render("~/Scripts/COMMERCIAL/ComSalesContract/ContractDetails.js")
+
+@*News Ticker*@
+<link href="~/Scripts/NewsTicker/ticker-style.css" rel="stylesheet" />
+<script src="~/Scripts/NewsTicker/jquery.ticker.js"></script>
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+
+        <div class="form-group">
+            <div class="form-group col-md-3">
+                <label class="col-md-4 col-xs-4 control-label" id="lblSearch" style="font-weight: bold; color: blue" for="txtSrcContact">Search Contract</label>
+                <div class="col-md-7 col-xs-7">
+                    <div class="input-group add-on">
+                        <input type="text" placeholder="Contract Id" class="form-control txt" autocomplete="off" name="txtSrcContact" id="txtSrcContact" disabled />
+                        <div class="input-group-btn">
+                            <button class="btn btn-xs btn-info" style="height:22px;" type="button" id="btnSearchContact"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <button id="btnSave" class="k-button-success"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                <button id="btnClearAll" class="k-button-danger"><i class="k-icon k-i-reload" style="margin-right: 4px;"></i>Refresh</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div id="includedContent">
+    <div id="bodyTab">
+        <ul>
+            <li id="tabContact" class="k-state-active">
+                <b>Contract</b>
+            </li>
+            <li id="tabDoc">
+                <b>Documents</b>
+            </li>
+            <li id="tabOthers">
+                <b id="tabOthers2"> Others</b>
+            </li>
+        </ul>
+        <div class="col-md-12 displayNone" id="divContact">
+            @Html.Partial("../COMMERCIAL/ComSalesContract/_ContractDetails")
+        </div>
+        <div class="col-md-12 displayNone" id="divDocuments">
+            <div class="panel-body">
+                <div class="row" @*style="margin-top: 1px;"*@>
+                    <div class="col-md-12 col-xs-12">
+                        @Html.Partial("../COMMERCIAL/ComSalesContract/_UploadDocument")
+                    </div>
+                </div>
+            </div>
+        <div class="col-md-12 displayNone" id="divOthers">
+            @*@Html.Partial("../")*@
+        </div>
+    </div>
+</div>

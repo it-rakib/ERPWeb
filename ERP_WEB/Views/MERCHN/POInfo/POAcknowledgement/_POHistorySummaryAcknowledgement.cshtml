@@ -1,0 +1,16 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/POInfo/POAcknowledgement/POHistorySummaryAcknowledgement.js?" + @jsVer)
+<style type="text/css">
+    #grdPOHistorySummary .k-grid-content
+{
+    max-height: 400px;
+}
+</style>
+
+<script src=""></script>
+<div class="col-md-12 col-xs-12">
+    <div class="bs-example">
+        <div class="well well-sm">PO HISTORY</div>
+        <div id="grdPOHistorySummaryAcknowledgement"></div>
+    </div>
+</div>

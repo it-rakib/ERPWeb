@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "Po File Upload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/POInfo/POUsingFileUpload/POUsingFileUploadSettings.js?" + @jsVer)
+@Scripts.Render("~/Scripts/MERCHN/POInfo/POUsingFileUpload/POUsingFileUploadDetails.js?" + @jsVer)
+@*new*@
+<script src="https://kendo.cdn.telerik.com/2022.1.412/js/jszip.min.js"></script>
+@*new*@
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="poFileUpload">
+                            <li class="k-state-active">
+                                Upload PO File
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="spacer5"></div>
+                                        <button id="btnSave" class="k-button-success" style="float: right;"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                                        @*<button id="btnBack" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>*@
+                                        <button id="export" class="k-button-success" style="float: right;"><i class="fa fa-download" style="margin-right: 4px;"></i>Download Excel Formate</button>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="spacer4"></div>
+                                        <div class="row">
+                                            <from enctype="multipart/form-data">
+                                                <div class="col-md-4">
+                                                    <div class="form-horizontal">
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 col-xs-3 control-label" style="float: left;">Select Style:</label>
+                                                            <div class="col-md-8 col-xs-8">
+                                                                <div class="">
+                                                                    <input type="text" id="cmbStyle" style="width: 100%; height: 28px;" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="form-horizontal">
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 col-xs-3 control-label">Upload File:</label>
+                                                            <div class="col-md-8 col-xs-8">
+                                                                <div class="">
+                                                                    <input type="file" asp-for="Files" class="form-control custom-file-input" id="AttachmentFile" style="width: 100%; height: 28px;" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-horizontal">
+                                                        <button id="upload" class="btn btn-primary">Upload</button>
+                                                    </div>
+                                                </div>
+                                            </from>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="cmbPOType">PO Type:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" style="width: 100%; height: 28px;" name="cmbPOType" id="cmbPOType" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group displayNone" id="divParentPO">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="cmbParentPO">Master PO:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" style="width: 100%; height: 28px;" name="cmbParentPO" id="cmbParentPO" />
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    @*<div class="form-group">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="cmbLeadTime">Lead Time:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" style="width: 100%; height: 28px;" name="cmbLeadTime" id="cmbLeadTime" />
+                                                        </div>
+                                                    </div>*@
+                                                </div>
+                                            </div>
+                                            @*<div class="col-md-4">
+                                                <div class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtReceiveDate">Receive Data:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" style="width: 100%; height: 28px;" name="txtReceiveDate" id="txtReceiveDate" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtShipmentDate">Ship Date:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" style="width: 100%; height: 28px;" name="txtShipmentDate" id="txtShipmentDate" />
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>*@
+
+                                            <div class="col-md-4">
+                                                <div class="form-horizontal">
+                                                    @*<div class="form-group">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="cmbShipmentMode">Ship Mode:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" style="width: 100%; height: 28px;" name="cmbShipmentMode" id="cmbShipmentMode" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtCuttoffDate">Cuttoff Date:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" style="width: 100%; height: 28px;" name="txtCuttoffDate" id="txtCuttoffDate" />
+                                                        </div>
+                                                    </div>*@
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="cmbContactOrLC">Contact / LC:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" style="width: 100%; height: 28px;" name="cmbContactOrLC" id="cmbContactOrLC" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtOrderQty">Order Qty:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" style="width: 100%; height: 28px;" name="txtOrderQty" id="txtOrderQty" disabled="disabled" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="k-state-active">
+                                Loaded Data
+                                <div id="uploadedFileData">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

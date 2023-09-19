@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Case Type Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/LEGAL/Case_Type/CaseTypeSettings.js")
+<div class="row">
+    <div id="divCaseTypeDetails" class="col-md-12">
+
+        @Html.Partial("../LEGAL/Case_Type/_CaseTypeDetails")
+        @Html.Partial("../LEGAL/Case_Type/_CaseTypeSummary")
+    </div>
+</div>
+
+

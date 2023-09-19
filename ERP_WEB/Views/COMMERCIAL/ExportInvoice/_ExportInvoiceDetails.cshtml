@@ -1,0 +1,291 @@
+﻿
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/COMMERCIAL/ExportInvoice/ExportInvoiceDetails.js?" + @jsVer)
+@*@Scripts.Render("~/Scripts/COMMERCIAL/ExportInvoice/POWiseStyleBreakDown.js?" + @jsVer)*@
+
+<style>
+    #tabstrip p {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<div class="panel panel-default bs-example">
+    <div class="well well-sm">
+        EXPORT INVOICE
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="spacer5"></div>
+                <button id="btnSaveInvoiceInfo" class="k-button-success" style="float: right; margin-right:25px"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                <button id="btnBack" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+            </div>
+            <div class="col-md-12">
+                <div class="spacer5"></div>
+                <div class="col-md-4">
+                    <div class="form-horizontal">
+                        <input type="hidden" id="hdnExInvoiceId" value="00000000-0000-0000-0000-000000000000" />
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbSCLC">LC/SC NO:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="cmbSCLC" id="cmbSCLC" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbCompany">Exporting Company:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="cmbCompany" id="cmbCompany" disabled="disabled"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbBuyer">Buyer:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="cmbBuyer" id="cmbBuyer" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtSCLCDate">LC/SC Date:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="txtSCLCDate" id="txtSCLCDate" disabled="disabled" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtSCLCValue">LC/SC Value:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="txtSCLCValue" id="txtSCLCValue" disabled="disabled" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbCurrency">Currency:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="cmbCurrency" id="cmbCurrency" disabled="disabled" />
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-horizontal">
+                       
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbBank">Lien Bank:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="cmbBank" id="cmbBank" disabled="disabled" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbPaymentTerm">Payment Term:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="cmbPaymentTerm" id="cmbPaymentTerm" disabled="disabled" />
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtPINo">File Ref.:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtPINo" id="txtPINo" />
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+            <div class="spacer4"></div>
+            <div class="col-md-12">
+                <div id="example">
+                    <div class="demo-section k-content">
+                        <div id="tabstrip">
+                            <ul>
+                                <li class="k-state-active">
+                                    Basic Info
+                                </li>
+                                <li>
+                                    Addtional Info
+                                </li>
+                                <li>
+                                    Documentation
+                                </li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtInvoiceNo">Invoice No:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtInvoiceNo" id="txtInvoiceNo" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtInvoiceDate">Invoice Date:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtInvoiceDate" id="txtInvoiceDate" />
+                                            </div>
+                                        </div>
+                                        @*<div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtInvoiceFor">Invoice For:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtInvoiceFor" id="txtInvoiceFor" />
+                                            </div>
+                                        </div>*@
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtGoodsValue">Goods Value:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtGoodsValue" id="txtGoodsValue" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtCommission">Commission:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtCommission" id="txtCommission" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtAdjustmentAmount">Adjustment Amount:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtAdjustmentAmount" id="txtAdjustmentAmount" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtInvoiceValue">Export Inv Value:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtInvoiceValue" id="txtInvoiceValue" disabled="disabled"/>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtExchangeRate">Exchange Rate:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtExchangeRate" id="txtExchangeRate" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtInvoiceValueBDT">Inv Value In BDT:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtInvoiceValueBDT" id="txtInvoiceValueBDT" disabled="disabled"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtInvoiceQuantity">Invoice Quantity:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtInvoiceQuantity" id="txtInvoiceQuantity" disabled="disabled"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="cmbUnit">Unit:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="cmbUnit" id="cmbUnit" />
+                                            </div>
+                                        </div>
+                                        @*<div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtInvoiceStatus">Export Inv. Status:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtInvoiceStatus" id="txtInvoiceStatus" />
+                                            </div>
+                                        </div>*@
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="cmbFreight">Freight:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="cmbFreight" id="cmbFreight" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="cmbShipmentTerm">Shipment Term:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="cmbShipmentTerm" id="cmbShipmentTerm" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="cmbPort">Shipment Port:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="cmbPort" id="cmbPort" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="cmbModeOfShipment">Mode of Shipment:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="cmbModeOfShipment" id="cmbModeOfShipment" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtExFactorDate">Ex Factor Date:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtExFactorDate" id="txtExFactorDate" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtOnBoardDate">On Board Date:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtOnBoardDate" id="txtOnBoardDate" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtAcceptanceDate">Acceptance Date:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtAcceptanceDate" id="txtAcceptanceDate" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtMaturityDate">Maturity Date:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtMaturityDate" id="txtMaturityDate" />
+                                            </div>
+                                        </div>
+                                        @*<div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtLCFor">LC For:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtLCFor" id="txtLCFor" />
+                                            </div>
+                                        </div>*@
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="txtRemarks">Remarks:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <textarea type="text" style="width: 100%; height: 56px;" name="txtRemarks" id="txtRemarks"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="spacer4"></div>
+                                <div class="col-md-12 displayNone" id="divPoWiseStyleGrid">
+                                    <div class="spacer5"></div>
+                                    @Html.Partial("../COMMERCIAL/ExportInvoice/_POWiseStyleBreakDown")
+                                </div>
+                            </div>
+                            <div>
+                                Future
+                            </div>
+                            <div>
+                                Future
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#piInfo").kendoPanelBar({
+            expandMode: "multiple",
+            expanded: true
+        });
+       
+    });
+</script>

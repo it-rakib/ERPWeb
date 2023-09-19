@@ -1,0 +1,152 @@
+﻿@Scripts.Render("~/Scripts/INVENTORY/InventoryReceive/InvReceiveDetails.js")
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="well well-sm">INVENTORY RECEIVE</div>
+            <div class="panel-body">
+               
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-7">
+                            <label class="col-md-2 col-xs-6 control-label" for="txtPINo" style="margin-right: 15px;">PI. NO:</label>
+                            <div class="col-md-4 col-xs-6 ">
+                                <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtPINo" id="txtPINo" disabled="disabled"/>
+                            </div>
+                            <div class="col-md-3 col-xs-6 ">
+                                <button type="button" class="btn glyphicon glyphicon-search" id="btnSearchPIInfo"></button>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-xs-4">
+                            <label class="col-md-8 col-xs-8 control-label" style="line-height: 20px; color: green; font-weight: bold; font-size: 18px !important; float: left;" id="lblMessage"></label>
+                            <button id="btnSaveMrr" class="k-button-success" style="float: right;"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                            <button id="btnBackMrr" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-7">
+                            <label class="col-md-2 col-xs-6 control-label" for="txtConsignmentNo" style="margin-right: 15px;">CONSIGNMENT NO.:</label>
+                            <div class="col-md-4 col-xs-6 ">
+                                <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtConsignmentNo" id="txtConsignmentNo" disabled="disabled" />
+                            </div>
+                            <div class="col-md-3 col-xs-6 ">
+                                <button type="button" class="btn glyphicon glyphicon-search" id="btnSearchConsignInfo"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-4">
+                            <div class="form-horizontal">
+                                <input type="hidden" id="hdnMrrId" value="00000000-0000-0000-0000-000000000000"/>
+                                <input type="hidden" id="hdnPIId" value="00000000-0000-0000-0000-000000000000"/>
+                                <input type="hidden" id="hdnConsignmentId" value="00000000-0000-0000-0000-000000000000" />
+                                <div class="form-group required">
+                                    <label class="col-md-4 col-xs-4 control-label" for="cmbLocation">Store Location:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" style="width: 100%; height: 28px;" name="cmbLocation" id="cmbLocation" required validationmessage="Required"/>
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtReceivedDate">Received Date:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" style="width: 100%; height: 28px;" name="txtReceivedDate" id="txtReceivedDate" required validationmessage="Required" />
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtMRRNo">MRR No:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtMRRNo" id="txtMRRNo" disabled="disabled"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 col-xs-4 control-label" for="cmbSupplier">Supplier:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" style="width: 100%; height: 28px;" name="cmbSupplier" id="cmbSupplier" required validationmessage="Required" disabled="disabled"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtGrnNo">GRN No:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtGrnNo" id="txtGrnNo" disabled="disabled"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtGrnDate">GRN Date:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" style="width: 100%; height: 28px;" name="txtGrnDate" id="txtGrnDate" disabled="disabled"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-horizontal">
+                                <div class="form-group required">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtChallanNo">Challan No:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtChallanNo" id="txtChallanNo" disabled="disabled"/>
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtChallanDate">Challan Date:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" style="width: 100%; height: 28px;" name="txtChallanDate" id="txtChallanDate" disabled="disabled"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtVehicleNo">Vehicle No:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtVehicleNo" id="txtVehicleNo" disabled="disabled"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtWayBillNo">Way Bill No:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtWayBillNo" id="txtWayBillNo" disabled="disabled"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtGateEntryNo">Gate Entry No:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtGateEntryNo" id="txtGateEntryNo" disabled="disabled"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtGateEntryDate">Gate Entry Date:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" style="width: 100%; height: 28px;" name="txtGateEntryDate" id="txtGateEntryDate" disabled="disabled"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-horizontal">
+                                <div class="form-group required">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtInvoiceNo">Com. Invoice No:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtInvoiceNo" id="txtInvoiceNo" disabled="disabled"/>
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtInvoiceDate">Com. Invoice Date:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" style="width: 100%; height: 28px;" name="txtInvoiceDate" id="txtInvoiceDate" disabled="disabled"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.Partial("../Inventory/InventoryReceive/_ReceivedItemList")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

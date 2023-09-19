@@ -1,0 +1,70 @@
+﻿@Scripts.Render("~/Scripts/MERCHN/ComGroupLc/ComGroupLcDetails.js")
+<div class="bs-example">
+    <div class="well well-sm">ComGroupLc Details</div>
+    <div id="menuDetailsDiv" class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <input type="hidden" id="hdnGroupLcid" value="00000000-0000-0000-0000-000000000000" />
+                            <input type="hidden" id="hdnGroupLcid" value="" />
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbCompany">Company:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input id="cmbCompany" placeholder="Company Name..." style="width: 100%; height:28px;" required validationmessage="Company Name Required!" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="nmbGroupAmount">Group Amount:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input id="nmbGroupAmount" type="number" title="GroupAmount" class="form-control" style="width: 100%; height:28px; margin-top:1px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="nmbUsedAmount">Used Amount:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input id="nmbUsedAmount" type="number" title="UsedAmount" class="form-control" style="width: 100%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6">
+                                <input type="hidden" id="txtCompanyIdentered" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-6 col-xs-6">
+                        <input type="hidden" id="txtCompanyIdlastUpdated"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="hidden" id="hdnBuyerId" value="00000000-0000-0000-0000-000000000000" />
+                        <label class="col-md-4 col-xs-4 control-label" style="margin-top:4px;" for="cmbBuyer">Buyer:</label>
+                        <div class="col-md-6 col-xs-6">
+                            <input id="cmbBuyer" placeholder="Buyer Name..." style="width: 100%; height: 28px;" required validationmessage="Buyer Name Required" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 col-xs-4 control-label" for="chkIsAllBuyer" style="margin-top:4px;">Is AllBuyer:</label>
+                        <div class="col-md-6 col-xs-6">
+                            <input type="checkbox" style="margin-top:5px;" id="chkIsAllBuyer" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <ul class="list-group ">
+                        <li class="list-group-item centerAlign">
+                            <button id="btnSave" class="btn btn-primary" type="button">Save</button>
+                            <button id="btnClearAll" class="btn btn-primary">Clear</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>

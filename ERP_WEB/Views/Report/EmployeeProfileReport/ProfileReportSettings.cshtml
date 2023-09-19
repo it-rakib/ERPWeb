@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "Profile Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/HRM/Reports/EmployeeProfileReport/ProfileSettings.js")
+
+<div class="well well-sm">Employee Profile Report</div>
+@Html.Partial("../Report/EmployeeProfileReport/EmployeeProfileReport")

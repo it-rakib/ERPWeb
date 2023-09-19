@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Buyer Costing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .row {
+        margin-bottom: 5px;
+    }
+</style>
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/BuyerCosting/BuyerCostingSettings.js?" + @jsVer)
+
+<div class="row">
+    <div id="divBuyerCostingSummary" class="col-lg-12">
+        @Html.Partial("../MERCHN/BuyerCosting/_BuyerCostingSummary")
+    </div>
+    <div id="divBuyerCostingDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../MERCHN/BuyerCosting/_BuyerCosting")
+    </div>
+</div>
+
+

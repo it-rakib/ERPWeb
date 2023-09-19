@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Movement Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/INVENTORY/Reports/Movement/MovementReports.js"></script>
+<div class="row">
+    <div id="divDetails" class="col-lg-12">
+        @Html.Partial("../INVENTORY/Reports/Movement/_MovementReports")
+    </div>
+</div>
+
+<div class="displayNone" id="styleSearch">
+    @Html.Partial("../INVENTORY/Reports/Movement/_StyleListSearch")
+</div>
+

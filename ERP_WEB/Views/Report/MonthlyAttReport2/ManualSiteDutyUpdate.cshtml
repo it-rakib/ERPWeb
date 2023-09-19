@@ -1,0 +1,53 @@
+﻿<script src="~/Scripts/HRM/Reports/MonthlyAttReport2/ManualSiteDutyUpdate.js"></script>
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        @*<div class="well well-sm">Manual Site Duty Application</div>*@
+        <div class="bs-example" id="divSiteDutyRegDetails">
+            <div class="form-horizontal">
+                <input type="hidden" id="hdnSiteDutyId" value="0" />
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="txtDateFromSD">From:</label>
+                    <div class="col-md-8 col-xs-8">
+                        <input type="text" style="width: 100%; height: 28px;" name="txtDateFromSD" id="txtDateFromSD" required validationmessage="Required" disabled="disabled" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="txtDateToSD">To:</label>
+                    <div class="col-md-8 col-xs-8">
+                        <input type="text" style="width: 100%; height: 28px;" name="txtDateToSD" id="txtDateToSD" required validationmessage="Required" disabled="disabled"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="txtNoOfDays">Days:</label>
+                    <div class="col-md-8 col-xs-8">
+                        <input type="text" class="form-control" style="height: 28px;" name="txtNoOfDays" id="txtNoOfDays" required validationmessage="Required" readonly="readonly" disabled="disabled" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="cmbTourType">Type:</label>
+                    <div class="col-md-8 col-xs-8">
+                        <input type="text" style="width: 100%; height: 28px;" name="cmbTourType" id="cmbTourType" required validationmessage="Required" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="txtReason">Reason:</label>
+                    <div class="col-md-8 col-xs-8">
+                        <textarea type="text" class="form-control" style="width: 100%; height: 100px; resize: none" name="txtReason" id="txtReason"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="spacer5"></div>
+                <div class="col-md-12 col-xs-12">
+                    <ul class="list-group ">
+                        <li class="list-group-item centerAlign">
+                            <button id="btnSaveSiteDuty" class="k-button-success" type="button"><span class="glyphicon glyphicon-floppy-disk"></span> Apply</button>
+                            <button id="btnClear" class="k-button-danger" type="button"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

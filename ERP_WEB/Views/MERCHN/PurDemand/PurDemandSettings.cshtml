@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Demand";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .k-grid .k-button {
+        margin: 0em !important;
+    }
+</style>
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/PurDemand/PurDemandSettings.js?" + @jsVer)
+
+<div class="row">
+    <div id="divDemandSummary" class="col-lg-12 displayNone">
+        @Html.Partial("../MERCHN/PurDemand/_PurDemandSummary")
+    </div>
+    <div id="divDemandDetails" class="col-lg-12 ">
+        @Html.Partial("../MERCHN/PurDemand/_PurDemandDetails")
+    </div>
+</div>
+
+

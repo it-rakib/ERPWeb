@@ -1,0 +1,65 @@
+﻿
+<style>
+    .comboBox {
+        width: 100%;
+    }
+
+    .datePicker {
+        width: 100%;
+    }
+
+    .txt {
+        width: 100%;
+        height: 28px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-6 col-xs-6">
+        <div class="bs-example">
+            <div class="well well-sm">Movement Report</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-4 col-xs-4 control-label" for="cmbBuyer">Buyer:</label>
+                                <div class="col-md-7 col-xs-7 ">
+                                    <input type="text" style="width: 100%; height: 28px;" name="cmbBuyer" id="cmbBuyer"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 col-xs-4 control-label" for="cmbStore">Store:</label>
+                                <div class="col-md-7 col-xs-7 ">
+                                    <input type="text" style="width: 100%; height: 28px;" name="cmbStore" id="cmbStore"/>
+                                </div>
+                            </div>
+                            <div class="form-group" id="divStyle">
+                                <label class="col-md-4 col-xs-4 control-label" id="lblSearchSt" for="txtStyleNo">Style:</label>
+                                <div class="col-md-7 col-xs-7">
+                                    <div class="input-group add-on">
+                                        <input type="hidden" class="hiddenId" id="hdnStyleId" value="00000000-0000-0000-0000-000000000000"/>
+                                        <input type="hidden" class="hiddenId" id="hdnStyleDetailsId" value="00000000-0000-0000-0000-000000000000"/>
+                                        <input id="txtStyleNo" name="txtStyleNo" type="text" placeholder="--Select Style--" class="form-control txt" autocomplete="off" disabled="disabled"/>
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-xs btn-info" style="height: 28px;" type="button" id="btnSearchStyle"><i class="glyphicon glyphicon-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-xs-12">
+                                    <ul class="list-group ">
+                                        <li class="list-group-item rightAlign">
+                                            <button id="btnLoadReport" class="btn btn-success" type="button">Show Report</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

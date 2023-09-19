@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Consignment Receive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/ConsignmentRcvInfo/ConsignmentRcvSettings.js")
+
+<div class="row">
+    <div id="divConsignmentRcvSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/ConsignmentRcvInfo/_ConsignmentRcvSummary")
+    </div>
+    <div id="divConsignmentRcvDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/ConsignmentRcvInfo/_ConsignmentRcvDetails")
+    </div>
+</div>
+
+

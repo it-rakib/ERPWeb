@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Vehicle Requisition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/TRANSPORT/VehicleRequisition/VehicleRequisitionSettings.js")
+
+<div class="row" id="divVehicleRequisition">
+    <div id="divVehicleRequisitionDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../TRANSPORT/VehicleRequisition/_VehicleRequisitionDetails")
+    </div>
+    <div id="divVehicleRequisitionSummary" class="col-lg-12">
+        @Html.Partial("../TRANSPORT/VehicleRequisition/_VehicleRequisitionSummary")
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Leave Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/Scripts/HRM/Reports/LeaveReport/AnnualLeaveReport/AnnualLeaveReport.js")
+
+<div class="col-md-8 col-xs-12">
+    @Html.Partial("../HRMCommonView/_SearchEmployee")
+</div>
+<div class="col-md-4 col-xs-12">
+    @Html.Partial("../Report/LeaveReport/AnnualLeaveReport/_StatusReport")
+</div>
+

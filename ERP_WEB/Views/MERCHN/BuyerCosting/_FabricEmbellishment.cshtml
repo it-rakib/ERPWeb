@@ -1,0 +1,10 @@
+﻿
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/BuyerCosting/FabricEmbellishment.js?" + @jsVer)
+
+<div class="panel-body">
+    <div class="spacer5"></div>
+    <div id="grdFabricEmbSummary">
+    </div>
+    <div class="spacer5"></div>
+</div>

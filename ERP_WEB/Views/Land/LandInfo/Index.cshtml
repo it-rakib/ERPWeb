@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Land Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .row {
+        margin-bottom: 5px;
+    }
+</style>
+
+<link href="~/Scripts/NewsTicker/ticker-style.css" rel="stylesheet" />
+<script src="~/Scripts/NewsTicker/jquery.ticker.js"></script>
+
+@Scripts.Render("~/Scripts/Land/LandInfo/LandInfoSettings.js")
+
+<div class="row">
+    <div id="divLandInfoSummary" class="col-md-12">
+        @Html.Partial("../Land/LandInfo/_LandInfoSummary")
+    </div>
+
+    <div id="divLandInfoDetails" class="col-md-12 displayNone">
+        @Html.Partial("../Land/LandInfo/_LandInfoDetails")
+    </div>
+</div>
+
+

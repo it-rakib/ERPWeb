@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Attendance Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/HRM/Reports/EmployeeAttendanceReport/EmployeeAttendanceReport.js")
+@Scripts.Render("~/Scripts/HRM/AttendanceSummary/AttendanceSummary.js")
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="well well-sm">Attendance Report</div>
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <table class="table" style="margin-bottom: 0 !important;">
+                        <tr>
+                            <td><label class="col-md-3  control-label" for="txtAttDateFrom">From:</label></td>
+                            <td><input type="text" placeholder="Date From" name="txtAttDateFrom" style="width: 100%; height: 26px;" id="txtAttDateFrom"></td>
+                            <td><label class="col-md-3  control-label" for="txtAttDateTo">To:</label></td>
+                            <td><input type="text" placeholder="Date To" name="txtAttDateTo" style="width: 100%; height: 26px;" id="txtAttDateTo"></td>
+                            <td><button id="btnSearchAtt" class="k-button-primary">Load Attendance</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="grdEmployeeAttendanceSummary">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

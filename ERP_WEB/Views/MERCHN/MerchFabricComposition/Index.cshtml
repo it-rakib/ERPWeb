@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Fabric Composition Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/MerchFabricComposition/MerchFabricCompositionSettings.js")
+
+<div class="row">
+    <div id="divFabricCompositionDetails" class="col-lg-12">
+        @Html.Partial("../MERCHN/MerchFabricComposition/_MerchFabricCompositionDetails")
+
+        @Html.Partial("../MERCHN/MerchFabricComposition/_MerchFabricCompositionSummary")
+    </div>
+</div>

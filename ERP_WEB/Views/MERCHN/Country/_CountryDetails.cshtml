@@ -1,0 +1,41 @@
+﻿@Scripts.Render("~/Scripts/MERCHN/Country/CountryDetails.js")
+<div class="bs-example">
+    <div class="well well-sm">
+        Country Details
+    </div>
+    <div id="menuDetailsDiv" class="row">
+        <div class="colo-md-12 col-xs-12">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <input type="hidden" id="hdnCountryId" value="00000000-0000-0000-0000-000000000000" />
+                    <label class="col-md-4 col-xs-4 control-label" for="txtCountryName">Country Name:</label>
+                    <div class="col-md-6 col-xs-6">
+                        <input type="text" placeholder="Country Name" name="txtCountryName" id="txtCountryName" class="form-control" style="width: 100%; height:28px;" required validationmessage="*" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 col-xs-4 control-label" for="txtCountryShort">Country Short:</label>
+                    <div class="col-md-6 col-xs-6">
+                        <input type="text" placeholder="Country Short Name" name="txtCountryShort" id="txtCountryShort" class="form-control" style="width: 100%; height:28px;" required validationmessage="*" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 col-xs-4 control-label" for="txtCountryCode">Country Code:</label>
+                    <div class="col-md-6 col-xs-6">
+                        <input type="text" placeholder="Country Code" name="txtCountryCode" id="txtCountryCode" class="form-control" style="width: 100%; height:28px;" required validationmessage="*" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <ul class="list-group">
+                            <li class="list-group-item centerAlign">
+                                <button id="btnSave" class="btn btn-primary" type="button">Save</button>
+                                <button id="btnClearAll" class="btn btn-primary">Clear</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

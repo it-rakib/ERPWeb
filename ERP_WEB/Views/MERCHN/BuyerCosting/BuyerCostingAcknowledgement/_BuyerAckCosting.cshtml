@@ -1,0 +1,152 @@
+﻿
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/BuyerCosting/BuyerCostingAcknowledgement/BuyerAckCosting.js?" + @jsVer)
+<style>
+    input[type="checkbox"]:disabled + label:hover::before{
+  background: blue;
+  border: 1px solid #d4d4d5;
+}
+</style>
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="pnlBuyerCosting">
+                            <li class="k-state-active">
+                                BUYER COSTING
+                                <div id="divBuyerPnl">
+                                    <div class="row" style="margin-top: 5px;">
+                                        <div class="col-md-12">
+                                            <div class="col-md-1">
+                                                <label class="col-md-12 col-xs-12 control-label" for="txtSearchKey" style="line-height: 20px;" hidden="hidden">Select Style:</label>
+                                            </div>
+                                            <div class="col-md-2" style="padding-left: 0;">
+                                                <div class="input-group add-on">
+                                                    <input type="hidden" id="hdnBuyerCostingId" value="00000000-0000-0000-0000-000000000000"/>
+                                                    <input type="hidden" id="hdnCostingEmbId" value="00000000-0000-0000-0000-000000000000"/>
+                                                    <input type="text" placeholder="Type here..." class="form-control" style="width: 100%; height: 28px; display: none" name="Style" id="txtSearchKey"/>
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-info" type="button" id="btnSearchStyle" style="display: none"><i class="glyphicon glyphicon-search"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 displayNone">
+                                                <input type="text" id="cboStyle" style="width: 100%; height: 28px; display: none"/>
+                                            </div>
+                                            <div class="col-md-4 ">
+
+                                            </div>
+                                            <div class="col-md-5">
+                                                @*<button id="btnSaveBuyerCost" class="k-button-success" style="float: right;" hidden="hidden"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>*@
+                                                <button id="btnClose" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="col-md-2 col-xs-2 control-label" for="cmbStatus" style="line-height: 20px;">Status:</label>
+                                            <div class="col-md-4 col-xs-7" style="padding-left: 1px;">
+                                                <input type="text" style="width: 100%; height: 25px;" name="cmbStatus" id="cmbStatus" readonly="readonly"/>
+                                            </div>
+                                            <label class="col-md-2 col-xs-2 control-label" for="cmbStatus" style="line-height: 20px;">Currency:</label>
+                                            <div class="col-md-4 col-xs-7">
+                                                <input type="text" style="width: 100%; height: 25px;" name="cmbCurrency" id="cmbCurrency" readonly="readonly"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 displayNone">
+                                            <label class="col-md-1 col-xs-1 control-label" for="cmbStatus" style="line-height: 20px;"></label>
+                                            <label class="col-md-8 col-xs-8 control-label" style="line-height: 20px; color: green; font-weight: bold; font-size: 18px !important; float: left;" id="lblMessage"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="k-state-active">
+                                ITEM INFORMATION
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @Html.Partial("../Merchn/BuyerCosting/BuyerCostingAcknowledgement/_ItemAckInfo")
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="k-state-active">
+                                EMBELLISHMENT
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-5 col-xs-12">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    @Html.Partial("../Merchn/BuyerCosting/BuyerCostingAcknowledgement/_FabricAckEmbellishment")
+                                                </div>
+                                                <div class="col-md-12" readonly="readonly">
+                                                    <table class="table table-bordered table-striped" style="font-weight: bold; font-size: 18px;" id="grdCM">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>Description</th>
+                                                            <th>Value</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody >
+                                                        <tr>
+                                                            <td>CPM</td>
+                                                            <td style="padding: 0px;"><input type="number" style="width: 100%; height: 28px;" id="txtCPM" readonly="readonly"/></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SMV</td>
+                                                            <td style="padding: 0px;"><input type="number" style="width: 100%; height: 28px;" id="txtSMV" readonly="readonly"/></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>CM</td>
+                                                            <td style="padding: 0px;"><input type="number" style="width: 100%; height: 28px;" id="txtCM" readonly="readonly"/></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4">
+                                                                <table class="table table-bordered table-striped" style="margin-bottom: 0px;">
+                                                                    <tr>
+                                                                        <td>FOB / PC</td>
+                                                                        <td style="padding: 0px;"><input type="number" style="width: 100%; height: 28px;" id="txtFOB" readonly="readonly"/></td>
+                                                                        <td>FOB / Dzn</td>
+                                                                        <td style="padding: 0px;"><input type="number" style="width: 100%; height: 28px;" id="txtFOBperDozon"readonly="readonly"/></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 col-xs-12" readonly="readonly">
+                                            <div class="row">
+                                                <div class="col-md-12" style="margin-top: 5px;">
+                                                    <div class="k-card">
+                                                        <div class="k-card-header">WASH TYPES</div>
+                                                        <div class="k-card-body" style="max-height: 350px; overflow-y: scroll;">
+                                                            <div id="WashTypes"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div>
+                    @Html.Partial("../MERCHN/BuyerCosting/BuyerCostingAcknowledgement/_ApproveRejection")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

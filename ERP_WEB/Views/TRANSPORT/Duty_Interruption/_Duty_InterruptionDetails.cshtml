@@ -1,0 +1,104 @@
+﻿@Scripts.Render("~/Scripts/TRANSPORT/Duty_Interruption/Duty_InterruptionDetails.js")
+<style>
+
+    .k-multiselect-wrap, .k-floatwrap {
+        height: 34px;
+    }
+</style>
+<div class="bs-example">
+    <div class="well well-sm">Duty Interruption Details</div>
+    <div id="menuDetailsDiv" class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="form-horizontal">
+                <div class="row" style="margin-top:5px;margin-bottom:5px;">
+                    <div class="col-md-6" style="margin-left: 184px;">
+                        <div class="col-md-2">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtSearchKey" style="line-height: 14px;">Vehicle:</label>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0; margin-left:-23px;">
+                            <div class="input-group add-on">
+                                <input type="hidden" id="hdnDutyInterruptionId" value="0" />
+                                <input type="text" placeholder="Type here..." class="form-control" style="width: 100%; height: 28px;margin-left:-1px;" name="Vehicle" id="txtSearchKey" />
+                                <div class="input-group-btn">
+                                    <button class="btn btn-info" type="button" id="btnSearchStyle"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5" style="margin-left: -29px;width:33%;">
+                            <input type="text" id="cboVehicle" style="width: 84%; height: 28px;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbDriver">Driver:</label>
+                            <div class="col-md-6 col-xs-6 comboBox">
+                                <input id="cmbDriver" placeholder="--Select Driver--" style="width: 100%; height: 34px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbProblemType">ProblemType:</label>
+                            <div class="col-md-6 col-xs-6 comboBox">
+                                <input id="cmbProblemType" placeholder="--Select Problem Type--" style="width: 100%; height: 34px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtProblemDetails">Problem Details:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <textarea type="text" placeholder="Problem Details" name="txtProblemDetails" id="txtProblemDetails" class="form-control" style="width: 100%; height: 34px; resize: none;" required validationmessage="*"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtNoticeDate">Notice Date:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input id="txtNoticeDate" type="text" placeholder="Notice Date" name="txtNoticeDate" style="width: 100%; height: 34px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtWorkShop">WorkShop:</label>
+                            <div class=" col-md-6 col-xs-6">
+                                <input type="text" placeholder="WorkShop..." name="txtWorkShop" id="txtWorkShop" class="form-control" style="width: 100%; height: 34px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtRepairDuration">Repair Duration:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input type="text" placeholder="Repair Duration" name="txtRepairDuration" id="txtRepairDuration" class="form-control" style="width: 100%; height: 34px; " />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtEstimatedReturnDate">Estimated Return Date:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input id="txtEstimatedReturnDate" type="text" placeholder="Estimated Return Date" name="txtEstimatedReturnDate" style="width: 100%; height: 34px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtRemarks" style="margin-bottom: 6px;">Remarks:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <textarea type="text" placeholder="Remarks" name="txtRemarks" id="txtRemarks" class="form-control" style="width: 100%; height: 34px; resize: none;" required validationmessage="*"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <ul class="list-group ">
+                            <li class="list-group-item centerAlign">
+                                <button id="btnSave" class="btn btn-primary" type="button">Save</button>
+                                <button id="btnClearAll" class="btn btn-primary">Clear</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

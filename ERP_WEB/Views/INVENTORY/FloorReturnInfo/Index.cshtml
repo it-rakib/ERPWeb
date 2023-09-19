@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Floor Return";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/FloorReturnInfo/FloorReturnSettings.js")
+
+<div class="row">
+    <div id="divFloorReturnSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/FloorReturnInfo/_FloorReturnSummary")
+    </div>
+    <div id="divFloorReturnDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/FloorReturnInfo/_FloorReturnDetails")
+    </div>
+</div>
+
+
+<div class="displayNone" id="popupStyleSearch">
+    @Html.Partial("../INVENTORY/FloorReturnInfo/_StyleListSearch")
+</div>

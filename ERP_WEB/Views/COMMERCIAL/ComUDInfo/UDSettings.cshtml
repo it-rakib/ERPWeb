@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Utilization Declaration Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Dashboard/DashboardMain.css" rel="stylesheet" />
+<style type="text/css">
+    .ob-center {
+        text-align: center !important;
+    }
+
+    .k-content {
+        background-color: white !important;
+    }
+
+    .k-tabstrip > .k-content {
+        display: none;
+        overflow: hidden;
+    }
+
+    tbody tr:hover {
+
+        cursor: pointer
+    } 
+</style>
+@Scripts.Render("~/Scripts/COMMERCIAL/ComUDInfo/UDSettings.js")
+@Scripts.Render("~/Scripts/COMMERCIAL/ComUDInfo/UDDetails.js")
+
+<link href="~/Scripts/NewsTicker/ticker-style.css" rel="stylesheet" />
+<script src="~/Scripts/NewsTicker/jquery.ticker.js"></script>
+
+@*  *@
+<div class="row">
+    @*<div class="col-md-7 col-xs-7 col-sm-7">
+            @Html.Partial("../HRMCommonView/_SearchEmployee")
+        </div>*@
+    <div id="divEmployeePFInfo" class="col-md-12 col-xs-12 col-sm-12">
+
+        @Html.Partial("../COMMERCIAL/ComUDInfo/_UDDetails")
+    </div>
+
+
+</div>

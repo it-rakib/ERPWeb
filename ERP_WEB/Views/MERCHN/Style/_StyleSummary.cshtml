@@ -1,0 +1,13 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/Style/StyleSummary.js?" + @jsVer)
+
+<div class="panel panel-default bs-example">
+    <div class="well well-sm">
+        Style Summary
+    </div>
+    <div class="panel-body">
+        <button class="k-button" id="btnAddNew"><span class="fa fa-plus"></span> Add New</button>
+        <div class="spacer5"></div>
+        <div id="grdStyleSummary"></div>
+    </div>
+</div>

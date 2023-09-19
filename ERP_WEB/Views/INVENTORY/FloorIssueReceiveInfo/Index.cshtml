@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Floor Issue Receive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/FloorIssueReceiveInfo/FloorIssueReceiveSettings.js")
+
+<div class="row">
+    <div id="divFloorIssueReceiveSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/FloorIssueReceiveInfo/_FloorIssueReceiveSummary")
+    </div>
+    <div id="divFloorIssueReceiveDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/FloorIssueReceiveInfo/_FloorIssueReceiveDetails")
+    </div>
+</div>

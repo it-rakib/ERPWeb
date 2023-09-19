@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Land Development Tax Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .row {
+        margin-bottom: 5px;
+    }
+</style>
+
+<link href="~/Scripts/NewsTicker/ticker-style.css" rel="stylesheet" />
+<script src="~/Scripts/NewsTicker/jquery.ticker.js"></script>
+
+@Scripts.Render("~/Scripts/Land/LandDevelopmentTaxInfo/LandDevTaxInfoSettings.js")
+
+<div class="row">
+    <div id="divLandDevTaxInfoSummary" class="col-lg-12">
+        @Html.Partial("../Land/LandDevelopmentTaxInfo/_LandDevTaxInfoSummary")
+    </div>
+
+    <div id="divLandDevTaxInfoDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../Land/LandDevelopmentTaxInfo/_LandDevTaxInfoDetails")
+    </div>
+</div>
+

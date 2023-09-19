@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Vehicle Requisition Approval";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/TRANSPORT/VehicleRequisitionApproval/RequisitionApprovalSettings.js"></script>
+
+<div class="row" id="divVehicleRequisitionApproval">
+    <div id="divRequisitionApprovalDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../TRANSPORT/VehicleRequisitionApproval/_RequisitionApprovalDetails")
+    </div>
+    <div id="divRequisitionApprovalSummary" class="col-lg-12">
+        @Html.Partial("../TRANSPORT/VehicleRequisitionApproval/_RequisitionApprovalSummary")
+    </div>
+</div>

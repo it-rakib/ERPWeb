@@ -1,0 +1,57 @@
+USE [SIMS_1_0_0]
+GO
+/****** Object:  StoredProcedure [dbo].[KENDOGRID]    Script Date: 5/21/2016 9:12:43 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER  PROCEDURE [dbo].[KENDOGRID]
+	@calltype VARCHAR (200)='CALL FOR NOTHING',
+	@skip INT,  
+	@take INT, 
+	@page INT, 
+	@pageSize INT, 
+	@sort VARCHAR (200) ,                  
+	@filter VARCHAR (200),
+	@orderby VARCHAR (200)=''
+AS
+	
+	if @calltype = 'GET_KENDOGRID_DATA'  goto GET_KENDOGRID_DATA
+
+
+	raiserror(@calltype,16,1)
+
+RETURN
+
+
+GET_KENDOGRID_DATA:
+	BEGIN
+		--============================Main Query===========================================================
+		
+        Select AccessId,AccessName into #tbl from AccessControl 
+       
+		
+--=======================================Count============================================
+		SELECT COUNT(*)TotalCount FROM #tbl As tbl ;
+--=======================================Paging & Filtering query==========================================
+		
+		IF(@filter = '')
+			BEGIN
+				 SELECT * FROM (SELECT ROW_NUMBER() OVER( ORDER BY  @orderby ) AS ROWINDEX, T.* 
+				FROM #tbl T ) tbl 
+				WHERE ROWINDEX >@skip AND ROWINDEX <=@take;
+			END
+		ELSE
+			BEGIN
+				declare @filterQuery  nvarchar(max) 
+				set @filterQuery = 'SELECT * FROM(
+				SELECT * FROM (SELECT ROW_NUMBER() OVER( ORDER BY '+@orderby +' ) AS ROWINDEX, T.* 
+				FROM 
+				#tbl T )b WHERE  '+@filter +'   )tbl
+				WHERE ROWINDEX >'+Convert(varchar(max),@skip) +' AND ROWINDEX <='+Convert(varchar(max),@take) +'';
+			EXEC sp_executesql @filterQuery
+			END
+		Drop table #tbl
+	END	
+RETURN
+--=======================================================================

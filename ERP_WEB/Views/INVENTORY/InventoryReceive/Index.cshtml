@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Inventory Receive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/InventoryReceive/InvReceiveSettings.js")
+
+<div class="row">
+    <div id="divRcvSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/InventoryReceive/_InvReceiveSummary")
+    </div>
+    <div id="divRcvDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/InventoryReceive/_InvReceiveDetails")
+    </div>
+</div>
+
+<div class="displayNone" id="popupPISearch">
+    @Html.Partial("../INVENTORY/InventoryReceive/_PIListSearch")
+</div>
+<div class="displayNone" id="popupConsignmentSearch">
+    @Html.Partial("../INVENTORY/InventoryReceive/_ConsignmentList")
+</div>
+

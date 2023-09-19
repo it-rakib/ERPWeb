@@ -1,0 +1,84 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/POInfo/ColorSizeSummary.js?" + @jsVer)
+
+<div class="row">
+    <div class="col-md-11">
+        <div class="spacer5"></div>
+        <div class="col-md-2">
+            <label for="txtSearchKey">Select Style:</label>
+        </div>
+        <div class="col-md-3" style="padding-left: 0;">
+            <div class="input-group add-on">
+                <input type="text" placeholder="Type here..." class="form-control" style="width: 100%; height: 28px;" name="Style" id="txtSearchKey" />
+                <div class="input-group-btn">
+                    <button class="btn btn-info" type="button" id="btnSearchStyle"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <input type="text" id="cboStyle" style="width: 100%; height: 28px;" />
+        </div>
+    </div>
+    @*<div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>*@
+    @*<div id="grdStyleSummary" class="displayNone"></div>*@
+
+    <div class="col-md-12">
+        <hr />
+    </div>
+    <div class="col-md-11">
+        <div class="spacer5"></div>
+        <div class="col-md-3">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="cmbColor">Color:</label>
+                    <div class="col-md-9 col-xs-9 ">
+                        <input type="text" style="width: 100%; height: 25px;" name="cmbColor" id="cmbColor" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-2 col-xs-2 control-label" for="cmbSize">Size:</label>
+                    <div class="col-md-9 col-xs-9">
+                        <input type="text" style="width: 100%; height: 25px;" name="cmbSize" id="cmbSize" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="txtRate">Rate:</label>
+                    <div class="col-md-7 col-xs-7 ">
+                        <input type="text" style="width: 100%; height: 25px;" name="txtRate" id="txtRate" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="txtQuantity">Quantity:</label>
+                    <div class="col-md-7 col-xs-7 ">
+                        <input type="text" style="width: 100%; height: 25px;" name="txtQuantity" id="txtQuantity" />
+                    </div>
+                    <div class="col-md-2">
+                        <button id="btnAddColorSize" class="k-button-primary"><i class="fas fa-arrow-down" style="margin-right: 4px;"></i>Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="grdColorSizeSummary"></div>
+    </div>
+</div>
+

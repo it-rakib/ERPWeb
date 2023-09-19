@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Bank Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/CmnBank/CmnBankSettings.js")
+<div class="row">
+    <div id="divCmnBankDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/CmnBank/_CmnBankDetails")
+        @Html.Partial("../MERCHN/CmnBank/_CmnBankSummary")
+    </div>
+</div>
+
+

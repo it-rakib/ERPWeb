@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Buyer Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/Buyer/BuyerSettings.js")
+
+<div class="row">
+    <div id="divBuyerDetails" class="col-lg-12">
+        @Html.Partial("../MERCHN/Buyer/_BuyerDetails")
+
+        @Html.Partial("../MERCHN/Buyer/_BuyerSummary")
+    </div>
+</div>

@@ -1,0 +1,93 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/COMMERCIAL/ComSalesContract/ContractDetails.js?" + @jsVer)
+@Scripts.Render("~/Scripts/COMMERCIAL/ComSalesContract/ContractAmendment.js?" + @jsVer)
+@Scripts.Render("~/Scripts/COMMERCIAL/ComSalesContract/ContractSummary.js?" + @jsVer)
+@Scripts.Render("~/Scripts/COMMERCIAL/ComSalesContract/ContractLCSummary.js?" + @jsVer)
+
+<style>
+    /*.k-panelbar .k-tabstrip>.k-content,*/
+    .k-tabstrip > .k-content {
+        padding: 0px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul id="pnlMasterInfo">
+                        <li class="k-state-active">
+                            <span>Sales Contract (SC) Information</span>
+                            <div>
+                                @*<div class="row">
+                                    <div class="col-md-6 col-xs-6" style="float:right;">
+                                        <label class="col-md-6 col-xs-6 control-label" style="line-height: 20px; color: green; font-weight: bold; font-size: 18px !important; float: left;" id="lblMessage"></label>
+                                        <button id="btnSave" class="k-button-success"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                                        <button id="btnClearAll" class="k-button-danger"><i class="k-icon k-i-reload" style="margin-right: 4px;"></i>Refresh</button>
+                                    </div>
+                                </div>*@
+                                <div class="spacer5"></div>
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12">
+                                        @Html.Partial("../COMMERCIAL/ComSalesContract/_ContractInfo")
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="panel panel-default" style="margin: 0px;">
+                                            <div class="well well-sm">
+                                                Remarks
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row" style="margin-top: 1px;">
+                                                    <div class="col-md-12 col-xs-12">
+                                                        <div class="form-horizontal">
+                                                            <textarea id="txtRemarks" name="txtRemarks" type="text" class="form-control" placeholder="Remarks" style="height:80px;width:100%;resize:none;"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spacer5"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12">
+                    <div id="example">
+                        <div class="demo-section k-content">
+                            <div id="tabstrip">
+                                <ul>
+                                    <li id="tabAmendment" class="k-state-active">
+                                        Amendment
+                                    </li>
+                                    <li id="tabPOList">
+                                        PO List
+                                    </li>
+                                </ul>
+                                <div class="row">
+                                    <div class="spacer5"></div>
+                                    <div class="col-md-12 col-xl-12" style="padding-left: 0px; padding-right: 0px;">
+                                        @Html.Partial("../COMMERCIAL/ComSalesContract/_ContractAmendment")
+                                    </div>
+                                    <div class="spacer5"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="spacer5"></div>
+                                    <div class="col-xs-12 col-md-12" style="padding-left: 5px; padding-right: 5px;">
+                                        <div id="gridPOList"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

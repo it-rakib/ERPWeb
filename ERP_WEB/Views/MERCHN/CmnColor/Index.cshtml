@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Color Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/Color/ColorSettings.js")
+<div class="row">
+    <div id="divColorDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/CmnColor/_ColorDetails")
+        @Html.Partial("../MERCHN/CmnColor/_ColorSummary")
+    </div>
+</div>

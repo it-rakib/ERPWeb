@@ -1,0 +1,75 @@
+﻿
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/BookingCosting/BookingCosting.js?" + @jsVer)
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="pnlBookingCosting">
+                            <li class="k-state-active">
+                                BOOKING COSTING
+                                <div id="divBookingPnl">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="spacer5"></div>
+                                            <div class="col-md-1">
+                                                <label style="float: right; line-height: 25px;">Select Style:</label>
+                                            </div>
+                                            <div class="col-md-2" style="padding-left: 0;">
+                                                <div class="input-group add-on">
+                                                    <input type="hidden" id="hdnBomId" value="00000000-0000-0000-0000-000000000000"/>
+                                                    <input type="text" placeholder="Type here..." class="form-control" autocomplete="off" style="width: 100%; height: 28px;" name="Style" id="txtSearchKey"/>
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-info" type="button" id="btnSearchStyle"><i class="glyphicon glyphicon-search"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="cboStyle" style="width: 100%; height: 28px;"/>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <button id="btnSaveBookingCost" class="k-button-success" style="float: right;"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                                                <button id="btnClose" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <label class="col-md-1 col-xs-2 control-label" for="cmbStatus" style="line-height: 20px;">Status:</label>
+                                            <div class="col-md-2 col-xs-7" style="margin-left: 8px;">
+                                                <input type="text" style="width: 100%; height: 25px;" name="cmbStatus" id="cmbStatus" />
+                                            </div>
+                                            <label class="col-md-2 col-xs-2 control-label" for="cmbStatus" style="line-height: 20px;">Currency:</label>
+                                            <div class="col-md-2 col-xs-7">
+                                                <input type="text" style="width: 100%; height: 25px;" name="cmbCurrency" id="cmbCurrency"/>
+                                            </div>
+                                            <label class="col-md-2 col-xs-2 control-label" for="txtBomNo" style="line-height: 20px;">BOM No.:</label>
+                                            <div class="col-md-2 col-xs-7">
+                                                <input type="text" class="form-control" style="width: 100%; height: 25px;" name="txtBomNo" id="txtBomNo" disabled="disabled" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="k-state-active">
+                                ITEM INFORMATION
+                                <div>
+                                    <div class="spacer5"></div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @Html.Partial("../Merchn/BookingCosting/_ItemInfo")
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

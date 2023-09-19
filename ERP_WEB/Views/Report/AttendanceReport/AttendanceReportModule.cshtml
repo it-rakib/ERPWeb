@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Attendance Reports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/HRM/Reports/AttendanceReport/AttendanceReportModule.js")
+
+<style type="text/css">
+    #cmbReportName-list {
+        height: auto !important;
+    }
+</style>
+
+<div class="col-md-8 col-xs-12">
+    @Html.Partial("../HRMCommonView/_SearchEmployee")
+</div>
+<div class="col-md-4 col-xs-12">
+    @Html.Partial("../Report/AttendanceReport/_AttendanceReportParam")
+</div>

@@ -1,0 +1,58 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/INVENTORY/ConsignmentInfo/ConsignmentDetailsGrid.js?" + @jsVer)
+
+<div class="row">
+    <div class="col-md-11">
+        <div class="spacer5"></div>
+        <div class="col-md-3">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-4 col-xs-4 control-label" for="txtTruckNo">Truck No:</label>
+                    <div class="col-md-8 col-xs-8 ">
+                        <input id="txtTruckNo" name="txtTruckNo" class="form-control" type="text" style="width: 100%; height: 25px;" autocomplete="off"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-2 col-xs-2 control-label" for="cmbItem">Item:</label>
+                    <div class="col-md-10 col-xs-10">
+                        <input id="cmbItem" name="cmbItem" type="text" style="width: 100%; height: 25px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-4 col-xs-4 control-label" for="cmbPackType">Pack Type:</label>
+                    <div class="col-md-8 col-xs-8">
+                        <input id="cmbPackType" name="cmbPackType" type="text" style="width: 100%; height: 25px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="txtQuantity">Quantity:</label>
+                    <div class="col-md-7 col-xs-7 ">
+                        <input id="txtQuantity" name="txtQuantity" type="text" style="width: 100%; height: 25px;" autocomplete="off"/>
+                    </div>
+                    <div class="col-md-2">
+                        <button id="btnAdd" class="k-button-primary"><i class="fas fa-arrow-down" style="margin-right: 4px;"></i>Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="grdConsignmentDetailsGridSummary"></div>
+    </div>
+</div>
+

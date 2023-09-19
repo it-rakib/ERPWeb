@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "OwnerShip Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/TRANSPORT/OwnershipInfo/OwnershipSettings.js")
+
+<div class="row">
+    <div id="divOwnershipDetails" class="col-md-12">
+
+        @Html.Partial("../TRANSPORT/OwnershipInfo/_OwnershipDetails")
+        @Html.Partial("../TRANSPORT/OwnershipInfo/_OwnershipSummary")
+    </div>
+</div>
+

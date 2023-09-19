@@ -1,0 +1,13 @@
+SELECT 
+	--dbo.OwnerInfo.OwnerInfoName,
+	OwnerInfoName,
+	Count(dbo.LandMaster.DeedNo),
+	SUM(dbo.LandOwnersDetail.LandAmount)
+   
+FROM 
+  dbo.LandMaster 
+  INNER JOIN dbo.LandOwnersDetail ON dbo.LandMaster.LandMasterId = dbo.LandOwnersDetail.LandMasterId 
+  INNER JOIN dbo.OwnerInfo ON dbo.LandOwnersDetail.OwnerInfoId = dbo.OwnerInfo.OwnerInfoId
+
+  --group by dbo.OwnerInfo.OwnerInfoName 
+  Where dbo.LandOwnersDetail.OwnerInfoId = 'A956CD50-6558-4AB0-A1F5-059C54EB74C8'

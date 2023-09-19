@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Ha-Meem ERP</title>
+    <link href="../../Images/HG.png" rel="shortcut icon" type="image/x-icon" />
+
+    @Styles.Render("~/UIFramework/MessageBox/css/buttons1.css")
+    @Scripts.Render("~/Scripts/jquery-3.6.0.min.js")
+    @Scripts.Render("~/Scripts/Common/ajaxManager.common.js")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/UIFramework/KendoUI/Css/CommonSize.css")
+    @Styles.Render("~/Scripts/Loading/ikr.Loader.css")
+    @Scripts.Render("~/Scripts/Loading/ikr.Loader.js")
+
+    <style type="text/css">
+        .footer-area {
+            background-color: #286090;
+            min-height: 10px;
+            color: #fff;
+            font-size: 8pt;
+            font-family: Verdana, Tahoma, Arial, Helvetica, Sans-serif, sans-serif;
+            font-weight: 100;
+        }
+    </style>
+
+</head>
+<body class="container-login100" style="background-image: url('../../Images/bg_login1.jpg');">
+    @*<body class="container-login100" style="background-image: url('../../Images/Eid/2021_2.jpg');">*@
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <footer class="footer-area navbar-fixed-bottom">
+            <div class="row" style="height: 20px">
+                <div class="col-md-6 col-xs-6" style="font-family: 'Century Gothic'">
+                    &copy; @DateTime.Now.Year - All right reserved Ha-Meem Group &nbsp;&nbsp; Website: <a style="color: white;" href="http://www.hameemgroup.net/" target="_blank">www.hameemgroup.net</a>
+                </div>
+                <div class="col-md-6 col-xs-6" style="float: right; text-align: right; font-family: 'Century Gothic'">Developed By: Ha-Meem Group (IT)</div>
+            </div>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

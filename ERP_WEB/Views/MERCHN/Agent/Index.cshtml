@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Agent Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/Agent/AgentSettings.js")
+<div class="row">
+    <div id="divAgentDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/Agent/_AgentDetails")
+    
+        @Html.Partial("../MERCHN/Agent/_AgentSummary")
+    </div>
+</div>
+

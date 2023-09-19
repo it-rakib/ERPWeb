@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Loan Issue Receive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/LoanIssueReceiveInfo/LoanIssueReceiveSettings.js")
+
+<div class="row">
+    <div id="divSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/LoanIssueReceiveInfo/_LoanIssueReceiveSummary")
+    </div>
+    <div id="divDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/LoanIssueReceiveInfo/_LoanIssueReceiveDetails")
+    </div>
+</div>

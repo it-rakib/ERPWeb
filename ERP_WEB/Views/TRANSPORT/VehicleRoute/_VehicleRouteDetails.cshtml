@@ -1,0 +1,66 @@
+﻿
+<script src="~/Scripts/TRANSPORT/VehicleRoute/VehicleRouteDetails.js"></script>
+<style>
+
+    .k-multiselect-wrap, .k-floatwrap {
+        height: 34px;
+    }
+</style>
+<div class="bs-example">
+    <div class="well well-sm">Route Details</div>
+    <div id="menuDetailsDiv" class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="hidden" id="hdnRouteId" value="0" />
+                            <label class="col-md-4 col-xs-4 control-label" for="txtVehicleRouteName">Route Name:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input type="text" placeholder="Route Name" name="txtVehicleRouteName" id="txtVehicleRouteName" class="form-control" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtDestination">Destination:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input type="text" placeholder="Destination..." name="txtDestination" id="txtDestination" class="form-control" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtStartPoint">Start Point:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input type="text" placeholder="Start Point..." name="txtStartPoint" id="txtStartPoint" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtDescription">Description:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <textarea type="text" placeholder="Description..." name="txtDescription" id="txtDescription" class="form-control" style="height: 78px;" required validationmessage="*"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 230px;">
+                            <label for="chkIsActive" style="margin-left: 0px"> Is Active:</label>
+                            <input type="checkbox" id="chkIsActive" name="chkIsActive" value="chkIsActive" style="margin-left: 31px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <ul class="list-group ">
+                            <li class="list-group-item centerAlign">
+                                <button id="btnSave" class="btn btn-primary" type="button">Save</button>
+                                <button id="btnClearAll" class="btn btn-primary">Clear</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

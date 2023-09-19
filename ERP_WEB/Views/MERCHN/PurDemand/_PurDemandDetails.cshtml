@@ -1,0 +1,105 @@
+﻿<link href="~/Content/FlatUI/flatui.css" rel="stylesheet" />
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/PurDemand/PurDemandDetails.js?" + @jsVer)
+
+<style>
+    .k-grid-footer {
+        display: none;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="pnlDemand">
+                            <li class="k-state-active">
+                                DEMAND
+                                <div id="divBuyerPnl">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="spacer5"></div>
+                                            <div class="col-md-1 lp">
+                                                <label style="margin-top: 7px;">Select Style:</label>
+                                            </div>
+                                            <div class="col-md-2" style="padding-left: 0;">
+                                                <div class="input-group add-on">
+                                                    <input type="text" placeholder="Type here..." class="form-control" autocomplete="off" style="width: 100%; height: 28px;" name="Style" id="txtSearchKey" />
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-info" type="button" id="btnSearchStyle"><i class="glyphicon glyphicon-search"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="cboStyleSearch" style="width: 100%; height: 28px;" />
+                                            </div>
+                                            <div class="col-md-5">
+                                                <button id="btnSaveGenerated" class="k-button-success" style="float: right;"><i class="fa fa-save" style="margin-right: 4px;"></i>Generated</button>
+                                                <button id="btnSaveSendToProcurement" class="k-button-success" style="float: right;"><i class="fa fa-paper-plane" style="margin-right: 4px;"></i>Send To Procurement</button>
+                                                <button id="btnBack" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer5"></div>
+                                </div>
+                            </li>
+                            <li class="k-state-active">
+                                DEMAND INFORMATION
+                                <div>
+                                    <div class="spacer5"></div>
+                                    <div class="row">
+                                        <input type="hidden" class="hiddenId" id="hdnDemandId" />
+                                        <div class="col-md-3">
+                                            <div class="form-group lp">
+                                                <label class="col-md-4 col-xs-4 control-label" for="txtDemandNo">Demand No:</label>
+                                                <div class="col-md-7 col-xs-7 ">
+                                                    <input type="text" id="txtDemandNo" name="txtDemandNo" placeholder="Demand No" class="form-control" disabled />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group lp">
+                                                <label class="col-md-4 col-xs-4 control-label" for="dtDemandDate">Demand Date:</label>
+                                                <div class="col-md-7 col-xs-7 ">
+                                                    <input type="text" id="dtDemandDate" class="datePicker" name="dtDemandDate" placeholder="Demand Date" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group lp">
+                                                <label class="col-md-4 col-xs-4 control-label" for="dtDueDate">Due Date:</label>
+                                                <div class="col-md-7 col-xs-7 ">
+                                                    <input type="text" id="dtDueDate" class="datePicker" name="dtDueDate" placeholder="Due Date" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group lp">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @*<button id="expand" class='k-button k-button-md k-rounded-md k-button-solid k-button-solid-base'><span class='k-button-text'>Expand All</span></button>
+                                            <button id="collapse" class='k-button k-button-md k-rounded-md k-button-solid k-button-solid-base'><span class='k-button-text'>Collapse All</span></button>*@
+                                            <div id="grdDemandItems"></div>
+                                        </div>                                        
+                                    </div>
+                                    @*<div class="row">
+                                        <div class="spacer5"></div>
+                                        <div class="col-md-12">
+                                            <div id="grdDemandItems"></div>
+                                        </div>
+                                    </div>*@
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

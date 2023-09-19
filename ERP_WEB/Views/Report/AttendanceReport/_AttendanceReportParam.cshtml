@@ -1,0 +1,182 @@
+﻿@Scripts.Render("~/Scripts/HRM/Reports/AttendanceReport/MonthlyAttendanceSummary.js")
+
+<div class="col-md-12 col-xs-12">
+    <div class="col-md-12 col-xs-12 bs-example">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-3  control-label" for="txtMonthYear">Select Report:</label>
+                        <div class="col-md-9 ">
+                            <input type="text" name="cmbReportName" style="width: 100%; height: 28px;" id="cmbReportName" required validationmessage="Required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="col-md-12 col-xs-12 displayNone" id="divJobLocation">
+    <div class="col-md-12 col-xs-12 bs-example">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-3  control-label" for="cmbJobLocation">Job Location:</label>
+                        <div class="col-md-9 ">
+                            <input type="text" name="cmbJobLocation" style="width: 100%; height: 28px;" id="cmbJobLocation" required validationmessage="Required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12 col-xs-12 displayNone" id="divMonthlyAtt">
+    <div class="col-md-12 col-xs-12 bs-example">
+        <div class="well well-sm">
+            Monthly Attendance Report
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-3  control-label" for="txtMonthYear" id="lblMonthYearFrom">Select Month:</label>
+                        <div class="col-md-9 ">
+                            <input type="text" name="txtMonthYear" style="width: 100%; height: 28px;" id="txtMonthYear" required validationmessage="Required">
+                        </div>
+                    </div>
+                    <div class="form-group displayNone" id="divMonthTo">
+                        <label class="col-md-3  control-label" for="txtMonthYearTo">Month To:</label>
+                        <div class="col-md-9 ">
+                            <input type="text" name="txtMonthYearTo" style="width: 100%; height: 28px;" id="txtMonthYearTo" required validationmessage="Required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="spacer5"></div>
+                <ul class="list-group ">
+                    <li class="list-group-item centerAlign">
+                        <button id="btnMonthlyAttSummaryReport" class="k-button-linkbutton" type="button">Employee Attendance Summary</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12 col-xs-12 displayNone" id="divDailyAtt">
+    <div class="col-md-12 col-xs-12 bs-example">
+        <div class="well well-sm">
+            Daily Attendance Report
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-3  control-label" for="txtAttDate" id="lblAttDateFrom">Select Date:</label>
+                        <div class="col-md-9 ">
+                            <input type="text" name="txtAttDate" style="width: 100%; height: 28px;" id="txtAttDate" required validationmessage="Required">
+                        </div>
+                    </div>
+                    <div class="form-group" id="divDateTo">
+                        <label class="col-md-3  control-label" for="txtAttDateTo" id="lblAttDateTo">Select Date To:</label>
+                        <div class="col-md-9 ">
+                            <input type="text" name="txtAttDateTo" style="width: 100%; height: 28px;" id="txtAttDateTo" required validationmessage="Required">
+                        </div>
+                    </div>
+                    <div class="form-group" id="attStatusCombo">
+                        <label class="col-md-3  control-label" for="cmbAttStatus">Select Status:</label>
+                        <div class="col-md-9 ">
+                            <input type="text" name="cmbAttStatus" style="width: 100%; height: 28px;" id="cmbAttStatus">
+                        </div>
+                    </div>
+                    <div class="form-group" id="designationcombo">
+                        <label class="col-md-3  control-label" for="cmbDesignation">Select Designation:</label>
+                        <div class="col-md-9 ">
+                            <input type="text" name="cmbDesignation" style="width: 100%; height: 28px;" id="cmbDesignation">
+                        </div>
+                    </div>
+                    @*<div class="form-group" id="jobLocationCombo">
+                        <label class="col-md-3 col-xs-4 control-label" for="cmbJobLocation">Job Location:</label>
+                        <div class="col-md-9 col-xs-8">
+                            <input type="text" style="width: 100%; height: 28px;" name="cmbJobLocation" id="cmbJobLocation" required validationmessage="Required" />
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+            <div class="row">
+                <div class="spacer5"></div>
+                <ul class="list-group ">
+                    <li class="list-group-item centerAlign" id="libtnDeptWiseAttSummaryReport">
+                        <button id="btnDeptWiseAttSummaryReport" class="k-button-linkbutton" type="button">Dept. Wise Attendance Summary</button>
+                    </li>
+                    <li class="list-group-item centerAlign" id="libtnDailyAttDetailsReport">
+                        <button id="btnDailyAttDetailsReport" class="k-button-linkbutton" type="button">Daily Attendance Details</button>
+                    </li>
+                    <li class="list-group-item centerAlign" id="libtnDesigWiseAttSummaryReport">
+                        <button id="btnDesigWiseAttSummaryReport" class="k-button-linkbutton" type="button">Designation Wise Attendance Summary</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12 col-xs-12 displayNone" id="divAttReport">
+    <div class="col-md-12 col-xs-12 bs-example">
+        <div class="well well-sm" id="lblAttReport">
+            Attendance Report (Job Card)
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-3  control-label" for="txtFromDate">From Date:</label>
+                        <div class="col-md-9 ">
+                            <input type="text" name="txtFromDate" style="width: 100%; height: 28px;" id="txtFromDate" required validationmessage="Required">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3  control-label" for="txtToDate">To Date:</label>
+                        <div class="col-md-9 ">
+                            <input type="text" name="txtToDate" style="width: 100%; height: 28px;" id="txtToDate" required validationmessage="Required">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="spacer5"></div>
+                <ul class="list-group ">
+                    <li class="list-group-item centerAlign" id="libtnEmployeeJobCardReport">
+                        <button id="btnEmployeeJobCardReport" class="k-button-linkbutton" type="button">Employee Job Card</button>
+                    </li>
+                    <li class="list-group-item centerAlign" id="libtnLeaveRegisterReport">
+                        <button id="btnLeaveRegisterReport" class="k-button-linkbutton" type="button">Leave Register</button>
+                    </li>
+                    <li class="list-group-item centerAlign" id="libtnMovementReport">
+                        <button id="btnMovementReport" class="k-button-linkbutton" type="button">Movement Report</button>
+                    </li>
+                    <li class="list-group-item centerAlign" id="libtnHourlyOTReport">
+                        <button id="btnHourlyOTReport" class="k-button-linkbutton" type="button">Hourly OT Report</button>
+                    </li>
+                    <li class="list-group-item centerAlign" id="libtnDailyMPReport">
+                        <button id="btnOPCostDetailsReport" class="k-button-linkbutton" type="button">OP Cost Details Report</button>
+                    </li>
+                    <li class="list-group-item centerAlign" id="libtnMonthlyMPReport">
+                        <button id="btnOPCostSummaryReport" class="k-button-linkbutton" type="button">OP Cost Summary Report</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

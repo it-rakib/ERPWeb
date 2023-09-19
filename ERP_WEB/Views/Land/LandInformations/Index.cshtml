@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Land Informations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .row {
+        margin-bottom: 5px;
+    }
+</style>
+
+@Scripts.Render("~/Scripts/Land/LandInformations/LandInformationSettings.js")
+
+<div class="row">
+    <div id="divLandInformationSummary" class="col-lg-12">
+        @Html.Partial("../Land/LandInformations/_LandInformationSummary")
+    </div>
+</div>

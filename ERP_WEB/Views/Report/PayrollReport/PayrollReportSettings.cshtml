@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Payroll Reports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/HRM/Reports/PayrollReport/PayrollReportSettings.js?" + @jsVer)
+
+<div class="col-md-8 col-xs-12">
+    @Html.Partial("../HRMCommonView/_SearchEmployee")
+</div>
+<div class="col-md-4 col-xs-12">
+    @Html.Partial("../Report/PayrollReport/_PayrollReportParam")
+</div>

@@ -1,0 +1,580 @@
+﻿@Scripts.Render("~/Scripts/Land/LandInfo/LandInfoDetails.js")
+
+
+
+<div class="bs-example">
+    <div class="well well-sm">Main Information of Land</div>
+
+    <div class="row" style="margin-bottom:0px !important;">
+        <div class="col-md-12 col-xs-12 centerAlign">
+            <ul class="list-group" style="margin-bottom:2px !important;">
+                <li class="list-group-item rightAlign">
+                    <button id="btnSubmitApplication" class="k-button-success" type="button"><span class="glyphicon glyphicon-floppy-disk"></span>Submit</button>
+                    <button id="btnCancelApplication" class="k-button-danger" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="includedContent">
+        <div id="bodyTab">
+            <ul>
+                <li id="tabDeedDetails" class="k-state-active">
+                    <b>Deed Details</b>
+                </li>
+
+                <li id="tabDeedDocument">
+                    <b>Deed Document</b>
+                </li>
+            </ul>
+            <div class="col-md-12 displayNone" id="divLandDetails">
+                <input type="hidden" id="hdnLandMasterId" value="00000000-0000-0000-0000-000000000000" />
+                <div class="row">
+                    <div class="col-md-2 col-xs-2" id="divChkIsTransfered">
+                        <div class="form-group" style="margin-top:12px;">
+                            <input type="checkbox" id="chkIsTransfered" name="chkIsTransfered" value="chkIsTransfered">
+                            <label for="chkIsTransfered"> Is Transfered?</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2" id="divChkIsSale">
+                        <div class="form-group" style="margin-top:12px;">
+                            <input type="checkbox" id="chkIsSale" name="chkIsSale" value="chkIsSale">
+                            <label for="chkIsSale"> Is Sale?</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="divTransferedLand" class="displayNone">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="cmbTransferedDeedNo">Transfered Deed No</label>
+                                <div class="comboBox">
+                                    <input id="cmbTransferedDeedNo" placeholder="--Select Transfered Deed--" style="width: 80%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="cmbTransferedKhatianType">Transfered Name of Survey</label>
+                                <div class="comboBox">
+                                    <input id="cmbTransferedKhatianType" placeholder="--Select Name of Survey--" style="width: 80%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="cmbTransferedDagNo">Transfered Plot No</label>
+                                <div class="comboBox">
+                                    <input id="cmbTransferedDagNo" placeholder="--Select Transfered Plot No--" style="width: 80%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtTotalPlotWiseMutationLandAmount">Total Plot Wise Mutated Land</label>
+                                <div class="">
+                                    <input type="text" placeholder="Total Plot Wise Mutated Land" name="txtTotalPlotWiseMutationLandAmount" id="txtTotalPlotWiseMutationLandAmount" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtTotalPlotWiseRemainMutationLandAmount">Total Plot Wise Remain Mutated Land</label>
+                                <div class="">
+                                    <input type="text" placeholder="Total Plot Wise Remain Mutated Land" name="txtTotalPlotWiseRemainMutationLandAmount" id="txtTotalPlotWiseRemainMutationLandAmount" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtPlotWiseTransferedLandAmount">Plot Wise Transfered Land Amount</label>
+                                <div class="">
+                                    <input type="text" placeholder="Plot Wise Transfered Land Amount" name="txtPlotWiseTransferedLandAmount" id="txtPlotWiseTransferedLandAmount" style="width: 80%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3" style="margin-left: -70px; margin-top: 24px;">
+                            <button id="btnAddPlotWiseLandTransfer" class="k-button-primary"><i class="fas fa-arrow-down"></i>Add Plot Wise Land Transfer</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="bs-example">
+                                <div class="panel-body">
+                                    <div id="grdPlotWiseLandTransferSummary"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2 col-xs-2">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="cmbTransferedOwnerInfo">Transfered Name of The Owner</label>
+                                <div class="comboBox">
+                                    <input id="cmbTransferedOwnerInfo" placeholder="--Select Transfered Name of The Owner--" style="width: 100%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-xs-2">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtTotalOwnerWiseMutationLandAmount">Total Owner Wise Mutated Land</label>
+                                <div class="">
+                                    <input type="text" placeholder="Total Owner Wise Mutated Land" name="txtTotalOwnerWiseMutationLandAmount" id="txtTotalOwnerWiseMutationLandAmount" style="width: 100%; height:28px;" required validationmessage="*" class="form-control" readonly />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtTotalOwnerWiseRemainMutatedLand">Total Owner Wise Remain Mutated Land</label>
+                                <div class="">
+                                    <input type="text" placeholder="Total Owner Wise Remain Mutated Land" name="txtTotalOwnerWiseRemainMutatedLand" id="txtTotalOwnerWiseRemainMutatedLand" style="width: 70%; height:28px;" required validationmessage="*" class="form-control" readonly />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtOwnerWiseTransferedLandAmount">Owner Wise Transfered Land Amount</label>
+                                <div class="">
+                                    <input type="text" placeholder="Owner Wise Transfered Land Amount" name="txtOwnerWiseTransferedLandAmount" id="txtOwnerWiseTransferedLandAmount" style="width: 80%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-2" style="margin-left: -70px; margin-top: 24px; width: 250px;">
+                            <button id="btnAddOwnerWiseLandTransfer" class="k-button-primary"><i class="fas fa-arrow-down"></i>Add Owner Wise Land Transfer</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="bs-example">
+                                <div class="panel-body">
+                                    <div id="grdOwnerWiseLandTransferSummary"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                </div>
+
+                <div id="divSaleLand" class="displayNone">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="cmbSaleDeedNo"> Deed No(Sale)</label>
+                                <div class="comboBox">
+                                    <input id="cmbSaleDeedNo" placeholder="--Select Deed(Sale)--" style="width: 80%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="cmbSaleKhatianType"> Name of Survey(Sale)</label>
+                                <div class="comboBox">
+                                    <input id="cmbSaleKhatianType" placeholder="--Select Name of Survey(Sale)--" style="width: 80%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="cmbSaleDagNo">Plot No(Sale)</label>
+                                <div class="comboBox">
+                                    <input id="cmbSaleDagNo" placeholder="--Select Sale Plot No--" style="width: 80%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtTotalPlotWiseMutationLandAmountSale">Total Plot Wise Mutated Land(Sale)</label>
+                                <div class="">
+                                    <input type="text" placeholder="Total Plot Wise Mutated Land(Sale)" name="txtTotalPlotWiseMutationLandAmountSale" id="txtTotalPlotWiseMutationLandAmountSale" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtTotalPlotWiseRemainMutationLandAmountSale">Total Plot Wise Remain Mutated Land(Sale)</label>
+                                <div class="">
+                                    <input type="text" placeholder="Total Plot Wise Remain Mutated Land(Sale)" name="txtTotalPlotWiseRemainMutationLandAmountSale" id="txtTotalPlotWiseRemainMutationLandAmountSale" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtPlotWiseSaleLandAmount">Plot Wise Sale Land Amount</label>
+                                <div class="">
+                                    <input type="text" placeholder="Plot Wise Sale Land Amount" name="txtPlotWiseSaleLandAmount" id="txtPlotWiseSaleLandAmount" style="width: 80%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3" style="margin-left: -70px; margin-top: 24px;">
+                            <button id="btnAddPlotWiseLandSale" class="k-button-primary"><i class="fas fa-arrow-down"></i>Add Plot Wise Land Sale</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="bs-example">
+                                <div class="panel-body">
+                                    <div id="grdPlotWiseLandSaleSummary"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2 col-xs-2">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="cmbSaleOwnerInfo">Name of The Owner(Sale)</label>
+                                <div class="comboBox">
+                                    <input id="cmbSaleOwnerInfo" placeholder="--Select Name of The Owner (Sale)--" style="width: 100%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtTotalOwnerWiseMutationLandAmountSale">Total Owner Wise Mutated Land(Sale)</label>
+                                <div class="">
+                                    <input type="text" placeholder="Total Owner Wise Mutated Land(Sale)" name="txtTotalOwnerWiseMutationLandAmountSale" id="txtTotalOwnerWiseMutationLandAmountSale" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" readonly />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtTotalOwnerWiseRemainMutatedLandSale">Total Owner Wise Remain Mutated Land(Sale)</label>
+                                <div class="">
+                                    <input type="text" placeholder="Total Owner Wise Remain Mutated Land(Sale)" name="txtTotalOwnerWiseRemainMutatedLandSale" id="txtTotalOwnerWiseRemainMutatedLandSale" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" readonly />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-xs-2">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtOwnerWiseSaleLandAmount">Owner Wise Sale Land Amount</label>
+                                <div class="">
+                                    <input type="text" placeholder="Owner Wise Sale Land Amount" name="txtOwnerWiseSaleLandAmount" id="txtOwnerWiseSaleLandAmount" style="width: 80%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-2" style="margin-left: -25px; margin-top: 24px;">
+                            <button id="btnAddOwnerWiseLandSale" class="k-button-primary"><i class="fas fa-arrow-down"></i>Add Owner Wise Land Sale</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="bs-example">
+                                <div class="panel-body">
+                                    <div id="grdOwnerWiseLandSaleSummary"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                </div>
+
+                <div style="border-style: solid; border-color: #286090; border-width: 2px">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3">
+                            <label class="col-md-12 col-xs-12 control-label" for="lblLandOwnerType" style="line-height: 20px;">Basis of Ownership:</label>
+                        </div>
+                        <div class="col-md-9 col-xs-9">
+                            <div id="LandOwnerType">
+
+                            </div>
+                            <div class="form-group">
+                                <div class="LandOwnerTypeOther displayNone" id="divLandOwnerTypeOtherRemarks">
+                                    <input type="text" placeholder="If other please write..." name="txtOtherRemarks" id="txtOtherRemarks" style="width: 20%; height: 28px;" required validationmessage="*" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbCmnDivision">Division</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnDivision" placeholder="--Select Division--" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtDeedNo">Deed No</label>
+                            <div class="">
+                                <input type="text" placeholder="Deed No" name="txtDeedNo" id="txtDeedNo" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbCmnDistrict">District</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnDistrict" placeholder="--Select District--" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtEntryDate">Date</label>
+                            <div class="">
+                                <input id="txtEntryDate" type="text" placeholder="Date" name="txtEntryDate" style="width: 80%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbCmnUpozila">Upazila/Thana</label>
+                            <div class="">
+                                <input id="cmbCmnUpozila" placeholder="--Select Upozila--" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtTotalLandAmount">Total Area of Land (Decimal)</label>
+                            <div class="">
+                                <input type="text" placeholder="Total Area of Land (Decimal)" name="txtTotalLandAmount" id="txtTotalLandAmount" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbSubRegOffice">Sub-Registrar Office</label>
+                            <div class="">
+                                <input id="cmbSubRegOffice" placeholder="--Sub-Registrar Office Name--" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group" style="margin-top:12px;">
+                            <input type="checkbox" id="chkIsBayna" name="chkIsBayna" value="chkIsBayna">
+                            <label for="chkIsBayna"> Is Bayna?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="well well-sm">Land Cost Information</div>
+                <div class="row">
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtLandPurchaseAmount">Price of Land(Deed)</label>
+                            <div class="">
+                                <input type="text" placeholder="Price of Land(Deed)" name="txtLandPurchaseAmount" id="txtLandPurchaseAmount" style="width: 80%; height:28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtLandRegAmount">Registration Cost</label>
+                            <div class="">
+                                <input type="text" placeholder="Registration Cost" name="txtLandRegAmount" id="txtLandRegAmount" style="width: 80%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtLandDevelopmentAmount">Development Cost</label>
+                            <div class="">
+                                <input type="text" placeholder="Land Development Cost" name="txtLandDevelopmentAmount" id="txtLandDevelopmentAmount" style="width: 80%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtLandOtherAmount">Other Cost</label>
+                            <div class="">
+                                <input type="text" placeholder="Other Cost" name="txtLandOtherAmount" id="txtLandOtherAmount" style="width: 80%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="DivSalerInfo" class="well well-sm">Seller Information</div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="bs-example">
+                            <div class="panel-body">
+                                <div id="grdSalerInfoSummary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="DivLandDetailsInfo" class="well well-sm">Detail's of Land</div>
+                <div class="row">
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbCmnMouza">Mouza</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnMouza" placeholder="--Select Mouza--" style="width: 100%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbKhatianType">Name of Survey</label>
+                            <div class="comboBox">
+                                <input id="cmbKhatianType" placeholder="--Select Name of Survey--" style="width: 100%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-xs-10" style="border-style: solid; border-width: 1px; border-color: #286090; margin-top: 2px; width:82.333333%">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-3" id="divOwnerInfo">
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-top : 4px" for="cmbOwnerInfo">Name of The Owner</label>
+                                    <div class="comboBox">
+                                        <input id="cmbOwnerInfo" placeholder="--Select Owner Name--" style="width: 100%; height:28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-xs-3 displayNone" id="divOwnerInfoSale">
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-top : 4px" for="txtSaleOwnerName">Name of The Owner(Sale)</label>
+                                    <div class="">
+                                        <input type="text" class="form-control" placeholder="Name of The Owner(Sale)" name="txtSaleOwnerName" id="txtSaleOwnerName" style="width: 100%; height:28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-top : 4px" for="txtLandAmount">Owner Area of Land</label>
+                                    <div class="">
+                                        <input type="text" placeholder="Area of Land" name="txtLandAmount" id="txtLandAmount" style="width: 100%; height:28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-top : 4px" for="txtOwnerPurchaseAmount">Owner Price of Land(Deed)</label>
+                                    <div class="">
+                                        <input type="text" disabled="disabled" placeholder="Price of Land(Deed)" name="txtOwnerPurchaseAmount" id="txtOwnerPurchaseAmount" style="width: 100%; height:28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                            <div class="col-md-3 col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-top : 4px" for="txtOwnerRegAmount">Owner Registration Cost</label>
+                                    <div class="">
+                                        <input type="text" disabled="disabled" placeholder="Registration Cost" name="txtOwnerRegAmount" id="txtOwnerRegAmount" style="width: 100%; height:28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12 text-right">
+                                <button id="btnAddOwner" class="k-button-primary"><i class="fas fa-arrow-down"></i>Add Owner</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="text-center">
+                                    <h5><b>Owner Information</b></h5>
+                                </div>
+                                <div id="grdOwnerDetailSummary"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2 col-xs-2"></div>
+                    <div class="col-md-10 col-xs-10" style="border-style: solid; border-width: 1px; border-color: #286090; margin-top: 2px; margin-left: -2px; width: 82.333333%">
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top: 4px" for="txtKhatianNo">Khatian No</label>
+                                <div class="">
+                                    <input type="text" placeholder="Khatian No" name="txtKhatianNo" id="txtKhatianNo" style="width: 100%; height: 28px;" required validationmessage="*" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top: 4px" for="txtDagNo">Plot No[*Use Comma(,) for Multiple Plot]</label>
+                                <div class="">
+                                    <input type="text" placeholder="Plot No" name="txtDagNo" id="txtDagNo" style="width: 100%; height: 28px;" required validationmessage="*" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top: 4px" for="txtRecordedOwnerName">Recorded Owner</label>
+                                <div class="">
+                                    <textarea placeholder="Recorded Owner" name="txtRecordedOwnerName" id="txtRecordedOwnerName" style="width: 100%; height: 70px; resize: none;" required validationmessage="*" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                        <div class="text-right col-md-12 col-xs-12" style="margin-bottom: 3px;">
+                            <button id="btnAddKhatian" class="k-button-primary"><i class="fas fa-arrow-down"></i>Add Khatian</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="text-center">
+                                    <h5><b>Khatian Information</b></h5>
+                                </div>
+                                <div id="grdKhatianDetailSummary"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="DivBayaDeedInfo" class="well well-sm">Baya Deed Detail</div>
+                <div class="row">
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtBayaDeedNo">Baya Deed No</label>
+                            <div class="">
+                                <input type="text" placeholder="Baya Deed No" name="txtBayaDeedNo" id="txtBayaDeedNo" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtBayaDeedDate">Baya Deed Date</label>
+                            <div class="">
+                                <input id="txtBayaDeedDate" type="text" placeholder="Baya Deed Date" name="txtBayaDeedDate" style="width: 80%; height: 28px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3" style="margin-left: -60px; margin-top: 20px;">
+                        <button id="btnAddBayaDeed" class="k-button-primary"><i class="fas fa-arrow-down"></i>Add Baya Deed</button>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-7 col-xs-7">
+                        <div id="grdBayaDeedSummary"></div>
+                    </div>
+                </div>
+                <br />
+                @*//baya deed*@
+                <div class="row" style="margin-top:4px;">
+                    <div class="col-md-8 col-xs-8">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtRemarks">Deed Remarks:</label>
+                            <div class="">
+                                <textarea placeholder="Remarks" name="txtRemarks" id="txtRemarks" style="width: 100%; height: 70px; resize: none;" required validationmessage="*" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 displayNone" id="divDeedDocuments">
+                <div class="panel-body">
+                    <div class="row" style="margin-top: 1px;">
+                        <div class="col-md-12 col-xs-12">
+                            @Html.Partial("../Land/LandInfo/_UploadDeedDocument")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

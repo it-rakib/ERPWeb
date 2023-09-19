@@ -1,0 +1,136 @@
+﻿@Scripts.Render("~/Scripts/Land/LandDevelopmentTaxView/LandDevTaxInfoDetails.js")
+
+<div class="bs-example">
+    <div class="well well-sm">Land Development Tax</div>
+    <div class="row" style="margin-bottom:0px !important;">
+        <div class="col-md-12 col-xs-12 centerAlign">
+            <ul class="list-group" style="margin-bottom:2px !important;">
+                <li class="list-group-item rightAlign">
+                    <button id="btnCancelApplication" class="k-button-danger" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="includedContent">
+        <div id="bodyTab">
+            <ul>
+                <li id="tabDeedDetails" class="k-state-active">
+                    <b>Tax Details</b>
+                </li>
+
+                <li id="tabDeedDocument">
+                    <b>Tax Document</b>
+                </li>
+            </ul>
+            <div class="col-md-12 displayNone" id="divLandDetails">
+                <input type="hidden" id="hdnLandDevelopmentTaxId" value="00000000-0000-0000-0000-000000000000" />
+                <div class="row">
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbHoldingNo">Holding No</label>
+                            <div class="comboBox">
+                                <input id="cmbHoldingNo" placeholder="--Select Holding No--" style="width: 80%; height:28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbCmnDivision">Division</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnDivision" placeholder="--Select Division--" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbCmnDistrict">District</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnDistrict" placeholder="--Select District--" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbCmnUpozila">Upazila/Thana</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnUpozila" placeholder="--Select Upozila--" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbCmnMouza">Mouza</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnMouza" placeholder="--Select Mouza--" style="width: 100%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtDakhilaNo">Dakhila No</label>
+                            <div class="">
+                                <input id="txtDakhilaNo" class="form-control" type="text" placeholder="Dakhila No" name="txtDakhilaNo" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtEntryDate">Date</label>
+                            <div class="">
+                                <input id="txtEntryDate" type="text" placeholder="Date" name="txtEntryDate" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbFromDate">Form Year(Bangla)</label>
+                            <div class="comboBox">
+                                <input id="cmbFromDate" type="text" placeholder="Form Year" name="cmbFromDate" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbToDate">To Year(Bangla)</label>
+                            <div class="comboBox">
+                                <input id="cmbToDate" type="text" placeholder="To Year" name="cmbToDate" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtTaxAmount">Tax Amount</label>
+                            <div class="">
+                                <input id="txtTaxAmount" type="text" placeholder="Tax Amount" name="txtTaxAmount" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group">
+                            <label class=" control-label" style="margin-top: 4px" for="txtRemarks">Tax Remarks:</label>
+                            <div class="">
+                                <textarea placeholder="Remarks" name="txtRemarks" id="txtRemarks" style="width: 80%; height: 50px; resize: none;" required validationmessage="*" class="form-control" disabled="disabled"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 displayNone" id="divDeedDocuments">
+                <div class="panel-body">
+                    <div class="row" style="margin-top: 1px;">
+                        <div class="col-md-12 col-xs-12">
+                            @Html.Partial("../Land/LandDevelopmentTaxView/_UploadDocument")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

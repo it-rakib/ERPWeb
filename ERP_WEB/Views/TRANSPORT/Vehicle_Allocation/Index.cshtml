@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Vehicle Allocation Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/TRANSPORT/Vehicle_Allocation/VehicleAllocationSettings.js"></script>
+
+<div class="row" id="divAllocationInfo">
+    <div id="divAllocationDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../TRANSPORT/Vehicle_Allocation/_VehicleAllocationDetails")
+    </div>
+    <div id="divAllocationSummary" class="col-lg-12">
+        @Html.Partial("../TRANSPORT/Vehicle_Allocation/_VehicleAllocationSummary")
+    </div>
+</div>

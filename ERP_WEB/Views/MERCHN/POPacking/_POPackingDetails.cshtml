@@ -1,0 +1,78 @@
+﻿
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/POPacking/POPackingDetails.js?" + @jsVer)
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="poPackingInfo">
+                            <li class="k-state-active">
+                                PO PACKING INFO
+                                <div class="row">
+                                    <div class="spacer4"></div>
+                                    <div class="col-md-12">
+                                        <div class="spacer5"></div>
+                                        <button id="btnSavePOPackingInfo" class="k-button-success" style="float: right;"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                                        <button id="btnBack" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="spacer5"></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="hidden" id="hdnPOPackingId" value="00000000-0000-0000-0000-000000000000" />
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="cmbPO">PO:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="cmbPO" id="cmbPO" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="col-md-4 col-xs-4 control-label" for="cmbStyle">Style No:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="cmbStyle" id="cmbStyle" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="col-md-5 col-xs-4 control-label" for="cmbPackingType">Packing Type:</label>
+                                            <div class="col-md-7 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="cmbPackingType" id="cmbPackingType" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="col-md-6 col-xs-4 control-label" for="txtPackPerCarton">PCS Per Carton:</label>
+                                            <div class="col-md-6 col-xs-7 ">
+                                                <input type="text" style="width: 100%; height: 28px;" name="txtPackPerCarton" id="txtPackPerCarton" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="spacer5"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-default bs-example">
+                            <div class="well well-sm text-center">
+                                PO PACKING LIST
+                            </div>
+                            <div class="panel-body">
+                                <div id="grdPOPackingList">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

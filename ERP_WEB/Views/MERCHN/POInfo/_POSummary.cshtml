@@ -1,0 +1,15 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/POInfo/POSummary.js?" + @jsVer)
+
+<div class="panel panel-default bs-example">
+    <div class="well well-sm">
+        PO SUMMARY
+    </div>
+    <div class="panel-body">
+        <button class="k-button" id="btnAddNewPO"><span class="fa fa-plus"></span> Add New</button>
+        <div class="spacer4"></div>
+        <div id="grdPOSummary">
+        </div>
+    </div>
+</div>
+

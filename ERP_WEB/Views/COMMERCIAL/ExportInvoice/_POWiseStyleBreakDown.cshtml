@@ -1,0 +1,13 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/COMMERCIAL/ExportInvoice/POWiseStyleBreakDown.js?" + @jsVer)
+
+
+    <div class="panel panel-default bs-example">
+        <div class="well well-sm text-center">
+            EXPORT PO Wise Style Break Down
+        </div>
+        <div class="panel-body">
+            <div id="grdExportPOStyleBreakDown">
+            </div>
+        </div>
+    </div>

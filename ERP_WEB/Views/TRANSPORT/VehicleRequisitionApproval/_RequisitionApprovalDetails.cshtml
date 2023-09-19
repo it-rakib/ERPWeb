@@ -1,0 +1,167 @@
+﻿
+<script src="~/Scripts/TRANSPORT/VehicleRequisitionApproval/RequisitionApprovalDetails.js"></script>
+
+<div class="bs-example">
+    <div class="well well-sm">Vehicle Requisition Details</div>
+
+    <div class="row" style="margin-bottom:0px !important;">
+        <div class="col-md-12 col-xs-12 centerAlign">
+            <ul class="list-group" style="margin-bottom:2px !important;">
+                <li class="list-group-item rightAlign">
+                    <button id="btnApprove" class="k-button-success" type="button"><span class="glyphicon glyphicon-download"></span>Approve</button>
+                    <button id="btnReject" class="k-button-danger" type="button"><span class="glyphicon glyphicon-download"></span>Reject</button>
+                    <button id="btnBack" class="k-button-danger" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="menuDetailsDiv" class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                        <div class="form-group" style="margin-left: 24px;">
+                            <input type="hidden" id="hdnVehicleRequisitionId" value="0" />
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbVehicleRequisitionType">Requisition Type:</label>
+                            <div class="comboBox">
+                                <input id="cmbVehicleRequisitionType" placeholder="--Select Vehicle Requisition Type--" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="txtRequisitionNo" style="margin-bottom: 6px;">Requisition No:</label>
+                            <div>
+                                <input type="text" placeholder="Requisition No..." name="txtRequisitionNo" id="txtRequisitionNo" class="form-control" disabled style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style=" margin-left: 23px; width: 94%;">
+                            <label class="control-label" for="txtRequisitionDate" style="margin-bottom: 6px;">Requisition Date:</label>
+                            <div>
+                                <input type="text" placeholder="Requisition Date" name="txtRequisitionDate" id="txtRequisitionDate" style="width: 63%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbVehicleAcquisitionType">Acquisition Type:</label>
+                            <div class="comboBox">
+                                <input id="cmbVehicleAcquisitionType" placeholder="--Select Vehicle Acquisition Type--" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbVehicleRequisitionPurpose">Requisition Purpose:</label>
+                            <div class="comboBox">
+                                <input id="cmbVehicleRequisitionPurpose" placeholder="--Select Vehicle Requisition Purpose--" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbVehicleType">Vehicle Type:</label>
+                            <div class="comboBox">
+                                <input id="cmbVehicleType" placeholder="--Select Vehicle Type--" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="txtWhereFrom" style="margin-bottom: 6px;">Where From:</label>
+                            <div>
+                                <input type="text" placeholder="Where From..." name="txtWhereFrom" id="txtWhereFrom" class="form-control" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="txtWhereTo" style="margin-bottom: 6px;">Where To:</label>
+                            <div>
+                                <input type="text" placeholder="Where To..." name="txtWhereTo" id="txtWhereTo" class="form-control" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <div class="form-group" style="width: 100%;">
+                            <label class="control-label" for="txtTimeFrom" style="margin-bottom: 6px;">Time From:</label>
+                            <div>
+                                <input type="text" placeholder="Time From" name="txtTimeFrom" id="txtTimeFrom" style="width: 62%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style=" width: 100%;">
+                            <label class="control-label" for="txtTimeTo" style="margin-bottom: 6px;">Time To:</label>
+                            <div>
+                                <input type="text" placeholder="Time To" name="txtTimeTo" id="txtTimeTo" style="width: 62%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px" for="txtToleranceDuration">Tolerance Duration(min):</label>
+                            <div class="">
+                                <input type="text" placeholder="Tolerance Duration..." name="txtToleranceDuration" id="txtToleranceDuration" class="form-control" style="width: 60%; height:28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="txtNoOfPassenfer" style="margin-bottom: 6px;">No Of Passenger:</label>
+                            <div>
+                                <input type="text" placeholder="No Of Passenger" name="txtNoOfPassenfer" id="txtNoOfPassenfer" style="width: 60%; height: 28px;" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="txtPickUp" style="margin-bottom: 6px;">Pick Up:</label>
+                            <div>
+                                <input type="text" placeholder="Pick Up" name="txtPickUp" id="txtPickUp" style="width: 60%; height: 28px;" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbSupervisor">Requisition To:</label>
+                            <div class="comboBox">
+                                <input id="cmbSupervisor" placeholder="--Select Supervisor--" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px" for="txtDetails">Details:</label>
+                            <div class="">
+                                <textarea type="text" placeholder="Details.." name="txtDetails" id="txtDetails" class="form-control" style="width: 60%; height:85px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="well well-sm">Requisition Employees</div>
+            <div class="form-horizontal">
+                <div class="row" style="margin-bottom:5px;">
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group" style="margin-left: 24px;">
+                            <input type="hidden" id="hdnVehiclePassengerId" value="0" />
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbEmployee">Employee:</label>
+                            <div class="comboBox">
+                                <input id="cmbEmployee" placeholder="--Select Employee--" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group">
+                            <label class="control-label" for="txtStoppage" style="margin-bottom: 6px;">Stoppage:</label>
+                            <div>
+                                <input type="text" placeholder="Stoppage..." name="txtStoppage" id="txtStoppage" style="width: 60%; height: 28px;" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div style="margin-left: -60px; margin-top: 29px;">
+                            <button id="btnAddEmp" class="k-button-primary"><i class="fas fa-arrow-down"></i>Add Employee</button>
+                            <button id="btnClearAll" class="k-button-primary">Clear</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div id="grdRequisitionEmp"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

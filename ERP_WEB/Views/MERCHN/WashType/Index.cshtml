@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Wash Type Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/WashType/WashTypeSettings.js")
+<div class="row">
+    <div id="divWashTypeDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/WashType/_WashTypeDetails")
+        @Html.Partial("../MERCHN/WashType/_WashTypeSummary")
+    </div>
+</div>
+

@@ -1,0 +1,35 @@
+﻿<style type="text/css">
+    .divWithInputBtnSS {
+        width: 100%;
+        height: 30px;
+        border: 1px solid #ccc;
+        background-color: #ffffff;
+    }
+
+        .divWithInputBtnSS input {
+            border: none;
+            width: 96%;
+            height: 26px;
+            background-color: #FAFAFA;
+            float: left;
+            width: 84%;
+        }
+
+            .divWithInputBtnSS input:focus {
+                outline-width: 0;
+            }
+
+        .divWithInputBtnSS i {
+            line-height: 28px;
+            cursor: pointer;
+        }
+</style>
+
+<label class="col-md-4 col-xs-4 control-label" for="cboStyle">Style:</label>
+<div class="col-md-7 col-xs-7">
+    <div class="divWithInputBtnSS" style="background-color: #FAFAFA; width: 30%; float: left; margin-right: 2px;">
+        <input class="txtStyleSearch" type="text" placeholder="Type style no..." />
+        <i class="glyphicon glyphicon-search btnStyleSearch"></i>
+    </div>
+    <select id="cboStyleSearch" class="comboBox" style="width: 69% !important;" name="cboStyle"></select>
+</div>

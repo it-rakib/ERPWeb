@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Store Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/CmnStore/StoreSettings.js")
+<div class="row">
+    <div id="divCmnStoreDetails" class="col-md-12">
+        @Html.Partial("../INVENTORY/CmnStore/_StoreDetails")
+        @Html.Partial("../INVENTORY/CmnStore/_StoreSummary")
+    </div>
+</div>

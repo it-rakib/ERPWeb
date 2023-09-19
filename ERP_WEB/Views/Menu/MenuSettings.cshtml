@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Manage Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/Core/Menu/MenuSettings.js")
+
+
+<div>
+    @*<h2 class="k-header">Menu Settings</h2>*@
+    <div class="well well-sm">Menu Settings</div>
+     @Html.Partial("_MenuInformation")
+    
+<div class="clear"></div>
+</div>

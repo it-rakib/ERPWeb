@@ -1,0 +1,30 @@
+﻿
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/BookingCosting/ItemSummary.js?" + @jsVer)
+@Scripts.Render("~/Scripts/MERCHN/BookingCosting/ItemColorSizeBreakDown.js?" + @jsVer)
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="panel-body">
+            <button class="k-button" id="expand">Expand All</button>
+            <button class="k-button" id="collapse">Collapse All</button>
+            <label class="control-label" style="line-height: 20px; color: green; font-weight: bold; font-size: 18px !important; float: left;" id="lblMessage"></label>
+            <div id="grdItemSummary">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/kendo" id="supplierTemplate">
+    <ul style="padding-left:8px;">
+        # for(var i = 0; i< Supplier.length; i++){ #
+        <li style="padding-left:0px;">#: Supplier[i].SupplierName #</li>
+        # } #
+    </ul>
+    
+    @*# for(var i = 0; i< Supplier.length; i++){ #
+    #= Supplier[i].SupplierName #,
+    # } #*@
+    
+</script>

@@ -1,0 +1,107 @@
+﻿
+<script src="~/Scripts/TRANSPORT/Vehicle_Allocation/VehicleAllocationDetails.js"></script>
+
+<div class="bs-example">
+    <div class="well well-sm">Allocation Details</div>
+
+    <div id="menuDetailsDiv" class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="form-horizontal">
+                @*<div class="row" style="margin-top:5px;margin-bottom:5px;">
+                    <div class="col-md-6" style="margin-left: 184px;">
+                        <div class="col-md-2">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtSearchKey" style="line-height: 14px;">Requisition No:</label>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0; margin-left:-23px;">
+                            <div class="input-group add-on">
+                                <input type="hidden" id="hdnVehicleRequisitionId" value="0" />
+                                <input type="text" placeholder="Type here..." class="form-control" style="width: 100%; height: 28px;margin-left:-1px;" name="Requisition" id="txtSearchKey" />
+                                <div class="input-group-btn">
+                                    <button class="btn btn-info" type="button" id="btnSearchStyle"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5" style="margin-left: -29px;width:33%;">
+                            <input type="text" id="cboRequisitionNo" style="width: 84%; height: 28px;" />
+                        </div>
+                    </div>
+                </div>*@
+                <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                        <div class="form-group" style="margin-left: 24px;">
+                            <input type="hidden" id="hdnVehicleAllocationId" value="0" />
+                            <label class="control-label" style="margin-bottom: 6px;" for="cboRequisitionNo">Requisition No:</label>
+                            <div class="comboBox">
+                                <input id="cboRequisitionNo" placeholder="--Select Requisition No--" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbVehicle">Vehicle:</label>
+                            <div class="comboBox">
+                                <input id="cmbVehicle" placeholder="--Select Vehicle--" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbDriver">Driver:</label>
+                            <div class="comboBox">
+                                <input id="cmbDriver" placeholder="--Select Vehicle Driver--" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbVehicleRoute">Route:</label>
+                            <div class="comboBox">
+                                <input id="cmbVehicleRoute" placeholder="--Select Route--" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="txtParkingLocation" style="margin-bottom: 6px;">Parking Location:</label>
+                            <div>
+                                <input type="text" placeholder="Parking Location..." name="txtParkingLocation" id="txtParkingLocation" class="form-control" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px;" for="txtParkingCost">Parking Cost:</label>
+                            <div>
+                                <input type="text" placeholder="Parking Cost.." name="txtParkingCost" id="txtParkingCost" style="width: 60%; height: 28px;" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="cmbCompany" style="margin-bottom: 6px;">Company:</label>
+                            <div>
+                                <input type="text" placeholder="Company..." name="cmbCompany" id="cmbCompany" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cmbUnit" style="margin-bottom: 6px; margin-top:3px;">Unit:</label>
+                            <div>
+                                <input type="text" placeholder="Unit.." name="cmbUnit" id="cmbUnit" style="width: 60%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px;" for="txtRemarks">Remarks:</label>
+                            <div>
+                                <textarea type="text" placeholder="Remarks.." name="txtRemarks" id="txtRemarks" style="width: 60%; height: 93px;" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:0px !important;">
+                    <div class="col-md-12 col-xs-12 centerAlign">
+                        <ul class="list-group" style="margin-bottom:2px !important;">
+                            <li class="list-group-item rightAlign">
+                                <button id="btnSave" class="k-button-success" type="button"><span class="glyphicon glyphicon-download"></span>Submit</button>
+                                <button id="btnBack" class="k-button-danger" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

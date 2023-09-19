@@ -1,0 +1,216 @@
+﻿
+@Scripts.Render("~/Scripts/TRANSPORT/VehicleInfo/VehicleInfoDetails.js")
+
+<div class="bs-example">
+    <div class="well well-sm">Vehicle Details</div>
+
+    <div class="row" style="margin-bottom:0px !important;">
+        <div class="col-md-12 col-xs-12 centerAlign">
+            <ul class="list-group" style="margin-bottom:2px !important;">
+                <li class="list-group-item rightAlign">
+                    <button id="btnSave" class="k-button-success" type="button"><span class="glyphicon glyphicon-download"></span>Submit</button>
+                    <button id="btnBack" class="k-button-danger" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="menuDetailsDiv" class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group" style="margin-left: 24px;">
+                            <input type="hidden" id="hdnVehicleId" value="0" />
+                            <label class="control-label" for="txtVehicleName" style="margin-bottom: 6px;">Vehicle Name:</label>
+                            <div>
+                                <input type="text" placeholder="VehicleName" name="txtVehicleName" id="txtVehicleName" class="form-control" style="width: 60%; height:28px;"  />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbVehicleCategory">Vehicle Category:</label>
+                            <div class="comboBox">
+                                <input id="cmbVehicleCategory" placeholder="--Select Vehicle Category--" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbDepartment">Department:</label>
+                            <div class="comboBox">
+                                <input id="cmbDepartment" placeholder="--Select Department--" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbDivision">Division:</label>
+                            <div class="comboBox">
+                                <input id="cmbDivision" placeholder="--Select Division--" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+
+                        <div class="form-group" style=" margin-left: 23px; width: 94%;">
+                            <label class="control-label" for="txtRegistrationDate" style="margin-bottom: 6px;">Registration Date:</label>
+                            <div>
+                                <input type="text" placeholder="Registration Date" name="txtRegistrationDate" id="txtRegistrationDate" style="width: 63%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="cmbRTACircleOffice" style="margin-bottom: 6px;">RTA Circle Office:</label>
+                            <div class="comboBox">
+                                <input id="cmbRTACircleOffice" placeholder="--Select Circle Office--" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="txtLicensePlate" style="margin-bottom: 6px;">License Plate:</label>
+                            <div>
+                                <input type="text" placeholder="License Plate..." name="txtLicensePlate" id="txtLicensePlate" class="form-control" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="cmbVendor" style="margin-bottom: 6px;">Vendor:</label>
+                            <div class="comboBox">
+                                <input id="cmbVendor" placeholder="--Select Vendor--" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="txtSeatCapacity" style="margin-bottom: 6px;">Seat Capacity:</label>
+                            <div>
+                                <input type="text" placeholder="Seat Capacity..." name="txtSeatCapacity" id="txtSeatCapacity" class="form-control" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 24px;">
+                            <label class="control-label" for="cmbOwnerShip" style="margin-bottom: 6px;">OwnerShip:</label>
+                            <div class="comboBox">
+                                <input id="cmbOwnerShip" placeholder="--Select OwnerShip--" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px;" for="txtVehicleManual">Manual Id:</label>
+                            <div>
+                                <input type="text" placeholder="Vehicle Manual Id" name="txtVehicleManual" id="txtVehicleManual" style="width: 60%; height: 28px;" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="txtVehicleNo" style="margin-bottom: 6px;">Vehicle No:</label>
+                            <div>
+                                <input type="text" placeholder="Vehicle No" name="txtVehicleNo" id="txtVehicleNo" style="width: 60%; height: 28px;" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="txtEngineNo" style="margin-bottom: 6px;">Engine No:</label>
+                            <div>
+                                <input type="text" placeholder="Engine No" name="txtEngineNo" id="txtEngineNo" style="width: 60%; height: 28px;" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cmbVehicleCondition" style="margin-bottom: 6px;">Vehicle Condition:</label>
+                            <div>
+                                <input type="text" placeholder="Vehicle Condition" name="cmbVehicleCondition" id="cmbVehicleCondition" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="cmbVehicleBrand" style="margin-bottom: 6px;">Brand:</label>
+                            <div>
+                                <input type="text" placeholder="Vehicle Brand" name="cmbVehicleBrand" id="cmbVehicleBrand" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="cmbVehicleModel" style="margin-bottom: 6px;">Model:</label>
+                            <div>
+                                <input type="text" placeholder="Vehicle Model" name="cmbVehicleModel" id="cmbVehicleModel" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px;" for="txtRentalCompany">Rental Company:</label>
+                            <div>
+                                <input type="text" placeholder="Rental Company" name="txtRentalCompany" id="txtRentalCompany" style="width: 60%; height: 28px;" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="txtRentalContact">Rental Contact:</label>
+                            <div>
+                                <input type="text" placeholder="Rental Contact" name="txtRentalContact" id="txtRentalContact" style="width: 60%; height: 28px;" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px;" for="txtRentalCompanyAdrs">Rental Company Address::</label>
+                            <div class="">
+                                <textarea placeholder="Rental Company Address" name="txtRentalCompanyAdrs" id="txtRentalCompanyAdrs" style="width: 60%; height: 101px; resize: none;"  class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px" for="txtRentAmnt">Rent Amnt:</label>
+                            <div class="">
+                                <input type="text" placeholder="Rent Amount..." name="txtRentAmnt" id="txtRentAmnt" style="width: 60%; height:28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="width: 100%;">
+                            <label class="control-label" for="txtRentPayDate" style="margin-bottom: 6px;">Rent Pay Date:</label>
+                            <div>
+                                <input type="text" placeholder="Rent Pay Date" name="txtRentPayDate" id="txtRentPayDate" style="width: 63%; height: 28px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="txtRentAccountName" style="margin-bottom: 6px;">Rent Account Name:</label>
+                            <div>
+                                <input type="text" placeholder="Rent Account Name" name="txtRentAccountName" id="txtRentAccountName" style="width: 60%; height: 28px;" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group" style=" width: 100%;">
+                            <label class="control-label" for="txtRentStartDate" style="margin-bottom: 6px;">Rent Start Date:</label>
+                            <div>
+                                <input type="text" placeholder="Rent Start Date" name="txtRentStartDate" id="txtRentStartDate" style="width: 63%; height: 28px;" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbPrimaryFuelType">Primary Fuel Type:</label>
+                            <div class="comboBox">
+                                <input id="cmbPrimaryFuelType" placeholder="--Select Primary Fuel Type--" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px" for="txtPrimaryFuelLimit">Primary Fuel Limit:</label>
+                            <div class="">
+                                <input type="text" placeholder="Primary Fuel Limit" name="txtPrimaryFuelLimit" id="txtPrimaryFuelLimit" style="width: 60%; height:28px;"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px;" for="cmbSecondaryFuelType">Secondary Fuel Type:</label>
+                            <div class="comboBox">
+                                <input id="cmbSecondaryFuelType" placeholder="--Select Secondary Fuel Type--" style="width: 60%; height: 28px;"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px" for="txtSecondaryFuelLimit">Secondary Fuel Limit:</label>
+                            <div class="">
+                                <input type="text" placeholder="Secondary Fuel Limit" name="txtSecondaryFuelLimit" id="txtSecondaryFuelLimit" style="width: 60%; height:28px;"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-bottom: 6px" for="txtFuelPerLitre">Fuel Per Litre:</label>
+                            <div class="">
+                                <input type="text" placeholder="Fuel Per Litre" name="txtFuelPerLitre" id="txtFuelPerLitre" style="width: 60%; height:28px;"  />
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 10px; margin-left: 9px;">
+                            <label for="chkIsAirCondition" style="margin-left: -22px;"> Is AirCondition:</label>
+                            <input type="checkbox" id="chkIsAirCondition" name="chkIsAirCondition" value="chkIsAirCondition" style="margin-left: 31px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

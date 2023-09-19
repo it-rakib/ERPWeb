@@ -1,0 +1,46 @@
+﻿@Scripts.Render("~/Scripts/MERCHN/Buyer/BuyerDetails.js")
+<div class="bs-example">
+    <div class="well well-sm">Buyer Details</div>
+    <div id="menuDetailsDiv" class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <input type="hidden" id="hdnBuyerId" value="00000000-0000-0000-0000-000000000000" />
+                    <label class="col-md-4 col-xs-4 control-label" for="txtBuyerName" style="margin-top : 5px;">Buyer Name:</label>
+                    <div class="col-md-6 col-xs-6">
+                        <input type="text" placeholder="Buyer Name" name="txtBuyerName" id="txtBuyerName" class="form-control" style="margin-top:2px;" required validationmessage="*" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 col-xs-4 control-label" style="margin-top : 5px;" for="txtBuyerShortName">Buyer Short Name:</label>
+                    <div class="col-md-6 col-xs-6">
+                        <input type="text" placeholder="Buyer Short Name" name="txtBuyerShortName" id="txtBuyerShortName" class="form-control" required validationmessage="*" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 col-xs-4 control-label" style="margin-top : 4px" for="countries">Country :</label>
+                    <div class="col-md-6 col-xs-6">
+                        <input id="cmbCountry" placeholder="Country Name..." style="width: 100%; height:28px;" required validationmessage="*" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 col-xs-4 control-label" for="chkIsActive" style="margin-bottom : 2px;">Is Active :</label>
+                    <div class="col-md-6 col-xs-6">
+                        <input type="checkbox" id="chkIsActive">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <ul class="list-group ">
+                            <li class="list-group-item centerAlign">
+                                <button id="btnSave" class="btn btn-primary" type="button">Save</button>
+                                <button id="btnClearAll" class="btn btn-primary">Clear</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

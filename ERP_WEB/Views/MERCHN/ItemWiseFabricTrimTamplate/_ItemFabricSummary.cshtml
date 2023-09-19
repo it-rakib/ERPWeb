@@ -1,0 +1,81 @@
+﻿@Scripts.Render("~/Scripts/MERCHN/ItemWiseFabricTrimTamplate/ItemFabricSummary.js")
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="row">
+            <div class="col-md-6 col-xs-6">
+                <div class="panel panel-default bs-example">
+                    <div class="well well-sm">
+                        Product Details
+                    </div>
+                    <div class="panel-body">
+                        <div id="grdItemSummary">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-6">
+                <div class="bs-example">
+                    <div class="well well-sm">
+                        ProductWise Item Entry
+                    </div>
+                    <div class="bs-example">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <input type="hidden" id="hdnProductCategoryId" />
+                                        <label class="col-md-2 col-xs-2 control-label" for="cmbProductCategory">Product Category:</label>
+                                        <div class="col-md-7 col-xs-7 ">
+                                            <input type="text" style="width: 100%; height: 28px;" name="cmbProductCategory" id="cmbProductCategory" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" id="hdnProductId" />
+                                        <label class="col-md-2 col-xs-2 control-label" for="cmbProduct">Product Name:</label>
+                                        <div class="col-md-7 col-xs-7 ">
+                                            <input type="text" style="width: 100%; height: 28px;" name="cmbProduct" id="cmbProduct" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-xs-2 control-label" for="datepicker">Effect Date:</label>
+                                        <div class="col-md-7 col-xs-7 ">
+                                            <input value="" title="datepicker" style="width: 100%; height: 28px;" name="effectDate" id="effectDate" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="grdProductSummary" style="margin-top:3px;">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12 centerAlign">
+                            <ul class="list-group ">
+                                <li class="list-group-item centerAlign">
+                                    <button id="btnSaveItem" class="k-button-success" type="button"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                                    <button id="btnClearItem" class="k-button-danger" type="button"><span class="glyphicon glyphicon-repeat"></span> Clear</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+            <div class="panel panel-default bs-example">
+                <div class="well well-sm">
+                    Product Accessories
+                </div>
+                <div class="panel-body">
+                    <div id="grdProductAccessories">
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+

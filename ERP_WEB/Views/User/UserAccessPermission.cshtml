@@ -1,0 +1,52 @@
+﻿@Scripts.Render("~/Scripts/Core/User/AccessPermission.js")
+
+<div class="bs-example">
+    <div class="form">
+        <div class="col-md-10 col-xs-10">
+            <div class="form-horizontal" id="divUserDetails">
+                <input type="hidden" id="hdnMenuId" value="0"/>
+                <input type="hidden" id="hdnAccessPermissionId" value="0" />
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="lblMenuName">Menu Name:</label>
+                    <div class="col-md-7 col-xs-7">
+                        <input type="text" name="lblMenuName" id="lblMenuName" class="form-control" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="chkCanInsert">Can Insert:</label>
+                    <div class="col-md-7 col-xs-7">
+                        <input id="chkCanInsert" type="checkbox" name="chkCanInsert" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="chkCanEdit">Can Edit:</label>
+                    <div class="col-md-7 col-xs-7">
+                        <input id="chkCanEdit" type="checkbox" name="chkCanEdit"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="chkCanDelete">Can Delete:</label>
+                    <div class="col-md-7 col-xs-7">
+                        <input id="chkCanDelete" type="checkbox" name="chkCanDelete"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-3 control-label" for="chkCanView">Can View:</label>
+                    <div class="col-md-7 col-xs-7">
+                        <input id="chkCanView" type="checkbox" name="chkCanView" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="list-group ">
+                <li class="list-group-item centerAlign">
+                    <button id="btnSaveAccessPermission" class="btn btn-success" type="button"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

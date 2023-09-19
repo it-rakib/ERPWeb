@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Shift Setup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/Scripts/HDL/Shift/ShiftInfo.js")
+
+<div class="row">
+    <div id="divShiftDetails" class="col-lg-6">
+        @Html.Partial("ShiftDetails")
+    </div>
+    <div id="divShiftSummary" class="col-lg-6">
+        @Html.Partial("ShiftSummary")
+    </div>
+</div>

@@ -1,0 +1,179 @@
+﻿@Scripts.Render("~/Scripts/INVENTORY/ConsignmentRcvInfo/ConsignmentRcvDetails.js")
+
+<style>
+    .comboBox {
+        width: 100%;
+    }
+
+    .datePicker {
+        width: 100%;
+    }
+
+    .txt {
+        width: 100%;
+        height: 28px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="pnlMasterInfo">
+                            <li class="k-state-active">
+                                CONSIGNMENT DETAILS
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-7 col-xs-6">
+                                                <label class="col-md-12 col-xs-12 control-label" id="lblMessage" style="line-height: 20px; color: red; font-weight: bold; font-size: 18px !important; float: right;"></label>
+                                            </div>
+                                            <div class="col-md-5 col-xs-4" style="float: right;">
+                                                @*<label class="col-md-8 col-xs-8 control-label" style="line-height: 20px; color: green; font-weight: bold; font-size: 18px !important; float: left;" id="lblMessage"></label>*@
+                                                <button id="btnReceive" class="k-button-success" style="float: right;"><i class="fa fa-check-circle" style="margin-right: 4px;"></i>Accknowledge</button>
+                                                <button id="btnBackToList" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer5"></div>
+                                    <div class="row">
+                                        <div class="col-md-12" id="divMaster">
+                                            <div class="col-md-4">
+                                                <div class="form-horizontal">
+                                                    <input type="hidden" id="hdnConsignmentId" />
+                                                    <input type="hidden" id="hdnConsignmentDetailsId" />
+                                                    <input type="hidden" id="hdnConsignmentLcId" />
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtConsignmentNo">Consignment / Invoice No:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtConsignmentNo" id="txtConsignmentNo" required validationmessage="Required" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtConsignmentDate">Consignment Date:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input class="datePicker" type="text" style="width: 100%; height: 28px;" name="txtConsignmentDate" id="txtConsignmentDate" required validationmessage="Required" disabled="disabled"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="cmbSupplier">Supplier:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" style="width: 100%; height: 28px;" name="cmbSupplier" id="cmbSupplier" required validationmessage="Required" disabled="disabled"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtGrnNo">GRN No:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtGrnNo" id="txtGrnNo" required validationmessage="Required" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtGrnDate">GRN Date:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="datePicker" style="width: 100%; height: 28px;" name="txtGrnDate" id="txtGrnDate" required validationmessage="Required" disabled="disabled"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="cmbDischargePort">Discharge Port:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="comboBox" style="width: 100%; height: 28px;" name="cmbDischargePort" id="cmbDischargePort" disabled="disabled"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-horizontal">
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtChallanNo">Challan No:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtChallanNo" id="txtChallanNo" required validationmessage="Required" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtChallanDate">Challan Date:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="datePicker" style="width: 100%; height: 28px;" name="txtChallanDate" id="txtChallanDate" required validationmessage="Required" disabled="disabled"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtVehicleNo">Vehicle No:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtVehicleNo" id="txtVehicleNo" required validationmessage="Required"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtWayBillNo">Way Bill No:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtWayBillNo" id="txtWayBillNo" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="cmbCountry">Origin:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="comboBox" style="width: 100%; height: 28px;" name="cmbCountry" id="cmbCountry" disabled="disabled"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="cmbLC">LC:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <select id="cmbLC" name="cmbLC" multiple="multiple" style="width: 100%; height: 28px;" required validationmessage="Required" disabled="disabled"></select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-horizontal">
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtGateEntryNo">Gate Entry No:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtGateEntryNo" id="txtGateEntryNo" required validationmessage="Required" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtGateEntryDate">Gate Entry Date:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="datePicker" style="width: 100%; height: 28px;" name="txtGateEntryDate" id="txtGateEntryDate" required validationmessage="Required" disabled="disabled"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtInvoiceNo">Com. Invoice No:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtInvoiceNo" id="txtInvoiceNo" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="txtInvoiceDate">Com. Invoice Date:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="datePicker" style="width: 100%; height: 28px;" name="txtInvoiceDate" id="txtInvoiceDate" required validationmessage="Required" disabled="disabled"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 col-xs-4 control-label" for="cmbPortOfLoad">Port of Loading:</label>
+                                                        <div class="col-md-7 col-xs-7 ">
+                                                            <input type="text" class="comboBox" style="width: 100%; height: 28px;" name="cmbPortOfLoad" id="cmbPortOfLoad" disabled="disabled"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer5"></div>
+                                </div>
+                            </li>
+
+                            <li class="k-state-active">
+                                CONSIGNMENT ITEM INFORMATION
+                                <div>
+                                    <div class="spacer5"></div>
+                                    @Html.Partial("../INVENTORY/ConsignmentRcvInfo/_ConsignmentRcvDetailsGrid")
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

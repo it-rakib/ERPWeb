@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Employee Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/UIFramework/amcharts/amcharts.js")
+@Scripts.Render("~/UIFramework/amcharts/serial.js")
+@Scripts.Render("~/UIFramework/amcharts/gauge.js")
+
+@Scripts.Render("~/UIFramework/amcharts/plugins/animate/animate.js")
+<script src="~/UIFramework/amcharts/plugins/export/export.min.js"></script>
+<link href="~/UIFramework/amcharts/plugins/export/export.css" rel="stylesheet" />
+
+@Scripts.Render("~/Scripts/HRM/Reports/DegreeWiseEmpReport/DegreeWiseEmpReport.js")
+@Scripts.Render("~/Scripts/HRM/Reports/DegreeWiseEmpReport/DegreeWiseEmpSummary.js")
+<script src="~/Scripts/HRM/Reports/DegreeWiseEmpReport/DegreeWiseEmployeeReportPrint.js"></script>
+
+<style type="text/css">
+    #chartdivDegreeWise {
+        width: 100%;
+        height: 300px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example" id="divCHeadDetails">
+            <div class="well well-sm">Educational Degree Wise Employee Information</div>
+            <div id="chartdivDegreeWise"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+     
+        <div class="bs-example" id="divEmployeeGrid">
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" class="k-button-primary" id="btnExport" style="float: right;">Export & Print</button>
+                </div>
+            </div>
+            <div class="spacer5"></div>
+            <input type="hidden" id="hdnDegreeId" value="0"/>
+            <div id="grdDegreeWiseEmpSummary"></div>
+        </div>
+    </div>
+</div>
+
+
+

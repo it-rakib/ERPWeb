@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Vehicle Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/TRANSPORT/VehicleInfo/VehicleInfoSettings.js")
+
+<div class="row" id="divVehicleInfo">
+    <div id="divVehicleDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../TRANSPORT/VehicleInfo/_VehicleInfoDetails")
+    </div>
+    <div id="divVehicleSummary" class="col-lg-12">
+        @Html.Partial("../TRANSPORT/VehicleInfo/_VehicleInfoSummary")
+    </div>
+    
+</div>
+
+
+

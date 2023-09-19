@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Size Breakdown Template";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/POSizeBreakdownTemplate/POSizeBreakdownTemplateSettings.js?" + @jsVer)
+
+<div class="row">
+    <div id="divSizeBreakdownDetail" class="col-md-12">
+        @Html.Partial("../MERCHN/POSizeBreakdownTemplate/_POSizeTemplateDetails")
+    </div>
+</div>

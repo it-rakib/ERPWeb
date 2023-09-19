@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Size Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/Size/SizeSettings.js")
+<div class="row">
+    <div id="divSizeDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/CmnSize/_SizeDetails")
+        @Html.Partial("../MERCHN/CmnSize/_SizeSummary")
+    </div>
+</div>
+

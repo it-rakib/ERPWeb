@@ -1,0 +1,124 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/POSizeBreakdownTemplate/POSizeBreakdownTemplateDetails.js?" + @jsVer)
+
+<style>
+    checkbox:checked {
+        background: red;
+        color: white;
+    }
+
+</style>
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="row">
+            <div class="col-md-7 col-xs-7">
+                <div class="panel panel-default bs-example">
+                    <div class="well well-sm">
+                        Buyer Product Size Template
+                    </div>
+                    <div class="panel-body">
+                        <div id="grdTemplateSummary">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-xs-5">
+                <div class="bs-example">
+                    <div class="well well-sm">
+                        Buyer PO Size Breakdown Template
+                    </div>
+                    <div class="bs-example">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <input type="hidden" id="hdnPOSizeBreakdownId" value="00000000-0000-0000-0000-000000000000"/>
+                                        <label class="col-md-3 col-xs-3 control-label" for="cmbBuyer">Buyer:</label>
+                                        <div class="col-md-7 col-xs-7 ">
+                                            <input type="text" style="width: 100%; height: 28px;" name="cmbBuyer" id="cmbBuyer" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" id="hdnProductId" />
+                                        <label class="col-md-3 col-xs-3 control-label" for="cmbBrand">Brand:</label>
+                                        <div class="col-md-7 col-xs-7 ">
+                                            <input type="text" style="width: 100%; height: 28px;" name="cmbBrand" id="cmbBrand" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" id="hdnProductId" />
+                                        <label class="col-md-3 col-xs-3 control-label" for="cmbDepartment">Department:</label>
+                                        <div class="col-md-7 col-xs-7 ">
+                                            <input type="text" style="width: 100%; height: 28px;" name="cmbDepartment" id="cmbDepartment" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" id="hdnProductId" />
+                                        <label class="col-md-3 col-xs-3 control-label" for="cmbProduct">Product Name:</label>
+                                        <div class="col-md-7 col-xs-7 ">
+                                            <input type="text" style="width: 100%; height: 28px;" name="cmbProduct" id="cmbProduct" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" id="hdnProductId" />
+                                        <label class="col-md-3 col-xs-3 control-label" for="cmbCountry">Country:</label>
+                                        <div class="col-md-7 col-xs-7 ">
+                                            <input type="text" style="width: 100%; height: 28px;" name="cmbCountry" id="cmbCountry" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top:3px;">
+                            <div class="well well-sm text-center">
+                                Size List
+                            </div>
+                            <div>
+                                <div class="spacer5"></div>
+                                <button data-toggle="modal" data-target="#sizeModal" data-keyboard="false" data-backdrop="static" id="btnNewSize" class="k-button-primary"  type="button"><span class="glyphicon glyphicon-plus"></span> Add Size</button>
+                                <div class="spacer5"></div>
+                            </div>
+                            <div class="row" id="sizeList"></div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12 centerAlign">
+                            <ul class="list-group ">
+                                <li class="list-group-item centerAlign">
+                                    <button id="btnSaveItem" class="k-button-success" type="button"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                                    <button id="btnClearItem" class="k-button-danger" type="button"><span class="glyphicon glyphicon-repeat"></span> Clear</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" id="sizeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create New Size</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="txtSizeName" class="col-form-label">Size Name:</label>
+                        <input type="text" class="form-control" name="txtSizeName" id="txtSizeName" >
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="btnSaveSize" class="btn btn-primary">Save Size</button>
+            </div>
+        </div>
+    </div>
+</div>

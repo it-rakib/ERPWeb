@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Division Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/Scripts/Land/CmnDivision/CmnDivisionSettings.js")
+
+<div class="row">
+    <div id="divCmnDivisionDetails" class="col-md-6">
+        @Html.Partial("../Land/CmnDivision/_CmnDivisionDetails")
+    </div>
+    <div id="divCmnDivisionSummary" class="col-md-6">
+        @Html.Partial("../Land/CmnDivision/_CmnDivisionSummary")
+    </div>
+</div>
+
+@*Test*@

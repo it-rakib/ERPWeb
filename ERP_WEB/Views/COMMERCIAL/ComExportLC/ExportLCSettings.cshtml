@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Export LC Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Dashboard/DashboardMain.css" rel="stylesheet" />
+<style type="text/css">
+    .ob-center {
+        text-align: center !important;
+    }
+
+    .k-content {
+        background-color: white !important;
+    }
+
+    .k-tabstrip > .k-content {
+        display: none;
+        overflow: hidden;
+    }
+
+    tbody tr:hover {
+        cursor: pointer
+    }
+</style>
+
+@Scripts.Render("~/Scripts/COMMERCIAL/ComExportLC/ExportLCSettings.js")
+@Scripts.Render("~/Scripts/COMMERCIAL/ComExportLC/ExportLCDetails.js")
+
+@*News Ticker*@
+<link href="~/Scripts/NewsTicker/ticker-style.css" rel="stylesheet" />
+<script src="~/Scripts/NewsTicker/jquery.ticker.js"></script>
+
+<div id="includedContent">
+    <div id="bodyTab">
+        <ul>
+            <li id="tabLc" class="k-state-active">
+                <b>General</b>
+            </li>
+            @*<li id="tabDoc">
+                <b>Documents</b>
+            </li>
+            <li id="tabOthers">
+                <b id="tabOthers2"> Others</b>
+            </li>*@
+        </ul>
+        <div class="col-md-12 displayNone" id="divLC">
+            @Html.Partial("../COMMERCIAL/ComExportLC/_ExportLCDetails")
+        </div>
+        <!--<div class="col-md-12 displayNone" id="divDocuments">-->
+            @*@Html.Partial("../")*@
+        <!--</div>
+        <div class="col-md-12 displayNone" id="divOthers">-->
+            @*@Html.Partial("../")*@
+        <!--</div>-->
+    </div>
+</div>

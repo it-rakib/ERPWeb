@@ -1,0 +1,214 @@
+﻿<style>
+    .dropZoneElement {
+        position: relative;
+        display: inline-block;
+        background-color: #f8f8f8;
+        border: 1px solid #c7c7c7;
+        width: 350px;
+        height: 200px;
+        text-align: center;
+    }
+
+    .textWrapper {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        font-size: 18px;
+        line-height: 1.2em;
+        font-family: Arial,Helvetica,sans-serif;
+        color: #000;
+    }
+
+    .dropImageHereText {
+        color: #c7c7c7;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+
+    .wrapper:after {
+        content: ".";
+        display: inline-block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .or {
+        margin: auto;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        transform: translate(-50%,-45%);
+    }
+
+    .k-button {
+        border-radius: 4px;
+        border-color: #93c8df;
+        color: #003f59;
+        background-color: #daecf4;
+        background-position: 50% 50%;
+        background-image: url(textures/highlight.png);
+        background-image: none,linear-gradient(to bottom,rgba(255,255,255,.4) 0,rgba(255,255,255,0) 100%);
+    }
+
+    .k-button-icon {
+        width: 33px;
+        height: 16px;
+        padding: 6px;
+    }
+
+    .k-button {
+        margin: 0;
+        padding: 4px 8px;
+        box-sizing: border-box;
+        border-width: 1px;
+        /* border-style: solid; */
+        background-repeat: repeat-x;
+        background-position: 0 center;
+        font: inherit;
+        /* line-height: 1.42857143; */
+        text-align: center;
+        text-decoration: none;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        overflow: hidden;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        outline: 0;
+        -webkit-appearance: none;
+        position: relative;
+    }
+    #productionFactory {
+        display:none;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-4">
+        <input type="hidden" class="hiddenId" id="hdnStyleId" />
+        <input type="hidden" class="hiddenId" id="hdnStyleDetailId" />
+        <input type="hidden" class="hiddenId" id="hdnCreateDate" />
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboStatus">Status:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboStatus" class="comboBox" name="cboStatus"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboDepartment">Dept:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboDepartment" class="comboBox" name="cboDepartment"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboProductCategory">Prod Category:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboProductCategory" class="comboBox" name="cboProductCategory"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboAgent">Agent:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboAgent" class="comboBox" name="cboAgent"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboSeason">Season:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboSeason" class="comboBox" name="cboSeason"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtRemarks">Remarks:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <textarea id="txtRemarks" name="txtRemarks" type="text" placeholder="Remarks" style="height:60px;width:100%;" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboBuyer">Buyer:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboBuyer" class="comboBox" name="cboBuyer"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtStyleNo">Style:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="txtStyleNo" name="txtStyleNo" autocomplete="off" type="text" placeholder="Style No*" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboProduct">Product:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboProduct" name="cboProduct" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboVendor">Vendor:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboVendor" name="cboVendor" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboYear">Year:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboYear" name="cboYear" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group" id="productionFactory">
+                <label class="col-md-4 col-xs-4 control-label" for="cboCompany">Production Factory:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboCompany" name="cboCompany" class="comboBox"></select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboBrand">Brand:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboBrand" class="comboBox" name="cboBrand"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtProtoNo">Proto:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="txtProtoNo" name="txtProtoNo" type="text" placeholder="Proto No*" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboProductType">Prod Type:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboProductType" name="cboProductType" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtInstructions">Instructions:</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="txtInstructions" type="text" name="txtInstructions" placeholder="Instructions" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group" id="DocumentFileUpload">
+                <label class="col-md-4 col-xs-4 control-label">Attachment:</label>
+                <div class="col-md-7 col-xs-7 " id="divFileUpload">
+                    <input class="form-control custom-file-input" id="txtFiles" type="file" docType="02dca355-0dbf-4115-a11b-39d0ec9e25af">
+                </div>
+            </div>            
+        </div>
+    </div>     
+</div>

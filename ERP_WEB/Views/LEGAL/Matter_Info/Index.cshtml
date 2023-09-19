@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Matter Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/LEGAL/Matter_Info/MatterInfoSettings.js")
+<div class="row">
+    <div id="divMatterInfoDetails" class="col-md-12">
+
+        @Html.Partial("../LEGAL/Matter_Info/_MatterInfoDetails")
+        @Html.Partial("../LEGAL/Matter_Info/_MatterInfoSummary")
+    </div>
+</div>
+

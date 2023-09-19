@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Purchase Request For Quotation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .k-grid .k-button {
+        margin: 0em !important;
+    }
+     .row {
+        margin-bottom: 5px;
+    }
+</style>
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/PurRFQ/PurRFQSettings.js?" + @jsVer)
+
+<div class="row">
+    <div id="divRFQSummary" class="col-md-12 displayNone">
+        @Html.Partial("../MERCHN/PurRFQ/_PurRFQSummary")
+    </div>
+    <div id="divRFQDetails" class="col-md-12 ">
+        @Html.Partial("../MERCHN/PurRFQ/_PurRFQDetails")
+    </div>
+</div>

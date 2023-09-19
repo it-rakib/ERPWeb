@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Dashboard/DashboardMain.css" rel="stylesheet" />
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/Dashboard/INVENTORY/InventoryDashboardDetails.js?" + @jsVer)
+
+<div class="row">
+    <div class="col-md-12 displayNone" id="divInventoryDashboard">
+        @Html.Partial("../Dashboard/InventoryDashboard")
+    </div>
+</div>

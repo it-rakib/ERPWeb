@@ -1,0 +1,46 @@
+﻿@Scripts.Render("~/Scripts/INVENTORY/SampleIssueReceiveInfo/SampleIssueReceiveItemList.js")
+
+<style type="text/css">
+    .editable {
+        background-color: skyblue;
+    }
+
+    .non-editable {
+        pointer-events: none;
+        opacity: 0.8;
+    }
+
+    .row {
+        margin-bottom: 5px;
+    }
+
+    .k-grid .k-group-col {
+        width: 5px;
+    }
+    
+    .critical {
+        background-color: #fdd;
+    }
+
+    .pending {
+        background-color: #D4AC0D;
+    }
+
+    .complete {
+        background-color: #17A589;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="well well-sm">
+                Sample Issue Receive Item Information
+            </div>
+            <div class="panel-body">
+                <div id="grdSampleIssueReceiveItemSummary">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

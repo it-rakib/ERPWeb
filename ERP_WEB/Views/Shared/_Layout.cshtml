@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @*<meta content="no-cache" />*@
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ha-Meem ERP | @ViewBag.Title</title>
+    <link href="../../Images/HG.png" rel="shortcut icon" type="image/x-icon" />
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/docs.min.css")
+    @Styles.Render("~/Content/coustom.css")
+    @Styles.Render("~/UIFramework/KendoUI/Css/Common.css")
+    @Styles.Render("~/UIFramework/KendoUI/Css/CommonSize.css")
+    @Styles.Render("~/fonts/fontawesome5.6.3/css/all.css")
+    @Styles.Render("~/UIFramework/FileInput/css/fileinput.css")
+    @Styles.Render("~/Content/Menu/LightOperaDropDownMenu.css")
+    @Styles.Render("~/Content/animate.css")
+    @*@{
+            var themeName = Session["themeName"];
+            themeName = themeName == null ? "blueopal" : Session["themeName"];
+        }*@
+
+    @Styles.Render("~/UIFramework/kendoUI2021/kendo/Style/kendo.common.min.css")
+    @Styles.Render("~/UIFramework/kendoUI2021/kendo/Style/kendo.blueopal.min.css")
+
+    @Styles.Render("~/Content/ikr.notification.css")
+    @Styles.Render("~/Content/Menu/SidebarMenu.css")
+    @Styles.Render("~/Scripts/Loading/ikr.Loader.css")
+
+    @Scripts.Render("~/Scripts/jquery-3.6.0.min.js")
+    @Scripts.Render("~/UIFramework/FileInput/js/fileinput.js")
+
+    @Scripts.Render("~/UIFramework/kendoUI2021/kendo/kendo.all.min.js")
+    @Scripts.Render("~/Scripts/Common/hrm.common.js")
+    @Scripts.Render("~/Scripts/Common/merchant.common.js")
+    @Scripts.Render("~/Scripts/Common/ikr.library.js")
+    @Scripts.Render("~/Scripts/Common/ajaxManager.common.js")
+    @Scripts.Render("~/Scripts/Common/utility.common.js")
+    @Scripts.Render("~/Scripts/Common/land.common.js")
+    @Scripts.Render("~/Scripts/date.js")
+    @Scripts.Render("~/Scripts/Common/Login/UserLogin.js")
+    @Scripts.Render("~/Scripts/Common/Login/Login.js")
+    @Scripts.Render("~/Scripts/Common/Login/LogOff.js")
+    @Scripts.Render("~/Scripts/Common/Login/Menu.js")
+    @Scripts.Render("~/Scripts/Common/Login/Module.js")
+    @Scripts.Render("~/UIFramework/SweetAlert/sweetalert.min.js")
+    @Scripts.Render("~/UIFramework/SweetAlert/SweetAlert2.js")
+    @Scripts.Render("~/Scripts/Common/Login/ForgotPassword.js")
+    @Scripts.Render("~/Scripts/notify.js")
+    @Scripts.Render("~/Scripts/Common/jquery.pleaseWait.js")
+    @Scripts.Render("~/Scripts/Loading/ikr.Loader.js")
+    @Scripts.Render("~/Scripts/Common/Login/ForgotPassword.js")
+
+    @Scripts.Render("~/UIFramework/amcharts/amcharts.js")
+    @Scripts.Render("~/UIFramework/amcharts/serial.js")
+    @Scripts.Render("~/UIFramework/amcharts/gauge.js")
+    @Scripts.Render("~/UIFramework/amcharts/plugins/animate/animate.js")
+    @Scripts.Render("~/UIFramework/amcharts/pie.js")
+    @{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+    @Scripts.Render("~/Scripts/Dashboard/INVENTORY/InventoryDashboardDetails.js?" + @jsVer)
+
+    @Scripts.Render("~/Scripts/TableToExcel/jszip.js")
+
+    <script type="text/javascript">
+        //var _baseUrl = "https://localhost:5050";
+        var _baseUrlLand = "http://192.168.0.11:8012";
+        //var _baseUrlLand = "https://localhost:44351";
+        //var _baseUrl = "https://localhost:44369";
+        var _baseUrl = "http://192.168.0.11:8020";
+        //var _baseUrlLegal = "https://localhost:44369";
+        var _baseUrlLegal = "http://192.168.0.11:8013";
+        var _baseUrlTransport = "https://localhost:44369";
+
+        $(document).ready(function () {
+            //Loacal Storage
+            var projectId = 2;
+
+            ModuleHelper.GetModuleInformation(projectId);
+            UserLoginManager.getCurrentUser();
+            ModuleHelper.GetSessionModuleId();
+            var moduleId = window.location.search.substring(1).split('=')[1];
+            mnHelper.GetMenuInformation(moduleId);
+
+            var pathName = window.location.pathname;
+            if (pathName === "/Home/Home") {
+                $("#kendoMenu li").not(".liLogout").hide();
+            } else {
+                $("#kendoMenu li").show();
+            }
+            //user photo display
+            if (CurrentUser.Image64 != null) {
+                document.getElementById("userPhoto").src = "data:image/png;base64," + CurrentUser.Image64;
+            } else {
+                $("#userPhoto").attr("src", "/images/chat/usr1.jpg");
+            }
+            //set coockies
+            localStorage.setItem('profilePic', CurrentUser.Image64);
+
+            //Notification
+            $('#divNotifications').hide();
+            $(".button__badge").show();
+            $("#faNotification").click(function () {
+                $("#divNotifications").show();
+                $(".button__badge").hide();
+            });
+            $(document).on('click', function () {
+                $('#divNotifications').hide();
+                $(".button__badge").show();
+            });
+            $('#divNotifications, #faNotification').on('click', function (e) {
+                e.stopPropagation();
+            });
+
+            if (moduleId === "1030") {
+                InventoryDashboardHelper.InitInventoryDashboard();
+                $("#divInventoryDashboard").show();
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            background-color: #f9fcff;
+            background-image: url('../../Images/1.png');
+        }
+
+        .avatar {
+            vertical-align: middle;
+            width: 47px;
+            height: 47px;
+            border-radius: 50%;
+            float: right;
+            margin-top: 0px;
+        }
+
+        #btnLogOff {
+            padding-top: 5px;
+            border-radius: 80% !important;
+            color: White;
+            background-color: cornflowerblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar navbar-inverse">
+        <div class="container-fluid" style="padding-right: 0px !important; padding-left: 0px !important;">
+            <div class="col-md-5 col-xs-5" style="padding-right: 0px !important; padding-left: 0px !important;">
+                <img src="~/Images/hglogo.png" style="float: left; width: 100px; height: 32px; margin-top: 10px; margin-right: 5px;" />
+                &nbsp;
+                &nbsp;
+                <img src="~/images/chat/usr1.jpg" id="userPhoto" class="avatar" style="float: left">
+                <div style="text-align: right; float: left" class="form-group form-group-custom">
+                    &nbsp;
+                    <label id="lblWelcome" style="color: white; font-family: century gothic"></label>
+                </div>
+                @*notification list*@
+                <div id="divNotifications" class="displayNone"></div>
+            </div>
+            <div class="col-md-7 col-xs-7" style="padding-left: 0">
+                <div class="navbar-header ">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" id="cssmenu" style="float: right;">
+                    <ul style="float: left; list-style-type: none; padding: 0px; margin-top: 2px;">
+                        <li class='liDashboard'><a href='../Home/Home'><span class="glyphicon glyphicon-home"></span> DASHBOARD</a></li>
+                    </ul>
+                    <ul class="menu" id="kendoMenu" style="float: left;"></ul>
+                    <ul style="float: left; list-style-type: none; padding: 0px; margin-top: 2px;">
+                        <li class='liLogout'><a href='../Home/LogOff'><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div style="margin-bottom: 4px;"></div>
+    @*Menu of Module*@
+    <div>
+        <nav class="navbar navbar-inverse sidebar" role="navigation" id="navSidebarMenu11" style="left: -146px; position: absolute; z-index: 9999999;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#" style="font-family: cursive;">HG ERP<span class="fa fa-angle-double-right" style="float:right; cursor: pointer;"></span></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                    <ul class="nav navbar-nav" id="ulMenu"></ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row randerBody" style="margin-left: 60px; margin-right: 0px !important;">
+            <div class="col-md-12 col-xs-12">
+                @RenderBody()
+            </div>
+        </div>
+        <footer class="footer-area navbar-fixed-bottom">
+            <div class="row" style="height: 20px">
+                <div class="col-md-6 col-xs-6"></div>
+                <div class="col-md-6 col-xs-6" style="float: right; text-align: right">&copy; @DateTime.Now.Year - All right reserved Ha-Meem Group, Developed By Ha-Meem Group (IT)</div>
+            </div>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

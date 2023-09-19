@@ -1,0 +1,261 @@
+﻿@Scripts.Render("~/Scripts/Land/MutationInfoView/MutationInfoDetails.js")
+<div class="bs-example">
+    <div class="well well-sm">Mutation Information</div>
+    <div class="row" style="margin-bottom:0px !important;">
+        <div class="col-md-12 col-xs-12 centerAlign">
+            <ul class="list-group " style="margin-bottom:2px !important;">
+                <li class="list-group-item rightAlign">
+                    <button id="btnCancelApplication" class="k-button-danger" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="includedContent">
+        <div id="bodyTab">
+            <ul>
+                <li id="tabDeedDetails" class="k-state-active">
+                    <b>Mutation Details</b>
+                </li>
+
+                <li id="tabDeedDocument">
+                    <b>Mutation Document</b>
+                </li>
+            </ul>
+
+            <div class="col-md-12 displayNone" id="divLandDetails">
+                <input type="hidden" id="hdnMutationMasterId" value="00000000-0000-0000-0000-000000000000" />
+                <div class="row" style="border-style: solid; border-color: #286090; border-width: 2px ; margin-left:0px; margin-right:0px;">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="form-group" style="margin-top:10px;">
+                            <input type="checkbox" id="chkIsRecorded" name="chkIsRecorded" value="chkIsRecorded" disabled="disabled">
+                            <label for="chkIsTransfered"> Is Recorded?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbCmnDivision">Division</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnDivision" placeholder="--Select Division--" style="width: 80%; height:28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtMutationApplicationNo">Mutation Application No</label>
+                            <div class="">
+                                <input type="text" placeholder="Mutation Application No" name="txtMutationApplicationNo" id="txtMutationApplicationNo" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" disabled="disabled" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtMutationKhatianNo">Mutation Khatian No</label>
+                            <div class="">
+                                <input type="text" placeholder="Mutation khatian No" name="txtMutationKhatianNo" id="txtMutationKhatianNo" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbCmnDistrict">District</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnDistrict" placeholder="--Select District--" style="width: 80%; height:28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="txtMutationApplicationDate">Date</label>
+                            <div class="">
+                                <input id="txtMutationApplicationDate" type="text" placeholder="Date" name="txtMutationApplicationDate" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtHoldingNo">Holding No</label>
+                            <div class="">
+                                <input type="text" placeholder="Holding No" name="txtHoldingNo" id="txtHoldingNo" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbCmnUpozila">Upazila/Thana</label>
+                            <div class="">
+                                <input id="cmbCmnUpozila" placeholder="--Select Upazila--" style="width: 80%; height:28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtCaseNo">Case No</label>
+                            <div class="">
+                                <input type="text" placeholder="Case No" name="txtCaseNo" id="txtCaseNo" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbCmnMouza">Mouza</label>
+                            <div class="">
+                                <input id="cmbCmnMouza" placeholder="--Select Mouza--" style="width: 80%; height:28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="txtDCRNo">DCR No</label>
+                            <div class="">
+                                <input type="text" placeholder="DCR No" name="txtDCRNo" id="txtDCRNo" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="well well-sm">Mutation Details</div>
+                <div class="row">
+                    <div class="col-md-2 col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbDeedNo">Deed No</label>
+                            <div class="comboBox">
+                                <input id="cmbDeedNo" placeholder="--Select Deed No--" style="width: 80%; height:28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbKhatianType">Name of Survey</label>
+                            <div class="comboBox">
+                                <input id="cmbKhatianType" placeholder="--Select Name of Survey--" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-xs-10 ">
+                        <div id="grdKhatianDetailSummary"></div>
+                    </div>
+                </div>
+
+                <div class="row" style="border-style: solid; border-width: 1px; border-color: #286090; margin-top: 2px; margin-left:0px; margin-right:0px">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3" style="margin-left: 5px;">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top: 4px" for="cmbKhatianNo">Khatian No</label>
+                                <div class="">
+                                    <input type="text" placeholder="Khatian No" name="cmbKhatianNo" id="cmbKhatianNo" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top: 4px" for="cmbDagNo">Plot No</label>
+                                <div class="">
+                                    <input type="text" placeholder="Plot No" name="cmbDagNo" id="cmbDagNo" style="width: 80%; height: 28px;" required validationmessage="*" disabled="disabled" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtPlotWiseMutationLandAmount">Plot Wise Mutated Land</label>
+                                <div class="">
+                                    <input type="text" placeholder="Plot Wise Mutated Land" name="txtPlotWiseMutationLandAmount" id="txtPlotWiseMutationLandAmount" style="width: 80%; height:28px;" required validationmessage="*" disabled="disabled" />
+                                </div>
+                            </div>
+                            <br />
+
+                        </div>
+                        <div class="text-left col-md-2 col-xs-2" style="margin-top: 25px; margin-left: -85px;">
+                            <button id="btnAddToListPlotWiseMutation" class="k-button-primary"><i class="fas fa-arrow-down"></i>Add Plot Wise Mutation</button>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left:0px; margin-right:0px">
+                        <div class="text-center">
+                            <h5><b>Plot Wise Mutation Summary</b></h5>
+                        </div>
+                        <div id="grdPlotWiseMutationSummary"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div id="grdLandOwnerDetailSummary"></div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4 col-xs-4">
+                                <div class="form-group">
+                                    <label class="col-md-6 col-xs-6 control-label" style="margin-top : 4px" for="txtTotalAreaOfLand">Total Area of Land (Decimal):</label>
+                                    <div class="col-md-6 col-xs-6">
+                                        <input type="text" placeholder="Total Area of Land (Decimal)" name="txtTotalAreaOfLand" id="txtTotalAreaOfLand" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-4">
+                                <div class="form-group">
+                                    <label class="col-md-6 col-xs-6 control-label" style="margin-top : 4px" for="txtMutatedLand">Mutated Land (Decimal):</label>
+                                    <div class="col-md-6 col-xs-6">
+                                        <input type="text" placeholder="Mutated Land (Decimal)" name="txtMutatedLand" id="txtMutatedLand" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-4">
+                                <div class="form-group">
+                                    <label class="col-md-6 col-xs-6 control-label" style="margin-top : 4px" for="txtNonMutatedLand">Non-Mutated Land (Decimal):</label>
+                                    <div class="col-md-6 col-xs-6">
+                                        <input type="text" placeholder="Non-Mutated Land (Decimal):" name="txtNonMutatedLand" id="txtNonMutatedLand" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="border-style: solid; border-width: 1px; border-color: #286090; margin-top: 2px; margin-left:0px; margin-right:0px">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3" style="margin-left: 5px;">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="cmbOwnerInfo">Name of The Owner</label>
+                                <div class="comboBox">
+                                    <input id="cmbOwnerInfo" placeholder="--Select Owner Name--" style="width: 100%; height:28px;" required validationmessage="*" disabled="disabled" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtOwnerLandAmount">Owner Area of Land (Decimal)</label>
+                                <div class="">
+                                    <input type="text" placeholder="Owner Area of Land (Decimal)" name="txtOwnerLandAmount" id="txtOwnerLandAmount" style="width: 80%; height:28px;" required validationmessage="*" class="form-control" readonly="readonly" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label" style="margin-top : 4px" for="txtOwnerMutatedLandAmount">Owner Mutated Land</label>
+                                <div class="">
+                                    <input type="text" placeholder="Mutated Land" name="txtOwnerMutatedLandAmount" id="txtOwnerMutatedLandAmount" style="width: 80%; height:28px;" required validationmessage="*" disabled="disabled" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-left col-md-2 col-xs-2" style="margin-top: 25px; margin-left: -85px;">
+                            <button id="btnAddToListOwnerWise" class="k-button-primary"><i class="fas fa-arrow-down"></i>Add Owner Wise Mutation</button>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left:0px; margin-right:0px">
+                        <div class="text-center">
+                            <h5><b>Owner Wise Mutation Summary</b></h5>
+                        </div>
+                        <div id="grdOwnerWiseMutationSummary"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-8 col-xs-8 control-label" style="margin-top: 4px" for="txtRemarks">Mutation Remarks:</label>
+                        <div class="col-md-4 col-xs-4">
+                            <textarea placeholder="Remarks" name="txtRemarks" id="txtRemarks" style="width: 80%; height: 50px; resize: none;" required validationmessage="*" class="form-control" disabled="disabled"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12 displayNone" id="divDeedDocuments">
+                <div class="panel-body">
+                    <div class="row" style="margin-top: 1px;">
+                        <div class="col-md-12 col-xs-12">
+                            @Html.Partial("../Land/MutationInfoView/_UploadDocument")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

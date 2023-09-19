@@ -1,0 +1,197 @@
+﻿@{
+    ViewBag.Title = "Employee List Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/HRM/Reports/EmployeeListReport/EmployeeListReport.js")
+<script src="~/Scripts/HRM/EmployeeSearch/EmployeeTree.js"></script>
+
+@*<style>
+        #trAllEmp ul li {
+            font-size: 12px !important;
+            font-weight: bold;
+        }
+    </style>*@
+
+<div class="col-md-12 col-xs-12 bs-example" style="max-height: 600px; overflow-y: auto">
+    <div class="well well-sm" id="commonEmpSerach">
+        Employee Information Report
+    </div>
+    <div class="row">
+        <div class="col-md-4 form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cmbStatus">Status:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" style="width: 100%; height: 28px;" name="cmbStatus" id="cmbStatus" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cmbEmpType">Employment Type:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" style="width: 100%; height: 28px;" name="cmbEmpType" id="cmbEmpType" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cmbEmpCategory">Employment Category:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" style="width: 100%; height: 28px;" name="cmbEmpCategory" id="cmbEmpCategory" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cmbDesignation">Designation:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" style="width: 100%; height: 28px;" name="cmbDesignation" id="cmbDesignation" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtEmpId">Employee ID/Name:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtEmpId" id="txtEmpId"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cmbJobLocation">Job Location:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" style="width: 100%; height: 28px;" name="cmbJobLocation" id="cmbJobLocation" required validationmessage="Required" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cmbReligion">Religion:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" style="width: 100%; height: 28px;" name="cmbReligion" id="cmbReligion" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cmbBloodGroup">Blood Group:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" style="width: 100%; height: 28px;" name="cmbBloodGroup" id="cmbBloodGroup" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cmbGender">Gender:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" style="width: 100%; height: 28px;" name="cmbGender" id="cmbGender" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4  control-label" for="ddlMaritalStatus">Marital Status:</label>
+                <div class="col-md-6 col-xs-8 ">
+                    <input type="text" style="width: 100%; height: 28px;" name="ddlMaritalStatus" id="ddlMaritalStatus" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-3  control-label" for="txtBirthDay">Date of Birth:</label>
+                <div class="col-md-2 col-xs-3" style="padding-right: 1px;">
+                    <input type="text" class="form-control" placeholder="DD" style="width: 100%; height: 28px;" name="txtBirthDay" id="txtBirthDay" onkeypress="return isNumberKey(event)" min="1" max="31" maxlength="2" />
+                </div>
+                <div class="col-md-2 col-xs-3" style="padding-right: 1px; padding-left: 1px">
+                    <input type="text" class="form-control" placeholder="MM" style="width: 100%; height: 28px;" name="txtBirthMonth" id="txtBirthMonth" onkeypress="return isNumberKey(event)" min="1" max="12" maxlength="2" />
+                </div>
+                <div class="col-md-2 col-xs-3" style="padding-left: 1px;">
+                    <input type="text" class="form-control" placeholder="YYYY" style="width: 100%; height: 28px;" name="txtBirthYear" id="txtBirthYear" onkeypress="return isNumberKey(event)" maxlength="4" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4  control-label" for="ddlCountry">Country:</label>
+                <div class="col-md-6 col-xs-8 ">
+                    <input type="text" style="width: 100%; height: 28px;" name="ddlCountry" id="ddlCountry" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4  control-label" for="cmbBoard">Board/University:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" style="width: 100%; height: 28px;" name="cmbBoard" id="cmbBoard" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4  control-label" for="cmbDegree">Degree:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" style="width: 100%; height: 28px;" name="cmbDegree" id="cmbDegree" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtResult">Result:</label>
+                <div class="col-md-6 col-xs-8">
+                    <input type="text" style="width: 100%; height: 28px;" name="txtResult" id="txtResult" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-3  control-label" for="txtJoinDay">Join Date:</label>
+                <div class="col-md-2 col-xs-3" style="padding-right: 1px;">
+                    <input type="text" class="form-control" placeholder="DD" style="width: 100%; height: 28px;" name="txtJoinDay" id="txtJoinDay" onkeypress="return isNumberKey(event)" maxlength="2" />
+                </div>
+                <div class="col-md-2 col-xs-3" style="padding-right: 1px; padding-left: 1px">
+                    <input type="text" class="form-control" placeholder="MM" style="width: 100%; height: 28px;" name="txtJoinMonth" id="txtJoinMonth" onkeypress="return isNumberKey(event)" maxlength="2" />
+                </div>
+                <div class="col-md-2 col-xs-3" style="padding-left: 1px;">
+                    <input type="text" class="form-control" placeholder="YYYY" style="width: 100%; height: 28px;" name="txtJoinYear" id="txtJoinYear" onkeypress="return isNumberKey(event)" maxlength="4" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-8 col-xs-8">
+            <div id="trAllEmp"></div>
+        </div>
+        <div class="col-md-4 col-xs-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <button id="btnEmpList" class="btn btn-sm btn-info" style="width: 100%; text-align: left;" type="button"> Employee List</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="btnEmpListDesig" class="btn btn-sm btn-info" style="width: 100%; text-align: left;" type="button">Employee List (Desig. Wise)</button>
+                </div>
+            </div>
+            <div class="spacer3"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <button id="btnEmpDetails" class="btn btn-sm btn-info" style="width: 100%; text-align: left;" type="button">Employee List (Details)</button>
+                </div>
+            </div>
+
+
+            @*<ul class="list-group">
+                    <li class="list-group-item">
+
+                    </li>
+                    <li class="list-group-item">
+
+                    </li>
+                </ul>*@
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31
+        && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+    function isNumericKey(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31
+        && (charCode < 48 || charCode > 57))
+            return true;
+        return false;
+    }
+    //$('#txtBirthDay').change(function () {
+    //    $(this).val(Math.min(31, Math.max(1, $(this).val())));
+    //});
+    //$('#txtBirthMonth').change(function () {
+    //    $(this).val(Math.min(12, Math.max(1, $(this).val())));
+    //});
+    //$('#txtJoinDay').change(function () {
+    //    $(this).val(Math.min(31, Math.max(1, $(this).val())));
+    //});
+    //$('#txtJoinMonth').change(function () {
+    //    $(this).val(Math.min(12, Math.max(1, $(this).val())));
+    //});
+</script>

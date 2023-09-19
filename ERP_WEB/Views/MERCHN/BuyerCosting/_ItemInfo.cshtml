@@ -1,0 +1,106 @@
+﻿
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/BuyerCosting/ItemSummary.js?" + @jsVer)
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-1">
+                        <label>Select Item:</label>
+                    </div>
+                    <div class="col-md-2" style="padding-left: 0;">
+                        <div class="input-group add-on">
+                            <input type="text" placeholder="Type here..." class="form-control" style="width: 100%; height: 28px;" name="Item" id="txtSearchItmKey" />
+                            <div class="input-group-btn">
+                                <button class="btn btn-info" type="button" id="btnSearchItem"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" id="cmbItem" style="width: 100%; height: 28px;" />
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-6">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-2 col-xs-2 control-label" for="cmbFabComposition">Fabric Composition:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="cmbFabComposition" id="cmbFabComposition" disabled="disabled" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 col-xs-2 control-label" for="txtItemRef">Item Ref.:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <input type="text" class="form-control" style="width: 100%; height: 28px;" name="txtItemRef" id="txtItemRef" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 col-xs-2  control-label" for="txtItemDesc">Item Desc:</label>
+                            <div class="col-md-7 col-xs-7 ">
+                                <textarea type="text" class="form-control" style="resize: none; height: 50px;" name="txtItemDesc" id="txtItemDesc"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 col-xs-2 control-label" for="cmbColor">Color:</label>
+                            <div class="col-md-7 col-xs-7">
+                                <input type="text" style="width: 100%; height: 25px;" name="cmbColor" id="cmbColor" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-6">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-2 col-xs-2 control-label" for="txtConsumption">Consumption / Pcs:</label>
+                            <div class="col-md-3 col-xs-3 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="txtConsumption" id="txtConsumption" />
+                            </div>
+
+                            <label class="col-md-2 col-xs-2 control-label" for="cmbUoM">Unit:</label>
+                            <div class="col-md-3 col-xs-3 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="cmbUoM" id="cmbUoM" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 col-xs-2 control-label" for="cmbExcessPercent">Excess Percent:</label>
+                            <div class="col-md-3 col-xs-3 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="cmbExcessPercent" id="cmbExcessPercent" />
+                            </div>
+
+                            <label class="col-md-2 col-xs-2 control-label" for="txtRate">Rate:</label>
+                            <div class="col-md-3 col-xs-3 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="txtRate" id="txtRate" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 col-xs-2 control-label" for="txtTotalRequiredQty">Total Required Qty:</label>
+                            <div class="col-md-3 col-xs-3 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="txtTotalRequiredQty" id="txtTotalRequiredQty" disabled="disabled" />
+                            </div>
+
+                            <label class="col-md-2 col-xs-2 control-label" for="txtTotalValue">Total Value:</label>
+                            <div class="col-md-3 col-xs-3 ">
+                                <input type="text" style="width: 100%; height: 28px;" name="txtTotalValue" id="txtTotalValue" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="margin-top: 10px;">
+                        <label></label>
+                        <button id="btnAddItem" class="k-button-primary"><i class="fas fa-arrow-down" style="margin-right: 4px;"></i>Add</button>
+                        <button id="btnClearItem" class="k-button-primary"><i class="fas fa-refresh" style="margin-right: 4px;"></i>Clear</button>
+                    </div>
+                </div>
+            </div>
+            <div id="grdItemSummary" style="display:none">
+            </div>
+            <div id="grdItemSummary1" style="display:none">
+            </div>
+        </div>
+    </div>
+</div>
+

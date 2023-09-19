@@ -1,0 +1,21 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+<style type="text/css">
+    .fontBoldTextRight {
+        font-weight: bold;
+        text-align: right;
+        width: 150px !important;
+    }
+</style>
+@Html.Partial("../MERCHN/SendingMail/_MailTemplate1")
+@Scripts.Render("~/Scripts/MERCHN/PurRFQ/PurRFQSummary.js?" + @jsVer)
+
+<div class="panel panel-default bs-example">
+    <div class="well well-sm">
+        RFQ Summary
+    </div>
+    <div class="panel-body">
+        <button class="k-button" id="btnAddNew"><span class="fa fa-plus"></span> Add New</button>
+        <div class="spacer5"></div>
+        <div id="grdPurRFQSummary"></div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+﻿<link href="~/Content/FlatUI/ikr.custom.css" rel="stylesheet" />
+
+<style type="text/css">
+    .customTable td, .customTable th {
+        height: 34px;
+    }
+</style>
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/PurCS/PurCSDetails.js?" + @jsVer)
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="pnlUl">
+                            <li class="k-state-active">
+                                Purchase CS
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="spacer5"></div>
+                                            <input type="hidden" class="hiddenId" id="hdnCSId" />
+                                            <input type="text" id="txtCSNo" class="form-control" style="float:left; margin-left:4px; width:200px; height:32px; text-align:left;" placeholder="CS No" disabled />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="spacer5"></div>
+                                            <button id="btnBack" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                                            <button id="btnReturn" class="k-button-success" style="float: right;"><i class="returnIcon fa fa-undo" style="margin-right: 4px;"></i><span class="btnReturn">Return</span></button>
+                                            <button id="btnSave" class="k-button-success" style="float: right;"><i class="saveIcon fa fa-save" style="margin-right: 4px;"></i><span class="btnSave">Save</span></button>
+                                            <div style="float: right;" class="divForwardedPersion">
+                                                <label>Forwarded Persion : </label>
+                                                <select id="cboForwardPersons" class="comboBox" style="height: 27px;width:240px;"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin:10px 0 0 2px;">
+                                        <div class="col-md-3 divQuotation">
+                                            <div class="spacer5"></div>
+                                            <div id="gridQuotation"></div>
+                                        </div>
+                                        <div class="col-md-9 divSupplier divItem">
+                                        </div>
+                                    </div>
+                                    <div id="details"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="divModal" style="display:none;">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="gridItemHistory"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button id="btnModalClose" class="btn btn-danger" style="float:right;margin-right:10px;margin-top:10px;">Close</button>
+        </div>
+    </div>
+</div>

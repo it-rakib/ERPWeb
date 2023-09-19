@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "User Settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/Core/User/UserSettings.js")
+
+<div class="row">
+    <div id="divUserSummary" class="col-md-6">
+        @Html.Partial("UserSummary")
+    </div>
+    <div id="divUserDetails" class="col-md-6">
+        @Html.Partial("UserDetails")
+    </div>
+</div>
+<div id="divUserAccessPopup" class="displayNone">
+    @Html.Partial("UserAccessPermission")
+</div>
+
+

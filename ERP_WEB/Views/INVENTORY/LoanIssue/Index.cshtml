@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Loan Issue";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/LoanIssue/LoanIssueSettings.js")
+
+<div class="row">
+    <div id="divSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/LoanIssue/_LoanIssueSummary")
+    </div>
+    <div id="divDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/LoanIssue/_LoanIssueDetails")
+    </div>
+</div>
+
+<div class="displayNone" id="popupRequisitionSearch">
+    @Html.Partial("../INVENTORY/LoanIssue/_RequisitionListSearch")
+</div>

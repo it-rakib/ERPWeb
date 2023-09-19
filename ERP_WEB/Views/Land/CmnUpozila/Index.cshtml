@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Upozila Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/Land/CmnUpozila/CmnUpozilaSettings.js")
+<div class="row">
+    <div id="divCmnUpozilaDetails" class="col-md-6">
+        @Html.Partial("../Land/CmnUpozila/_CmnUpozilaDetails")
+    </div>
+    <div id="divCmnUpozilaSummary" class="col-md-6">
+        @Html.Partial("../Land/CmnUpozila/_CmnUpozilaSummary")
+    </div>
+</div>

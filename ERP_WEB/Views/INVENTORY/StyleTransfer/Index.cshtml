@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Style Transfer Issue";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/StyleTransfer/StyleTransferSettings.js")
+
+<div class="row">
+    <div id="divSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/StyleTransfer/_StyleTransferSummary")
+    </div>
+    <div id="divDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/StyleTransfer/_StyleTransferDetails")
+    </div>
+</div>
+
+<div class="displayNone" id="popupStyleGridFrom">
+    @Html.Partial("../INVENTORY/StyleTransfer/_StylePopUpGridFrom")
+</div>
+
+<div class="displayNone" id="popupStyleGridTo">
+    @Html.Partial("../INVENTORY/StyleTransfer/_StylePopUpGridTo")
+</div>

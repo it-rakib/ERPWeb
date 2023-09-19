@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Fabric Type Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/FabricTypes/FabricTypeSettings.js")
+<div class="row">
+    <div id="divFabricTypeDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/FabricTypes/_FabricTypeDetails")
+        @Html.Partial("../MERCHN/FabricTypes/_FabricTypeSummary")
+    </div>
+</div>

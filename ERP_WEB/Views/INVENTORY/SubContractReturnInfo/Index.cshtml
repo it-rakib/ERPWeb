@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Sub Contract Return";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/SubContractReturnInfo/SubContractReturnSettings.js")
+
+<div class="row">
+    <div id="divSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/SubContractReturnInfo/_SubContractReturnSummary")
+    </div>
+    <div id="divDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/SubContractReturnInfo/_SubContractReturnDetails")
+    </div>
+</div>
+
+
+<div class="displayNone" id="popupStyleSearch">
+    @Html.Partial("../INVENTORY/SubContractReturnInfo/_StyleListSearch")
+</div>

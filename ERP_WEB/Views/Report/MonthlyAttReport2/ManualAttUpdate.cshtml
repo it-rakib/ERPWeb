@@ -1,0 +1,72 @@
+﻿@Scripts.Render("~/Scripts/HRM/Reports/MonthlyAttReport2/ManualAttUpdate.js")
+<div class="col-md-12 col-xs-12 bs-example">
+    @*<div class="well well-sm">
+        Manual Attendance Entry
+    </div>*@
+    <div class="col-md-12">
+        <div class="row">
+            <div class="form-horizontal">
+                <input type="hidden" id="hdnEmpId"/>
+                <div class="form-group">
+                    <label class="col-md-3  control-label" for="txtEmpName">Emp Name:</label>
+                    <div class="col-md-9 ">
+                        <input type="text" name="txtEmpName" class="form-control" style="width: 100%; height: 28px;" id="txtEmpName"  disabled="disabled">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3  control-label" for="txtDateFrom">Date From:</label>
+                    <div class="col-md-9 ">
+                        <input type="text" name="txtDateFrom" style="width: 100%; height: 28px;" id="txtDateFrom" required validationmessage="Required" disabled="disabled" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3  control-label" for="txtDateTo">Date To:</label>
+                    <div class="col-md-9 ">
+                        <input type="text" name="txtDateTo" style="width: 100%; height: 28px;" id="txtDateTo" required validationmessage="Required" disabled="disabled">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3  control-label" for="chkDoorModeIn">Door Mode:</label>
+                    <div class="col-md-9 ">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="col-md-4  control-label" for="chkDoorModeIn">IN:</label>
+                                <div class="col-md-8">
+                                    <input type="checkbox" name="chkDoorModeIn" style="height: 20px;" id="chkDoorModeIn" required validationmessage="Required">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="col-md-4  control-label" for="chkDoorModeIn">OUT:</label>
+                                <div class="col-md-8">
+                                    <input type="checkbox" name="chkDoorModeOut" style="height: 20px;" id="chkDoorModeOut" required validationmessage="Required">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3  control-label" for="txtPunchTimeIn">In Time:</label>
+                    <div class="col-md-9 ">
+                        <input type="text" name="txtPunchTimeIn" style="width: 100%; height: 28px;" id="txtPunchTimeIn" required validationmessage="Required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3  control-label" for="txtPunchTimeOut">Out Time:</label>
+                    <div class="col-md-9 ">
+                        <input type="text" name="txtPunchTimeOut" style="width: 100%; height: 28px;" id="txtPunchTimeOut" required validationmessage="Required">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="spacer5"></div>
+            <ul class="list-group ">
+                <li class="list-group-item centerAlign">
+                    <button id="btnSave" class="k-button-primary" type="button">Save</button>
+                    <button id="btnClosePopup" class="k-button-danger" type="button">Close</button>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

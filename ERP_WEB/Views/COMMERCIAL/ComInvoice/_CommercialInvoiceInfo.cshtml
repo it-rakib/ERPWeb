@@ -1,0 +1,341 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/COMMERCIAL/ComInvoice/CommercialInvoiceSummary.js?" + @jsVer)
+
+<style>
+    .form-horizontal .form-group {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .form-horizontal .control-label {
+        text-align: left !important;
+        /*background-color: lightgrey;*/
+        font-weight: normal;
+    }
+
+    .comboBox {
+        width: 100%;
+    }
+
+    .datePicker {
+        width: 100%;
+    }
+
+    .txt {
+        width: 100%;
+        height: 22px;
+    }
+</style>
+
+<div class="row" style="margin-top: 2px; margin-bottom: 2px;">
+    <div class="col-md-4">
+        <input type="hidden" class="hiddenId" id="hdnCIID" />
+        <input type="hidden" class="hiddenId" id="hdnInvoiceId" />
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" id="lblSearchCI" style="font-weight: bold; color: blue" for="txtSrcCIID">Invoice Id</label>
+                <div class="col-md-8 col-xs-8">
+                    <div class="input-group add-on">
+                        <input id="txtSrcCIID" name="txtSrcCIID" class="form-control txt" type="text" placeholder="Invoice Id" autocomplete="off" disabled />
+                        <div class="input-group-btn">
+                            <button id="btnSearchInvoice" class="btn btn-xs btn-info" style="height:22px;" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="txtInvoiceNo">Invoice No</label>
+                <div class="col-md-8 col-xs-8">
+                    <input id="txtInvoiceNo" name="txtInvoiceNo" class="form-control txt" type="text" autocomplete="off" placeholder="Invoice No" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="dtInvoiceDate">Invoice Date</label>
+                <div class="col-md-8 col-xs-8">
+                    <input id="dtInvoiceDate" name="dtInvoiceDate" type="text" class="datePicker" placeholder="select Invoice date" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="txtInvoiceValue">Invoice Value</label>
+                <div class="col-md-8 col-xs-8">
+                    <input id="txtInvoiceValue" name="txtInvoiceValue" class="txt" type="text" autocomplete="off" placeholder="Invoice Value" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="cboCompany">Company</label>
+                <div class="col-md-8 col-xs-8">
+                    <select id="cboCompany" name="cboCompany" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="cboCurrency">Currency</label>
+                <div class="col-md-3 col-xs-3" style="padding-right: 0px;">
+                    <select id="cboCurrency" name="cboCurrency" class="comboBox"></select>
+                </div>
+                <label class="col-md-1 col-xs-1 control-label" for="txtExRate">Ex.Rate</label>
+                <div class="col-md-4 col-xs-4" style="padding-left: 5px;">
+                    <input id="txtExRate" name="txtExRate" class="txt" type="text" autocomplete="off" placeholder="Ex.Rate" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="cboSupplier">Supplier</label>
+                <div class="col-md-8 col-xs-8">
+                    <select id="cboSupplier" name="cboSupplier" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="cboTradeTerm">Trade Term</label>
+                <div class="col-md-8 col-xs-8">
+                    <select id="cboTradeTerm" name="cboTradeTerm" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="cboPayTerm">Pay Term</label>
+                <div class="col-md-4 col-xs-4" style="padding-right: 0px;">
+                    <select id="cboPayTerm" name="cboPayTerm" class="comboBox"></select>
+                </div>
+                <div class="col-md-3 col-xs-3">
+                    <input id="txtPayTermDays" name="txtPayTermDays" type="text" class="txt" />
+                </div>
+                <label class="col-md-1 col-xs-1 control-label" for="txtPayTermDays">Days</label>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="txtBondNo">Bond No</label>
+                <div class="col-md-3 col-xs-3" style="padding-right: 0px;">
+                    <input id="txtBondNo" name="txtBondNo" class="form-control txt" type="text" autocomplete="off" placeholder="Bond No" style="width: 90%; height: 22px; text-align: left;" />
+                </div>
+                <label class="col-md-1 col-xs-1 control-label" for="dtBondDate">Date</label>
+                <div class="col-md-4 col-xs-4" style="padding-left: 0px;">
+                    <input id="dtBondDate" name="dtBondDate" type="text" class="datePicker" placeholder="select Invoice date" style="width: 100%; height: 22px; text-align: left;" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="txtRegNo">Reg No</label>
+                <div class="col-md-8 col-xs-8">
+                    <input id="txtRegNo" name="txtRegNo" type="text" class="form-control txt" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="cboBBLc">BBLc</label>
+                <div class="col-md-8 col-xs-8">
+                    <input type="text" id="cboBBLcGrid" style="width: 100%; height: 22px;" />
+                    @*<select id="cboBBLc" name="cboBBLc" class="comboBox"></select>*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboDocStatus">Doc Status</label>
+                <div class="col-md-7 col-xs-7">
+                    <select id="cboDocStatus" name="cboDocStatus" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtIPNo">IP No</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtIPNo" name="txtIPNo" class="form-control txt" type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtIPDate">IP Date</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="dtIPDate" name="dtIPDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboShipmentMode">Shipment Mode</label>
+                <div class="col-md-7 col-xs-7">
+                    <select id="cboShipmentMode" name="cboShipmentMode" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtBillofEntry">Bill of Entry</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtBillofEntry" name="txtBillofEntry" class="form-control txt" type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtBillofEntryDate">Bill of Entry Date</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="dtBillofEntryDate" name="dtBillofEntryDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtBLNo">B/L No</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtBLNo" name="txtBLNo" class="form-control txt" type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtBLDate">B/L Date</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="dtBLDate" name="dtBLDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboCountry">Country</label>
+                <div class="col-md-7 col-xs-7">
+                    <select id="cboCountry" name="cboCountry" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtVesselName">Vessel Name</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtVesselName" name="txtVesselName" class="form-control txt" type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtETAinHouseDate">ETA in House Date</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="dtETAinHouseDate" name="dtETAinHouseDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtVoyageDate">Voyage Date</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="dtVoyageDate" name="dtVoyageDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboPortOfloading">Port of Loading</label>
+                <div class="col-md-7 col-xs-7">
+                    <select id="cboPortOfloading" name="cboPortOfloading" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboPortOfDischarge">Port of Discharge</label>
+                <div class="col-md-7 col-xs-7">
+                    <select id="cboPortOfDischarge" name="cboPortOfDischarge" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboLTAgent">Local Trans.Agent</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboLTAgent" name="cboLTAgent" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-xs-3 control-label" for="chkFabric" style="margin-bottom: 2px;"><input type="checkbox" id="chkFabric"> Fabric </label>
+                <label class="col-md-3 col-xs-3 control-label" for="chkTrims" style="margin-bottom: 2px;"><input type="checkbox" id="chkTrims"> Trims </label>
+                <label class="col-md-3 col-xs-3 control-label" for="chkChemical" style="margin-bottom: 2px;"><input type="checkbox" id="chkChemical"> Chemical </label>
+                <label class="col-md-3 col-xs-3 control-label" for="chkOthers" style="margin-bottom: 2px;"><input type="checkbox" id="chkOthers"> Others </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtBankRefNo">Bank Ref No</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtBankRefNo" name="txtBankRefNo" class="form-control txt" type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtBankRefDate">Bank Ref Date</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="dtBankRefDate" name="dtBankRefDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtCompanyAcptDate">Company Acpt. Date</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="dtCompanyAcptDate" name="dtCompanyAcptDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtBankAcptDate">Bank Acpt. Date</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="dtBankAcptDate" name="dtBankAcptDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtAcceptedValue">Accepted Value</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtAcceptedValue" name="txtAcceptedValue" class="txt" type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtMaturityDate">Maturity Date</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="dtMaturityDate" name="dtMaturityDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtDocRcvDate">Doc Rcv. Date</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="dtDocRcvDate" name="dtDocRcvDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtGoodsRcvDate">Goods Rcv. Date</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="dtGoodsRcvDate" name="dtGoodsRcvDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboClearningAgent">Clearning Agent</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboClearningAgent" name="cboClearningAgent" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtDocHandoverDate">Doc Handover Date</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="dtDocHandoverDate" name="dtDocHandoverDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="dtETAPortDate">ETA Port Date</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="dtETAPortDate" name="dtETAPortDate" type="text" class="datePicker" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboETADestPort">ETA Dest.Port</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboETADestPort" name="cboETADestPort" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtCustHDCode">Custom H.S. Code</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtCustHDCode" name="txtCustHDCode" class="form-control txt" type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtRemarks">Remarks</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtRemarks" name="txtRemarks" class="form-control txt" type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtDiscAmount">Discount Ammount</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtDiscAmount" name="txtDiscAmount" class="txt" type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-5 col-xs-5 control-label" for="chkDocRcvC" style="margin-bottom: 2px;"><input type="checkbox" id="chkDocRcvC"> DocReceived Complete?</label>
+                <label class="col-md-4 col-xs-4 control-label" for="chkMaterialRcv" style="margin-bottom: 2px;"><input type="checkbox" id="chkMaterialRcv"> Material Received?</label>
+                <label class="col-md-3 col-xs-3 control-label" for="chkCIClose" style="margin-bottom: 2px;"><input type="checkbox" id="chkCIClose"> CI Close?</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="divCIModal" style="display: none;">
+    <div class="row">
+        <div class="col-md-12">
+            @Html.Partial("../COMMERCIAL/ComInvoice/_CommercialInvoiceSummary")
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button id="btnCIModalClose" class="btn btn-danger" style="float:right;margin-right:10px;margin-top:10px;">Close</button>
+        </div>
+    </div>
+</div>

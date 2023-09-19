@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "File Location View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .row {
+        margin-bottom: 5px;
+    }
+</style>
+
+@Scripts.Render("~/Scripts/Land/FileLocationView/FileLocationSettings.js")
+
+<div class="row">
+    <div id="divFileLocationSummary" class="col-lg-12">
+        @Html.Partial("../Land/FileLocationView/_FileLocationSummary")
+    </div>
+    <div id="divFileLocationDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../Land/FileLocationView/_FileLocationDetails")
+    </div>
+</div>

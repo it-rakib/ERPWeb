@@ -1,0 +1,174 @@
+@*<style src="http://fonts.googleapis.com/css?family=Open+Sans:200,300"></style>*@
+<style type="text/css">
+    .modal-header-info {
+        color: #fff;
+        padding: 9px 15px;
+        border-bottom: 1px solid #eee;
+        background-color: #5bc0de;
+        -webkit-border-top-left-radius: 5px;
+        -webkit-border-top-right-radius: 5px;
+        -moz-border-radius-topleft: 5px;
+        -moz-border-radius-topright: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .modal-dialog {
+        width: 830px !important;
+        margin: 30px auto;
+    }
+
+    .divBodyMain ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .divBodyMain ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .divBodyMain ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+        .divBodyMain ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+    /*tabsMail*/
+
+    .wrapperMail {
+        width: 94%;
+        margin: 0 auto;
+    }
+
+    .tabsMail {
+        position: relative;
+        margin: 3rem 0;
+        background: #5bc0de;
+        max-height: 450px !important;
+        overflow-y:auto;
+    }
+
+        .tabsMail::before,
+        .tabsMail::after {
+            content: "";
+            display: table;
+        }
+
+        .tabsMail::after {
+            clear: both;
+        }
+
+    .tabMail {
+        float: left;
+        height: 680px;
+    }
+
+    .tabMail-switch {
+        display: none;
+    }
+
+    .tabMail-label {
+        position: relative;
+        display: block;
+        line-height: 2.75em;
+        height: 3em;
+        padding: 0 1.618em;
+        background: #5bc0de;
+        border-right: 0.125rem solid #16a085;
+        color: #fff;
+        cursor: pointer;
+        top: 0;
+        transition: all 0.25s;
+        max-width: 120px;
+        text-align:left;
+    }
+
+        .tabMail-label:hover {
+            top: -0.25rem;
+            transition: top 0.25s;
+        }
+
+    .tabMail-content {
+        position: absolute;
+        z-index: 1;
+        top: 2.75em;
+        left: 0;
+        background: #fff;
+        color: #2c3e50;
+        opacity: 0;
+        transition: all 0.35s;
+        margin: 5px;
+        width: 98%;
+    }
+
+    .tabMail-switch:checked + .tabMail-label {
+        background: #fff;
+        color: #2c3e50;
+        border-bottom: 0;
+        border-right: 0.125rem solid #fff;
+        transition: all 0.35s;
+        z-index: 1;
+        top: -0.0625rem;
+    }
+
+    .tabMail-switch:checked + label + .tabMail-content {
+        z-index: 2;
+        opacity: 1;
+        transition: all 0.35s;
+    }
+</style>
+<script src="~/Scripts/MERCHN/SendingMail/mailTemplate1.js"></script>
+
+@*<div class="modal show" id="divMailTemplate">*@
+<div class="modal" id="divMailTemplate">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modal-header-info">
+                <button type="button" class="close btnCloseMail" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"><span class="glyphicon glyphicon-envelope"></span> Compose Message</h4>
+            </div>
+            <div class="wrapperMail">
+                <div class="tabsMail">
+                    <div class="tabMail tab1">
+                        <input type="radio" name="css-tabsMail" id="tabMail1" class="tabMail-switch tabInfo">
+                        <label for="tabMail1" class="tabMail-label tabInfo" title="Tab1">Tab1</label>
+                        <div class="tabMail-content">
+                            <div class="modal-body">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2" for="inputToMail" style="margin-top: 8px;">To <span class="fas fa-user-circle"></span></label>
+                                        <div class="col-sm-10"><input type="email" class="form-control inputToMail" placeholder="Semicolon separated list of recipients"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2" for="inputCCMail" style="margin-top: 8px;">CC <span class="fas fa-user-circle"></span></label>
+                                        <div class="col-sm-10"><input type="email" class="form-control inputCCMail" placeholder="Semicolon separated list of recipients"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2" for="inputBCCMail" style="margin-top: 8px;">BCC <span class="fas fa-user-circle"></span></label>
+                                        <div class="col-sm-10"><input type="email" class="form-control inputBCCMail" placeholder="Semicolon separated list of recipients"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2" for="inputSubjectMail" style="margin-top: 8px;">Subject <span class="glyphicon glyphicon-list-alt"></span></label>
+                                        <div class="col-sm-10"><input type="text" class="form-control inputSubjectMail" placeholder="Subject"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12 divBodyMain">
+                                            @*<textarea class="form-control mailTextArea inputBodyMail" rows="8" placeholder="Type here..." style="height: 180px !important; font-size: 14px; "></textarea>*@
+                                            <div contentEditable="true" class="mailTextArea inputBodyMail" style='display: inline-block;border: solid 1px #000;min-height: 200px;width: 100%;font-size: 14px;padding: 6px;'></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left btnCloseMail" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-warning pull-left"><i class="fas fa-box-open"></i> Save Draft</button>
+                <button id="btnMailSend" type="button" class="btn btn-primary "><span>Send</span> <i class="fa fa-arrow-circle-right fa-lg"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

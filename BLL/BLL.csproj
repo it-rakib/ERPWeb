@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{531C5367-BC61-4554-9C9B-F4208F8B935A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Menu\IMenuRepository.cs" />
+    <Compile Include="Core\Menu\MenuService.cs" />
+    <Compile Include="Core\Module\IModuleRepository.cs" />
+    <Compile Include="Core\Module\ModuleService.cs" />
+    <Compile Include="Core\Notice\INoticeSettingRepository.cs" />
+    <Compile Include="Core\Notice\NoticeSettingService.cs" />
+    <Compile Include="Core\User\IUserRepository.cs" />
+    <Compile Include="Core\User\UserService.cs" />
+    <Compile Include="FileManager\FileManagerService.cs" />
+    <Compile Include="FileManager\IFileManagerRepository.cs" />
+    <Compile Include="HRM\Common\CommonService.cs" />
+    <Compile Include="HRM\Common\ICommonRepository.cs" />
+    <Compile Include="HRM\Reports\IReport2Repository.cs" />
+    <Compile Include="HRM\Reports\Report2Service.cs" />
+    <Compile Include="HRM\AuditTrail\AuditTrailService.cs" />
+    <Compile Include="HRM\AuditTrail\IAuditTrailRepository.cs" />
+    <Compile Include="HRM\Reports\IReportRepository.cs" />
+    <Compile Include="HRM\Reports\ReportService.cs" />
+    <Compile Include="INVENTORY\Reports\IInvReportRepository.cs" />
+    <Compile Include="INVENTORY\Reports\InvReportService.cs" />
+    <Compile Include="LAND\LandInformations\ILandInformationsRepository.cs" />
+    <Compile Include="LAND\LandInformations\LandInformationsService.cs" />
+    <Compile Include="LAND\MutationLandInformations\IMutationLandInformationsRepository.cs" />
+    <Compile Include="LAND\MutationLandInformations\MutationLandInformationsService.cs" />
+    <Compile Include="LAND\Reports\ILandReportRepository.cs" />
+    <Compile Include="LAND\Reports\LandReportService.cs" />
+    <Compile Include="LEGAL\LegalDashboard\ILegalDashboardRepository.cs" />
+    <Compile Include="LEGAL\LegalDashboard\LegalDashboardService.cs" />
+    <Compile Include="LEGAL\Reports\CaseReportService.cs" />
+    <Compile Include="LEGAL\Reports\ExpenseReportService.cs" />
+    <Compile Include="LEGAL\Reports\ICaseReportRepository.cs" />
+    <Compile Include="LEGAL\Reports\IExpenseReportRepository.cs" />
+    <Compile Include="Login\ILoginRepository.cs" />
+    <Compile Include="Login\LoginService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{8e93b401-4322-4b01-a73d-3082c5e24c98}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBManager\DM.csproj">
+      <Project>{565A7AAC-F7DA-458C-9046-A7D7133E176A}</Project>
+      <Name>DM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{43EC51F4-69BA-4533-918C-6F39415B5D75}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\AUtilities.csproj">
+      <Project>{07242bcb-0768-4348-927d-1d8d6df41e84}</Project>
+      <Name>AUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MERCHN\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

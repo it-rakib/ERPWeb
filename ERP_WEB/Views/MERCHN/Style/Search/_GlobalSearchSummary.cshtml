@@ -1,0 +1,129 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/Style/Search/GlobalSearchSummary.js?" + @jsVer)
+
+
+<style>
+    .search {
+        width: 30%;
+        left: 35%;
+        position: relative;
+        display: flex;
+    }
+
+    .searchTerm {
+        width: 100%;
+        border: 3px solid #00B4CC;
+        border-right: none;
+        padding: 10px;
+        height: 20px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        color: #9DBFAF;
+    }
+
+        .searchTerm:focus {
+            color: #00B4CC;
+        }
+
+    .searchButton {
+        width: 40px;
+        height: 30px;
+        border: 1px solid #00B4CC;
+        background: #00B4CC;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 20px;
+    }
+</style>
+<div class="panel panel-default bs-example">
+    <div class="well well-sm">
+        Search Summary
+    </div>
+    <div class="panel-body">
+        <div>
+            <div class="search">
+                <input type="text" id='search' class="searchTerm" autocomplete="off" autofocus placeholder="Type what are you looking for?">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="spacer5"></div>
+        <div id="gridSearchSummary"></div>
+    </div>
+</div>
+@*Modal Part*@
+@*Style Modal*@
+<div id="divStyleModal" style="display:none;">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="gridStyleHistory"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button id="btnStyleModalClose" class="btn btn-danger" style="float:right;margin-right:10px;margin-top:10px;">Close</button>
+        </div>
+    </div>
+</div>
+@*PO Modal*@
+<div id="divPOModal" style="display:none;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well well-sm">
+                Purchase Order Master
+            </div>
+            <div id="gridPOMaster"></div>
+        </div>
+        <div class="col-md-6">
+            <div class="well well-sm">
+                Purchase Order History
+            </div>
+            <div id="gridPOHistory"></div>
+        </div>
+        @*<div class="col-md-6">
+            <div class="well well-sm">
+                PO Color Size BreakDown
+            </div>
+            <div id="gridPOColorSize"></div>
+        </div>*@
+    </div>
+    <div class="row" style="margin-left:-1px;">
+        @*<div class="col-md-4" style="margin-top:5px;">
+            <div class="well well-sm">
+                Purchase Order History
+            </div>
+            <div id="gridPOHistory"></div>
+        </div>*@
+        <div class="col-md-12" style="margin-top:5px;">
+            <div class="well well-sm">
+                Sales Contract
+            </div>
+            <div id="gridSalesContract"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button id="btnPOModalClose" class="btn btn-danger" style="float:right;margin-right:10px;margin-top:10px;">Close</button>
+        </div>
+    </div>
+</div>
+@**PO Color Size Modal *@
+<div id="divPOColorSizeModal" style="display:none;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                PO Color Size BreakDown
+            </div>
+            <div id="gridPOColorSize"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button id="btnPocsModalClose" class="btn btn-danger" style="float:right;margin-right:10px;margin-top:10px;">Close</button>
+        </div>
+    </div>
+
+</div>

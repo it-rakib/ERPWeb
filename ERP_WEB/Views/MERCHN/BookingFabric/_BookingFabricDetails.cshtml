@@ -1,0 +1,120 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/BookingFabric/BookingFabricDetails.js?" + @jsVer)
+@Scripts.Render("~/Scripts/MERCHN/BookingFabric/StyleSummary.js?" + @jsVer)
+@Scripts.Render("~/Scripts/MERCHN/BookingFabric/FabricCompositionInfo.js?" + @jsVer)
+
+<style>
+    .editable {
+        background-color: skyblue;
+    }
+
+    .non-editable {
+        pointer-events: none;
+        opacity: 0.8;
+    }
+
+     .row {
+        margin-bottom: 5px;
+    }
+
+    .k-grid .k-hierarchy-col {
+        width: 8px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="pnlBookingFabric">
+                            <li class="k-state-active">
+                                BOOKING FOR FABRIC
+                                <div id="divBuyerPnl">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="spacer5"></div>
+                                            <div class="col-md-1">
+                                                <label class="control-label-custom">Select Style:</label>
+                                            </div>
+                                            <div class="col-md-2" style="padding-left: 0;">
+                                                <div class="input-group add-on">
+                                                    <input type="hidden" id="hdnCostingEmbId" value="00000000-0000-0000-0000-000000000000" />
+                                                    <input type="text" placeholder="Type here..." class="form-control" style="width: 100%; height: 28px;" name="Style" id="txtSearchKey" />
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-info" type="button" id="btnSearchStyle"><i class="glyphicon glyphicon-search"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="cboStyle" style="width: 100%; height: 28px;"/>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button id="btnAddStyle" class="k-button-primary"><i class="fas fa-arrow-down" style="margin-right: 4px;"></i>Add</button>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button id="btnSaveBookingFabric" class="k-button-success" style="float: right;"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                                                <button id="btnClose" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="grdStyleSummary"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="k-state-active">
+                               FABRIC BOOKING INFORMATION
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-1 col-xs-4">
+                                            <label class="control-label control-label-custom" for="cmbSupplier">Select Supplier:</label>
+                                        </div>
+                                        <div class="col-md-2 col-xs-8">
+                                            <input type="text" id="cmbSupplier" name="cmbSupplier" style="width: 100%; height: 28px;"/>
+                                        </div>
+                                        <div class="col-md-1 col-xs-4">
+                                            <label class="control-label control-label-custom" for="txtBookingDate">Booking Date:</label>
+                                        </div>
+                                        <div class="col-md-2 col-xs-8">
+                                            <input type="text" id="txtBookingDate" name="txtBookingDate" style="width: 100%; height: 28px;"/>
+                                        </div>
+                                        <div class="col-md-1 col-xs-4">
+                                            <label class="control-label control-label-custom" for="txtETD">ETD:</label>
+                                        </div>
+                                        <div class="col-md-2 col-xs-8">
+                                            <input type="text" id="txtETD" name="txtETD" style="width: 100%; height: 28px;"/>
+                                        </div>
+                                        <div class="col-md-1 col-xs-4">
+                                            <label class="control-label control-label-custom" for="txtETA">ETA:</label>
+                                        </div>
+                                        <div class="col-md-2 col-xs-8">
+                                            <input type="text" id="txtETA" name="txtETA" style="width: 100%; height: 28px;"/>
+                                        </div>
+                                    </div>
+                                    <div class="row displayNone">
+                                        <div class="col-md-1 col-xs-4">
+                                            <label class="control-label control-label-custom" for="cmbCurrency">Select Currency:</label>
+                                        </div>
+                                        <div class="col-md-2 col-xs-8">
+                                            <input type="text" id="cmbCurrency" name="cmbCurrency" style="width: 100%; height: 28px;" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="grdFabricComposition"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

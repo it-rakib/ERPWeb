@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Driver Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/TRANSPORT/DriverInfo/DriverInfoSettings.js")
+<div class="row">
+    <div id="divDriverInfoDetails" class="col-md-12">
+
+        @Html.Partial("../TRANSPORT/DriverInfo/_DriverInfoDetails")
+        @Html.Partial("../TRANSPORT/DriverInfo/_DriverInfoSummary")
+    </div>
+</div>

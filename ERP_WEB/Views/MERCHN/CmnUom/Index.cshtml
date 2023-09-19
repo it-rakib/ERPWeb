@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "UOM Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/CmnUom/CmnUomSettings.js")
+<div class="row">
+    <div id="divAgentDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/CmnUom/_CmnUomDetails")
+
+        @Html.Partial("../MERCHN/CmnUom/_CmnUomSummary")
+    </div>
+</div>
+
+

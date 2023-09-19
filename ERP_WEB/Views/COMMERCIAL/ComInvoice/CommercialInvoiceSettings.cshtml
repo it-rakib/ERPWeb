@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Commercial Invoice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Dashboard/DashboardMain.css" rel="stylesheet" />
+<style type="text/css">
+    .ob-center {
+        text-align: center !important;
+    }
+
+    .k-content {
+        background-color: white !important;
+    }
+
+    .k-tabstrip > .k-content {
+        display: none;
+        overflow: hidden;
+    }
+
+    tbody tr:hover {
+
+        cursor: pointer
+    } 
+</style>
+@Scripts.Render("~/Scripts/COMMERCIAL/ComInvoice/CommercialInvoiceSettings.js")
+@Scripts.Render("~/Scripts/COMMERCIAL/ComInvoice/CommercialInvoiceDetails.js")
+
+<link href="~/Scripts/NewsTicker/ticker-style.css" rel="stylesheet" />
+<script src="~/Scripts/NewsTicker/jquery.ticker.js"></script>
+
+<div id="includedContent">
+    <div id="bodyTab">
+        <ul>
+            <li id="tabInvoice" class="k-state-active">
+                <b>General Information</b>
+            </li>
+            @*<li id="tabAC">
+                <b>Acceptance Charge</b>
+            </li>
+            <li id="tabAPI">
+                <b id="tabOthers2"> Advance Payment Information</b>
+            </li>*@
+        </ul>
+        <div class="col-md-12 displayNone" id="divComInvoice">
+            @Html.Partial("../COMMERCIAL/ComInvoice/_CommercialInvoiceDetails")
+        </div>
+        @*<div class="col-md-12 displayNone" id="divAC">
+            @Html.Partial("../")
+        </div>
+        <div class="col-md-12 displayNone" id="divAPI">
+            @Html.Partial("../")
+        </div>*@
+    </div>
+</div>

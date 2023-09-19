@@ -1,0 +1,67 @@
+﻿
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/COMMERCIAL/ComInvoice/CommercialInvoiceDetails.js?" + @jsVer)
+@Scripts.Render("~/Scripts/COMMERCIAL/ComInvoice/CommercialInvoiceSummary.js?" + @jsVer)
+<style>
+    .form-horizontal .form-group {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .form-horizontal .control-label {
+        text-align: left !important;
+        /*background-color: lightgrey;*/
+
+        font-weight: normal;
+    }
+
+    .comboBox {
+        width: 100%;
+    }
+
+    .datePicker {
+        width: 100%;
+    }
+
+    .txt {
+        width: 100%;
+        height: 22px;
+    }
+    .k-grid-footer {
+        visibility: hidden;
+    }
+</style>
+
+<ul id="pnlMaster">
+    <li class="k-state-active">
+        COMMERCIAL INVOICE INFORMATIONS
+        <div>
+            <div class="panel-body">
+                <div style="text-align: right; margin-right: 20px;">
+                    <button id="btnSave" class="k-button-success"><i class="fa fa-save" style="margin-right: 5px;"></i>Save</button>
+                    @*<button id="btnClearAll" class="k-button-danger"><i class="fa fa-backward" style="margin-right: 5px;"></i>Refreash</button>*@
+                </div>
+                <div class="spacer5"></div>
+                <div class="row" style="margin-top: 5px;">
+                    <div class="col-md-12 col-xs-12">
+                        @Html.Partial("../COMMERCIAL/ComInvoice/_CommercialInvoiceInfo")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    
+    <li class="k-state-active" >
+        Item Details
+        <div>
+            <div class="panel-body">
+                <div class="row" style="margin-top: 5px;">
+                    <div class="col-md-12 col-xs-12">
+                        <div id="grdPIItemList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+

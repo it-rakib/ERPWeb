@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Petitioner Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/LEGAL/Petitioner/PetitionerSettings.js")
+<div class="row">
+    <div id="divPetitionerDetails" class="col-md-12">
+
+        @Html.Partial("../LEGAL/Petitioner/_PetitionerDetails")
+        @Html.Partial("../LEGAL/Petitioner/_PetitionerSummary")
+    </div>
+</div>
+

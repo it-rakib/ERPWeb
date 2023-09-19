@@ -1,0 +1,27 @@
+﻿
+@Scripts.Render("~/Scripts/Land/LandReport/LandReportSummary.js")
+
+<div class="panel panel-default bs-example">
+    <div class="well well-sm">
+        Land Summary: Owner Wise Deed Summary
+    </div>
+    
+    
+    <div class="row">
+        <div class="form-group">
+            <label class="control-label col-md-4 col-xs-4" style="margin-top : 4px" for="cmbDeedNoOwnerDeed">Deed</label>
+            <div class="comboBox col-md-3 col-xs-3">
+                <input id="cmbDeedNoOwnerDeed" placeholder="--Select Deed--" style="width: 100%; height:28px;" required validationmessage="*" />
+            </div>
+            <div class="col-md-2 col-xs-2">
+                <button class="k-button" id="btnShowSummaryOwnerDeed" style="width:100px">Show Summary</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <div id="grdLandSummaryOwnerDeed"></div>
+    </div>
+</div>
+
+

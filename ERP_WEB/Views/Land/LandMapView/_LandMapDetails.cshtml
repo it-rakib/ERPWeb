@@ -1,0 +1,120 @@
+﻿@Scripts.Render("~/Scripts/Land/LandMapView/LandMapDetails.js")
+
+<div class="bs-example">
+    <div class="well well-sm">Land Map</div>
+    <div class="row" style="margin-bottom:0px !important;">
+        <div class="col-md-12 col-xs-12 centerAlign">
+            <ul class="list-group" style="margin-bottom:2px !important;">
+                <li class="list-group-item rightAlign">
+                    <button id="btnCancelApplication" class="k-button-danger" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="includedContent">
+        <div id="bodyTab">
+            <ul>
+                <li id="tabDeedDetails" class="k-state-active">
+                    <b>Map Details</b>
+                </li>
+
+                <li id="tabDeedDocument">
+                    <b>Map Document</b>
+                </li>
+            </ul>
+            <div class="col-md-12 displayNone" id="divLandDetails">
+                <input type="hidden" id="hdnLandMapId" value="00000000-0000-0000-0000-000000000000" />
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbCmnDivision">Division</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnDivision" placeholder="--Select Division--" style="width: 80%; height: 28px;" validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbCmnDistrict">District</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnDistrict" placeholder="--Select District--" style="width: 80%; height: 28px;" validationmessage="*" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbCmnUpozila">Upazila/Thana</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnUpozila" placeholder="--Select Upozila--" style="width: 80%; height: 28px;" validationmessage="*" disabled="disabled"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top: 4px" for="cmbCmnMouza">Mouza</label>
+                            <div class="comboBox">
+                                <input id="cmbCmnMouza" placeholder="--Select Mouza--" style="width: 80%; height: 28px;" validationmessage="*" disabled="disabled"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbTransferedKhatianType">Map Type</label>
+                            <div class="comboBox">
+                                <input id="cmbTransferedKhatianType" placeholder="--Select Map Type--" style="width: 80%; height:28px;" disabled="disabled" />
+                                @*<select id="cmbTransferedKhatianType" class="form-control" placeholder="Select Map Type..." style="width: 80%; height:28px;">
+                                    <option value="1">CS</option>
+                                    <option value="2">SA</option>
+                                    <option value="3">RS</option>
+                                    <option value="4">BS</option>
+                                    <option value="5">Digitize</option>
+                                </select>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-top : 4px" for="cmbSheetNo">Sheet No</label>
+                            <div class="comboBox">
+                                <input id="cmbSheetNo" placeholder="--Select Sheet No--" style="width: 80%; height:28px;" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-md-2 col-xs-2">
+                            <label class="col-md-12 col-xs-12 control-label" for="lblKhatianType" style="line-height: 28px;margin-top:17px;">Map Type:</label>
+                        </div>
+                        <div class="col-md-7 col-xs-7" style="margin-top : 20px;">
+                            <div id="LandKhatianType">
+
+                            </div>
+                        </div>*@
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group">
+                            <label class=" control-label" style="margin-top: 4px" for="txtRemarks">Remarks:</label>
+                            <div class="">
+                                <textarea placeholder="Remarks" name="txtRemarks" id="txtRemarks" style="width: 80%; height: 50px; resize: none;" disabled="disabled" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 displayNone" id="divMapDocuments">
+                <div class="panel-body">
+                    <div class="row" style="margin-top: 1px;">
+                        <div class="col-md-12 col-xs-12">
+                            @Html.Partial("../Land/LandMapView/_UploadDocument")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

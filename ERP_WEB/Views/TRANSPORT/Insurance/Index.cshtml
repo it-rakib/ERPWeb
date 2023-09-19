@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Insurance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/Scripts/TRANSPORT/Insurance/InsuranceSettings.js")
+<div class="row">
+    <div id="divInsuranceDetails" class="col-md-12">
+
+        @Html.Partial("../TRANSPORT/Insurance/_InsuranceDetails")
+        @Html.Partial("../TRANSPORT/Insurance/_InsuranceSummary")
+    </div>
+</div>
+
+

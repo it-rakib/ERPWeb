@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Product Type Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/MerchProductType/ProductTypeSettings.js")
+<div class="row">
+    <div id="divProductTypeDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/MerchProductType/_ProductTypeDetails")
+        @Html.Partial("../MERCHN/MerchProductType/_ProductTypeSummary")
+    </div>
+</div>
+
+

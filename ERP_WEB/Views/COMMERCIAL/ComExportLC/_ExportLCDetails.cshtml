@@ -1,0 +1,80 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/COMMERCIAL/ComExportLC/ExportLCDetails.js?" + @jsVer)
+@Scripts.Render("~/Scripts/COMMERCIAL/ComExportLC/ExportLCAmendment.js?" + @jsVer)
+@Scripts.Render("~/Scripts/COMMERCIAL/ComExportLC/ExportLCSummary.js?" + @jsVer)
+
+<div class="row">
+    <div class="col-md-5 col-xs-12" style="padding-right: 10px">
+        <div class="panel panel-default">
+            <div class="well well-sm">
+                Export LC Information
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        @Html.Partial("../COMMERCIAL/ComExportLC/_ExportLCInfo")
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: right;">
+            <button id="btnSave" class="k-button-success"><i class="fa fa-save"></i>Save</button>
+            <button id="btnClearAll" class="k-button-danger"><i class="k-icon k-i-reload"></i>Refreash</button>
+        </div>
+    </div>
+
+    <div class="col-md-7 col-xs-12" style="padding-left: 5px;padding-right: 20px;">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="well well-sm">
+                    Remarks
+                </div>
+                <div class="panel-body">
+                    <div class="row" style="margin-top: 1px;">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="form-horizontal">
+                                <textarea id="txtRemarks" name="txtRemarks" type="text" placeholder="Remarks" style="height:100px;width:100%;resize:none" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="well well-sm" style="text-align: center;">
+                        Amendment
+                    </div>
+                    <div class="panel-body">
+                        <div class="row" style="margin-top: 1px;">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-horizontal">
+                                    @Html.Partial("../COMMERCIAL/ComExportLC/_ExportLCAmendment")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul id="pnlMaster">
+    <li class="k-state-active">
+        PO List
+        <div>
+            <div class="row" style="margin-top: 5px;">
+                <div class="col-xs-12 col-md-12">
+                    <div id="gridPOList"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+    @*<li class="k-state-active">
+        Related BBLc Information
+        <div>
+            <div class="row" style="margin-top: 5px;">
+                <div class="col-md-12 col-xs-12">
+                    <div id="gridBBLcInfo"></div>
+                </div>
+            </div>
+        </div>
+    </li>*@
+</ul>

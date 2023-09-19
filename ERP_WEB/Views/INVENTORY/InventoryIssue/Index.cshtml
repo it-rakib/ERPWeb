@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Inventory Issue";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/InventoryIssue/InvIssueSettings.js")
+
+<div class="row">
+    <div id="divIssueSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/InventoryIssue/_InvIssueSummary")
+    </div>
+    <div id="divIssueDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/InventoryIssue/_InvIssueDetails")
+    </div>
+</div>
+
+<div class="displayNone" id="popupRequisitionSearch">
+    @Html.Partial("../INVENTORY/InventoryIssue/_RequisitionListSearch")
+</div>
+<div class="displayNone" id="popupStyleSearch">
+    @Html.Partial("../INVENTORY/InventoryIssue/_StyleListSearch")
+</div>

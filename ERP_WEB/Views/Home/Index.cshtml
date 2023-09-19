@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+@Styles.Render("~/Content/Login/LoginPage.css")
+@Scripts.Render("~/Scripts/Common/Login/Login.js")
+@Scripts.Render("~/Scripts/Common/Login/UserLogin.js")
+@Scripts.Render("~/Scripts/notify.min.js")
+@Styles.Render("~/UIFramework/kendoUI2021/kendo/Style/kendo.common.min.css")
+
+<div class="row" id="divUserLogin" style="min-height: 550px;">
+    <div class="col-md-12">
+        <div class="centerAlign">
+            <img src="~/Images/hglogo.png" alt="Ha-Meem Group"/>
+        </div>
+        <div class="centerAlign">
+            @*<h2 style="color: #ffffff">Ha-Meem ERP</h2>*@
+            <h2 style="color: #ffffff">HA-MEEM ERP SOLUTION</h2>
+            <div id="divIPAddress" style="color: #ffffff; display: none;"></div>
+        </div>
+        <div class="login-block">
+            <div class="row">
+                <div class="col-md-12" id="loginDivImg" style="text-align: center;">
+                    <img src="~/images/chat/usr1.jpg" id="profilePic" class="avatar" alt=""/>
+                </div>
+                <h1 style="color: #286893 !important">Login</h1>
+                <div class="col-md-12">
+                    <div class="form-group inner-addon left-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="text" value="" placeholder="Username" id="txtLoginId" required validationmessage="Required" autocomplete="off"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-md-12 passwordrow">
+                        <div class="form-group inner-addon left-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                            <input type="password" value="" placeholder="Password" id="txtpassword" required validationmessage="Required" autocomplete="off"/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-md-12">
+                        <div class="col-md-6 col-xs-7">
+                            <input id="chkRememeberMe" type="checkbox"/> Remember Me
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <a href="#" style="text-decoration: underline; float: right;" id="btnForgotPass">Forgot Password?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <button id="btnLogIn" class="btn btn-primary btn-block btn-large" type="button">Login</button>
+        </div>
+        <h5 style="text-align: center; color: white; font-family: 'Century Gothic'">Username: Your 6 digit Employee ID, Default Password :123, Change Password after first Login</h5>
+        <div style="text-align: center; margin-bottom: 20px;">
+            <span style="text-align: center; color: #ffffff; font-size: 14px !important; font-family: 'Century Gothic';">(NB: If found any problem please press <b style="color: yellow">(Ctrl+F5)</b> or clear your browser history <b style="color: yellow">(Ctrl+Shift+Del)</b>),</span>
+            <span style="text-align: center; color: #ffffff; font-size: 14px !important; font-family: 'Century Gothic';">For any query call - <b style="color: yellow">(PABX:1019,1015)</b></span><br/>
+        </div>
+        <marquee style="border: 1px solid skyblue; border-radius: 50px; color: white;">IF YOU NOT FOUND ANY DATA OF YOUR DASHBOARD, PLEASE PRESS <b style="color: yellow">(Ctrl+F5)</b></marquee>
+    </div>
+</div>
+@*<div id="particles-js"></div>*@
+
+<script type="text/javascript">
+    var propic = localStorage.getItem('profilePic');
+    if (propic != "null" && propic != null) {
+        $("#profilePic").attr("src", "data:image/png;base64," + propic);
+    } else {
+        $("#profilePic").attr("src", "/images/chat/usr1.jpg");
+    }
+    // localStorage.clear();
+</script>
+
+<div id="popupForgotPass" class="col-md-12 col-xs-12" style="display:none">
+    @Html.Partial("../Home/ForgotPassword")
+</div>

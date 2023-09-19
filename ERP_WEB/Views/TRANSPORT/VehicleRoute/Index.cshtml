@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Route Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/TRANSPORT/VehicleRoute/VehicleRouteSettings.js"></script>
+<div class="row">
+    <div id="divRouteDetails" class="col-md-12">
+
+        @Html.Partial("../TRANSPORT/VehicleRoute/_VehicleRouteDetails")
+        @Html.Partial("../TRANSPORT/VehicleRoute/_VehicleRouteSummary")
+    </div>
+</div>
+

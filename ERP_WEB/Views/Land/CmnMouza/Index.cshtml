@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Mouza Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/Land/CmnMouza/CmnMouzaSettings.js")
+<div class="row">
+    <div id="divCmnMouzaDetails" class="col-md-6">
+        @Html.Partial("../Land/CmnMouza/_CmnMouzaDetails")
+    </div>
+    <div id="divCmnMouzaSummary" class="col-md-6">
+        @Html.Partial("../Land/CmnMouza/_CmnMouzaSummary")
+    </div>
+</div>

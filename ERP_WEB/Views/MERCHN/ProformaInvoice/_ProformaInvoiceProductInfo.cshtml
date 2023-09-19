@@ -1,0 +1,19 @@
+﻿
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/ProformaInvoice/PIProductInfo.js?" + @jsVer)
+@Scripts.Render("~/Scripts/MERCHN/ProformaInvoice/ProformaInvoiceDetails.js?" + @jsVer)
+
+<style>
+    .k-grid tbody tr {
+        height: 30px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="panel-body">
+            <div id="grdBookingDetailsSummary">
+            </div>
+        </div>
+    </div>
+</div>

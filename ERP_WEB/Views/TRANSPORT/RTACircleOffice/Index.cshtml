@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "RTA Circle Office Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/TRANSPORT/RTACircleOffice/RTACircleOfficeSettings.js")
+<div class="row">
+    <div id="divCircleOfficeDetails" class="col-md-12">
+
+        @Html.Partial("../TRANSPORT/RTACircleOffice/_RTACircleOfficeDetails")
+        @Html.Partial("../TRANSPORT/RTACircleOffice/_RTACircleOfficeSummary")
+    </div>
+</div>

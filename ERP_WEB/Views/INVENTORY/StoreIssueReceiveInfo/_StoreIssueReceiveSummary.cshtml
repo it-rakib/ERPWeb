@@ -1,0 +1,31 @@
+﻿@Scripts.Render("~/Scripts/INVENTORY/StoreIssueReceiveInfo/StoreIssueReceiveSummary.js")
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="pnlMasterInfo">
+                            <li class="k-state-active">
+                                STORE GOODS ISSUE PENDING LIST FOR RECEIVE
+                                <div>
+                                    <div id="grdPendingIssueList"></div>
+                                </div>
+                            </li>
+                            <br />
+                            <li class="k-state-active">
+                                STORE GOODS ISSUE RECEIVE SUMMARY
+                                <div>
+                                    <div class="spacer5"></div>
+                                    <div id="grdIssueReveiveSummary"></div>
+                                    @*@Html.Partial("../INVENTORY/ConsignmentInfo/_ConsignmentDetailsGrid")*@
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

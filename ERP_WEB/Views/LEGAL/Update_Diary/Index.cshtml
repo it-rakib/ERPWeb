@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Case File Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/Scripts/LEGAL/Update_Diary/UpdateDiarySettings.js")
+
+<div class="row">
+    <div id="divUpdateDiaryDetails" class="col-lg-12">
+        <div class="row">
+            @Html.Partial("../LEGAL/Update_Diary/_UpdateDiaryDetails")
+        </div>
+        @*<div class="row">
+            @Html.Partial("../LEGAL/Update_Diary/_UpdateDiarySummary")
+        </div>*@        
+    </div>
+
+    @*<div id="divUpdateDiarySummary" class="col-lg-12" >
+        
+    </div>*@
+</div>
+

@@ -1,0 +1,126 @@
+﻿@Scripts.Render("~/Scripts/LEGAL/Update_Diary/UpdateDiaryDetails.js")
+<div class="col-lg-12">
+    <div class="bs-example">
+        <div class="well well-sm">Update Diary Details</div>
+        <div class="row" style="margin-bottom:0px !important;">
+            <div class="col-md-12 col-xs-12 centerAlign">
+                <ul class="list-group" style="margin-bottom:2px !important;">
+                    <li class="list-group-item rightAlign">
+                        <button id="btnSave" class="k-button-success" type="button"><span class="glyphicon glyphicon-floppy-disk"></span>Save</button>
+                        <button id="btnClearAll" class="k-button-danger" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="menuDetailsDiv" class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="form-horizontal">
+                    @*<div class="row" style="margin-top:5px;">
+                            <div class="col-md-6" style="margin-left: -39px;">
+                                <div class="col-md-2">
+                                    <label class="col-md-12 col-xs-12 control-label" for="txtSearchKey" style="line-height: 14px;">Select File:</label>
+                                </div>
+                                <div class="col-md-3" style="padding-left: 0; margin-left:-23px;">
+                                    <div class="input-group add-on">
+                                        <input type="hidden" id="hdnUpdateDiaryId" value="0" />
+                                        <input type="hidden" id="hdnFileMasterId" value="0" />
+                                        <input type="text" placeholder="Type here..." class="form-control" style="width: 100%; height: 28px;" name="Style" id="txtSearchKey" />
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-info" type="button" id="btnSearchStyle"><i class="glyphicon glyphicon-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5" style="margin-left: -24px;">
+                                    <input type="text" id="cboCaseFile" style="width: 75%; height: 28px;" />
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="row">
+                        <div class="col-md-6 col-xs-6">
+                            <div class="form-group" style="margin-left: 24px;">
+                                <label class="control-label" for="txtRegNo" style="margin-bottom: 6px;">Reg No:</label>
+                                <div>
+                                    <input type="text" placeholder="Reg No" name="txtRegNo" id="txtRegNo" class="form-control" disabled style="width: 60%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-left: 24px;">
+                                <label class="control-label" for="txtCourt" style="margin-bottom: 6px;">Court:</label>
+                                <div>
+                                    <input type="text" placeholder="Court" name="txtCourt" id="txtCourt" class="form-control" disabled style="width: 60%; height:28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-left: 24px;">
+                                <label class="control-label" style="margin-bottom: 6px;" for="txtPreviousDate">Previous Date:</label>
+                                <div class="">
+                                    <input id="txtPreviousDate" type="text" placeholder="Previous Date" name="txtPreviousDate" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-left: 24px;">
+                                <label class="control-label" style="margin-bottom: 6px;" for="txtPrvDatefr">Previous Date For:</label>
+                                <div>
+                                    <textarea placeholder="Previous Date for..." name="txtPrvDatefr" id="txtPrvDatefr" style="width: 60%; height: 74px; resize: none;" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+
+                            <div class="form-group">
+                                <label class="control-label" for="txtCaseNo" style="margin-bottom: 6px;">Case No:</label>
+                                <div>
+                                    <input type="text" placeholder="Case No" name="txtCaseNo" id="txtCaseNo" disabled class="form-control" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" style="margin-bottom: 6px;" for="txtNextDate">Next Date:</label>
+                                <div class="">
+                                    <input id="txtNextDate" type="text" placeholder="Next Date" name="txtNextDate" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" style="margin-bottom: 6px;" for="txtNxtDatefr">Next Date For:</label>
+                                <div>
+                                    <textarea placeholder="Next Date for..." name="txtNxtDatefr" id="txtNxtDatefr" style="width: 60%; height: 74px; resize: none;" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" style="margin-bottom: 6px;" for="cmbStatus">Status:</label>
+                                <div class="comboBox">
+                                    <input id="cmbStatus" placeholder="--Select Status--" style="width: 60%; height: 28px;" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 displayNone form-group" id="divStatus">
+                                    <label class="control-label" for="txtStatusDate" style="margin-bottom: 6px;">Status Date:</label>
+                                    <div>
+                                        <input type="text" placeholder="Status Date" name="txtStatusDate" id="txtStatusDate" style="width: 63%; height: 28px;" />
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="form-group" style="margin-top:17px; margin-left:9px;">
+                                    <label for="chkIsPublish" style="margin-left: -22px;"> Status:</label>
+                                    <input type="checkbox" id="chkIsPublish" name="chkIsPublish" value="chkIsPublish" style="margin-left: 31px;">
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default bs-example">
+            <div class="well well-sm">
+                Update Diary Information
+            </div>
+            <div class="panel-body">
+                @*<button class="k-button" id="btnAddNew"><span class="fa fa-plus"></span> Add New</button>*@
+                <div class="spacer4"></div>
+                <div id="grdUpdateDiarySummary">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

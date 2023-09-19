@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Expense Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/LEGAL/ExpenseReports/ExpenseReport.js"></script>
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="well well-sm">
+                Expense Report
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="row">
+                            <div class="bs-example" style="margin-left: 14px; height: 135px; margin-right: 15px;">
+                                @*<div class="well well-sm">
+                                        Salect Date Range
+                                    </div>*@
+                                <div class="panel-body">
+                                    <div class="col-md-4">
+                                        <div class="form-group" style="margin-top: 15px;">
+                                            <div>
+                                                <label class="control-label" for="txtFromDate" style="margin-right: 11px;">From Date:</label>
+                                                <input id="txtFromDate" type="text" placeholder="From Date" style="width: 60%; height: 28px;" name="txtFromDate" required validationmessage="*" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-top: 15px; Margin-left: 7px;">
+                                            <label class="control-label" style="margin-bottom: 6px; margin-right: 11px;" for="cmbFileType" style="margin-right: 11px;">File Type:</label>
+                                            <input id="cmbFileType" placeholder="--Select File Type--" style="width: 61%; height: 28px;" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group" style="margin-top: 15px; Margin-left: 7px;">
+                                            <div>
+                                                <label class="control-label" for="txtToDate" style="margin-right: 11px;">To Date:</label>
+                                                <input id="txtToDate" type="text" placeholder="To Date" name="txtToDate" style="width: 60%; height: 28px;" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-top: 15px; Margin-left: 18px;">
+                                            <label class="control-label" style="margin-bottom: 6px; margin-right: 11px;" for="cmbCourt">Court:</label>
+                                            <input id="cmbCourt" placeholder="--Select Court--" style="width: 61%; height: 28px;" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group" style="margin-top: 15px;">
+                                            <div>
+                                                <label for="txtCaseNo" style="margin-right: 11px;">Case No:</label>
+                                                <input id="txtCaseNo" type="text" placeholder="--Case No--" name="txtCaseNo" style="width: 61%; height: 28px;"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    @*<div id="divExpenseReportGrid" class="col-md-6 col-xs-6 displayNone">
+                            <div class="bs-example">
+                                <div class="well well-sm">
+                                    Expense Details
+                                </div>
+                                <div class="panel-body">
+                                    <div id="grdExpenseRpt">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <ul class="list-group ">
+                            <li class="list-group-item centerAlign">
+                                <button id="btnForRpt" class="btn btn-primary" type="button">Generate Report</button>
+                                @*<button id="btnShow" class="btn btn-primary">Show</button>*@
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

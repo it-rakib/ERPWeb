@@ -1,0 +1,91 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/COMMERCIAL/ComSalesContract/ContractAmendment.js?" + @jsVer)
+
+<style>
+    table thead {
+        background-color: lightblue;
+        text-align: center;
+        font-weight: bold;
+    }
+
+        table thead th {
+            text-align: center;
+            font-weight: bold;
+        }
+
+    .k-grid tbody .k-button {
+        min-width: 0px !important;
+    }
+
+    .k-header .k-link {
+        text-align: center !important;
+    }
+
+    #gridAmendment .k-header {
+        text-align: center !important;
+    }
+</style>
+
+<div class="panel-body">
+    <table id="tblContractAmendment" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <td colspan="1"></td>
+                <td colspan="3">SC Value</td>
+                <td colspan="2">Ship Date</td>
+                <td colspan="2">Expire Date</td>
+                <th rowspan="2">Remarks</th>
+                <th rowspan="2">Action</th>
+            </tr>
+            <tr>
+                <th>Amendment Date</th>
+                <th>Previous</th>
+                <th>Changed By</th>
+                <th>Current</th>
+                <th>Previous</th>
+                <th>Changed To</th>
+                <th>Previous</th>
+                <th>Changed To</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding:0px;">
+                    <input type="hidden" class="hiddenId" id="hdSCId" />
+                    <input type="hidden" class="hiddenId" id="hdnAmendId" />
+                    <input id="dtAmendDate" class="datePicker" type="text" placeholder="dd/mm/yyyy" style="width:100%;height:20px;font-size: 10px;" />
+                </td>
+                <td style="padding:0px;">
+                    <input id="txtPreSCAmt" class="txtPreSCAmt" type="text" placeholder="Pre SC Amt" style="width:100%;height:20px;font-size: 10px;" disabled />
+                </td>
+                <td style="padding:0px;">
+                    <input id="txtCurSCAmt" class="txtCurSCAmt" type="text" placeholder="Changed By" style="width:100%;height:20px;font-size: 10px;" autocomplete="off" />
+                </td>
+                <td style="padding:0px;">
+                    <input id="txtTotalAmt" class="txtTotalAmt" type="text" placeholder="Cur SC Amt" style="width:100%;height:20px;font-size: 10px;" disabled />
+                </td>
+                <td style="padding:0px;">
+                    <input id="dtPreShipDate" class="datePicker" type="text" placeholder="dd/mm/yyyy" style="width:100%;height:20px;font-size: 10px;" disabled />
+                </td>
+                <td style="padding:0px;">
+                    <input id="dtCurShipDate" class="datePicker" type="text" placeholder="dd/mm/yyyy" style="width:100%;height:20px;font-size: 10px;" />
+                </td>
+                <td style="padding:0px;">
+                    <input id="dtPreExpDate" class="datePicker" type="text" placeholder="dd/mm/yyyy" style="width:100%;height:20px;font-size: 10px;" disabled />
+                </td>
+                <td style="padding:0px;">
+                    <input id="dtCurExpDate" class="datePicker" type="text" placeholder="dd/mm/yyyy" style="width:100%;height:20px;font-size: 10px;" />
+                </td>
+                <td style="padding:0px;">
+                    <input id="txtAmendRemarks" class="txtAmendRemarks" type="text" placeholder="Remarks" style="width:100%;height:20px;font-size: 10px;" />
+                </td>
+                <td style="padding:0px; text-align: center;">
+                    <button class="k-button-success" id="btnSaveAmendment" style="width:100%;height:20px;margin:0px;min-width:0px !important;">
+                        <span class="fa fa-arrow-alt-circle-down" title="Save">Add</span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="gridAmendment"></div>
+</div>

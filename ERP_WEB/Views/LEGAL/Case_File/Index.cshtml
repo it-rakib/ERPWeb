@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Case File Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .row {
+        margin-bottom: 5px;
+    }
+</style>
+
+<link href="~/Scripts/NewsTicker/ticker-style.css" rel="stylesheet" />
+@Scripts.Render("~/Scripts/NewsTicker/jquery.ticker.js")
+@Scripts.Render("~/Scripts/LEGAL/Case_File/CaseFileSettings.js")
+
+<div class="row" id="divCaseFile">
+    <div id="divCaseFileDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../LEGAL/Case_File/_CaseFileDetails")
+    </div>
+
+    <div id="divCaseFileSummary" class="col-lg-12">
+        @Html.Partial("../LEGAL/Case_File/_CaseFileSummary")
+    </div>
+</div>
+
+<div class="row displayNone" id="divUpdateDiaryDetails">
+    <div class="col-lg-12">
+        <div class="row">
+            @Html.Partial("../LEGAL/Case_File/_UpdateDiaryDetails")
+        </div>
+    </div>
+</div>
+
+
+

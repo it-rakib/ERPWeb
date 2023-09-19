@@ -1,0 +1,29 @@
+﻿
+@Scripts.Render("~/Scripts/Core/User/MenuPermission.js")
+
+<div class="bs-example">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="cmbProjectName">Project:</label>
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Project" style="width: 100%; height: 28px;" name="cmbProjectName" id="cmbProjectName" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="cmbModuleName">Module:</label>
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Module" style="width: 100%; height: 28px;" name="cmbModuleName" id="cmbModuleName"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <input type="hidden" value="0" id="hdnUserId"/>
+
+    <div id="gridMenuPermission">
+    </div>
+
+</div>

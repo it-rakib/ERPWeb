@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Item Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/ItemWiseFabricTrimTamplate/ItemFabricSettings.js")
+<div class="row">
+    <div id="divItemDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/ItemWiseFabricTrimTamplate/_ItemFabricSummary")
+    </div>
+</div>

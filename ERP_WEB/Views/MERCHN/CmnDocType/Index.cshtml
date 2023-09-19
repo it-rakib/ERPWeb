@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "DocType Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/DocType/DocTypeSettings.js")
+<div class="row">
+    <div id="divDocTypeDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/CmnDocType/_DocTypeDetails")
+        @Html.Partial("../MERCHN/CmnDocType/_DocTypeSummary")
+    </div>
+</div>
+

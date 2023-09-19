@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Dashboard/DashboardMain.css" rel="stylesheet" />
+<style type="text/css">
+    .ob-center {
+        text-align: center !important;
+    }
+
+    /*.k-header {
+        text-align: center !important;
+    }*/
+    .k-content {
+        background-color: white !important;
+    }
+</style>
+
+@Scripts.Render("~/Scripts/Dashboard/DashboardSettings.js")
+@Scripts.Render("~/Scripts/Dashboard/DashboardDetails.js")
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+@*News Ticker*@
+<link href="~/Scripts/NewsTicker/ticker-style.css" rel="stylesheet" />
+<script src="~/Scripts/NewsTicker/jquery.ticker.js"></script>
+
+<div id="includedContent">
+    @*<marquee style="border: 1px solid skyblue; border-radius: 50px;">IF YOU ARE NOT GETTING E-MAIL (PAYSLIP, LEAVE APPROVAL) PLEASE CONTACT WITH HR & UPDATE YOUR OFFICIAL E-MAIL ADDRESS IN HRM </marquee>*@
+    <div>
+        <ul id="js-news" class="js-hidden">
+            @*<li class="news-item"><a href="#">সবাইকে বাংলা নববর্ষ - ১৪২৮ এর  শুভেচ্ছা </a></li>*@
+            <li class="news-item"><a href="#">IF FOUND ANY PROBLEM PLEASE PRESS (<b style="color: yellow;">Ctrl+F5</b>) OR CLEAR BROWSER HISTORY (<b style="color: yellow;">Ctrl+Shift+Del</b>)</a></li>
+            <li class="news-item"><a href="#">PLEASE USE LATEST VERSION OF BROWSER (Google Chrome,Mozilla Firefox or Microsoft Edge)</a></li>
+            <li class="news-item"><a href="#">FOR ANY QUERY PLEASE CONTACT WITH IT DEPARTMENT</a></li>
+            <li class="news-item"><a href="#">PLEASE CHANGE YOUR DEFAULT PASSWORD</a></li>
+            <li class="news-item"><a href="#">THANKS FOR USING - ERP SOLUTION</a></li>
+        </ul>
+    </div>
+    <div id="bodyTab">
+        <ul>
+            <li id="tabUser" class="k-state-active">
+                MY DASHBOARD
+            </li>
+            <li id="tabAdmin">
+                ADMIN DASHBOARD
+            </li>
+            <li id="tabLand">
+                LAND DASHBOARD
+            </li>
+            <li id="tabInventory">
+                INVENTORY DASHBOARD
+            </li>
+            <li id="tabLegal">
+                LEGAL DASHBOARD
+            </li>
+            <li id="tabQuickLink">
+                <b id="tabQuickLink2"> QUICK LINK</b>
+            </li>
+        </ul>
+        <div class="col-md-12 displayNone" id="divUserDashboard">
+            @Html.Partial("../Dashboard/UserDashboard")
+        </div>
+        <div class="col-md-12 displayNone" id="divAdminDashboard">
+            @Html.Partial("../Dashboard/AdminDashboard")
+        </div>
+        <div class="col-md-12 displayNone" id="divLandDashboard">
+            @Html.Partial("../Dashboard/LandDashboard")
+        </div>
+        <div class="col-md-12 displayNone" id="divInvDashboard">
+            @Html.Partial("../Dashboard/InventoryDashboard")
+        </div>
+        <div class="col-md-12 displayNone" id="divLegalDashboard">
+            @Html.Partial("../Dashboard/LegalDashboard")
+        </div>
+        <div id="divQuickLink" class="col-md-12 displayNone">
+            @Html.Partial("../Dashboard/QuickLink")
+        </div>
+
+    </div>
+</div>

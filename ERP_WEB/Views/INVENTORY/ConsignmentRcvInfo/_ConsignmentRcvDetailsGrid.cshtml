@@ -1,0 +1,8 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/INVENTORY/ConsignmentRcvInfo/ConsignmentRcvDetailsGrid.js?" + @jsVer)
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="grdConsignmentRcvDetailsGrid"></div>
+    </div>
+</div>

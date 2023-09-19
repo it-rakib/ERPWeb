@@ -1,0 +1,116 @@
+﻿@Scripts.Render("~/Scripts/Dashboard/MERCHN/OrderStatus/OrderStatusInfo.js")
+@Scripts.Render("~/Scripts/Dashboard/PROCUREMENT/PendingDemandList/PendingDemandList.js")
+
+<style type="text/css">
+    #chartdivLeaveStatus {
+        width: 100%;
+        height: 200px;
+    }
+
+    #chartdivAttendancePer {
+        width: 100%;
+        height: 405px;
+    }
+
+    #grdEmployeeLeaveAllocationSummary .k-header, #grdEmployeeLeaveTakenSummary .k-header, #grdEmployeeAttendanceSummary .k-header, #grdPendingLeaveApprovalSummary .k-header {
+        text-align: center !important;
+    }
+
+    #divAttendance .form-horizontal .form-group {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    #grphOrderStatus {
+        width: 100%;
+        height: 300px;
+    }
+
+    #grphOrderStatus2 {
+        width: 100%;
+        height: 500px;
+    }
+
+    .amcharts-export-menu-top-right {
+        top: 10px;
+        right: 0;
+    }
+    tbody tr:hover {
+        cursor: pointer
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-5 col-xs-12">
+        <div class="row" style="margin-top: 1px;">
+            <div id="" class="col-md-12 col-xs-12">
+                <div class="dbTopDiv row" id="attDiv">
+                    <div class="db2ndDiv"><span class="spnHead">MY PURCHASE ORDER STATUS</span></div>
+                    <div id="grphOrderStatus">
+                    </div>
+                    @*<div id="chartdivLeaveStatus"></div>*@
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 5px;">
+            <div class="col-xs-12 col-md-12">
+                <div class="dbTopDiv row">
+                    <div class="db2ndDiv"><span class="spnHead">SECTION 2</span></div>
+                    <div id="grdEmployeeLeaveTakenSummary" style="height: 200px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 5px;">
+            <div class="col-md-12 col-xs-12">
+                <div class="dbTopDiv row">
+                    <div class="db2ndDiv">
+                        <span class="spnHead">SECTION 3</span>
+                    </div>
+                    <div id="grdPendingLeaveApprovalSummary" style="height: 200px;"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row" style="margin-top: 5px;">
+            <div class="col-md-12 col-xs-12">
+                <div class="dbTopDiv row">
+                    <div class="db2ndDiv">
+                        <span class="spnHead">SECTION 4</span>
+                    </div>
+                    <div id="grdEmployeeLeaveDeductionEarnLeaveSummary" style="height: 200px;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-7  col-xs-12">
+        <div class="row" style="margin-top: 1px;">
+            <div class="col-md-12 col-xs-12">
+                <div class="dbTopDiv row">
+                    <div class="row" id="divPendingDemand">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="spnHead db2ndDiv">PENDING DEMAND LIST</div>
+                            <div class="form-horizontal">
+                                <div id="grdPendingDemandSummary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="divDemandModal" style="display:none;">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="gridPendingDemandHistory"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button id="btnDemandModalClose" class="btn btn-danger" style="float:right;margin-right:10px;margin-top:10px;">Close</button>
+        </div>
+    </div>
+</div>

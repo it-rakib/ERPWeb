@@ -1,0 +1,199 @@
+﻿@Scripts.Render("~/Scripts/LEGAL/Case_File/CaseFileDetails.js")
+<style>
+    .k-grid tbody .k-button {
+        min-width: 43px;
+    }
+</style>
+<div class="bs-example">
+    <div class="well well-sm">Case File Details</div>
+
+    <div class="row" style="margin-bottom:0px !important;">
+        <div class="col-md-12 col-xs-12 centerAlign">
+            <ul class="list-group" style="margin-bottom:2px !important;">
+                <li class="list-group-item rightAlign">
+                    <button id="btnSave" class="k-button-success" type="button"><span class="glyphicon glyphicon-floppy-disk"></span>Submit</button>
+                    <button id="btnClearAll" class="k-button-danger" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span>Back</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="includedContent">
+        <div id="bodyTab">
+            <ul>
+                <li id="tabFileDetails" class="k-state-active">
+                    <b>File Details</b>
+                </li>
+
+                <li id="tabFileDocument">
+                    <b>Files Document</b>
+                </li>
+            </ul>
+            <div id="menuDetailsDiv" class="row">
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-4 col-xs-4">
+                                <div class="form-group" style="margin-left: 24px;">
+                                    <input type="hidden" id="hdnFileMasterId" value="0" />
+                                    <label class="control-label" for="txtRegNo" style="margin-bottom: 6px;">Reg No:</label>
+                                    <div>
+                                        <input type="text" placeholder="Reg No" name="txtRegNo" id="txtRegNo" class="form-control" disabled style="width: 60%; height:28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-left: 24px;">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="cmbFileType">File Type:</label>
+                                    <div class="comboBox">
+                                        <input id="cmbFileType" placeholder="--Select File Type--" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-left: 24px;">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="cmbDistrict">District:</label>
+                                    <div class="comboBox">
+                                        <input id="cmbDistrict" placeholder="--Select District--" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-left: 24px;">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="cmbJurisdiction">Jurisdiction:</label>
+                                    <div class="comboBox">
+                                        <input id="cmbJurisdiction" placeholder="--Select Jurisdiction--" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-left: 24px;">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="cmbCourt">Court:</label>
+                                    <div class="comboBox">
+                                        <input id="cmbCourt" placeholder="--Select Court--" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-left: 24px;">
+                                    <label class="control-label" for="cmbMatter" style="margin-bottom: 6px;">Matter:</label>
+                                    <div class="comboBox">
+                                        <input id="cmbMatter" placeholder="--Select Matter--" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-left: 24px;">
+                                    <label class="control-label" for="txtCaseNo" style="margin-bottom: 6px;">Case No:</label>
+                                    <div>
+                                        <input type="text" placeholder="Case No" name="txtCaseNo" id="txtCaseNo" class="form-control" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-left: 24px;">
+                                    <label class="control-label" for="cmbPetitioner" style="margin-bottom: 6px;">Petitioner:</label>
+                                    <div>
+                                        <input type="text" placeholder="Petitioner" name="cmbPetitioner" id="cmbPetitioner" class="form-control" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="txtPetitionerCont">Contact No:</label>
+                                    <div>
+                                        <input type="text" disabled placeholder="Petitioner Contact No" name="txtPetitionerCont" id="txtPetitionerCont" style="width: 60%; height: 28px;" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="cmbFillingLawyer" style="margin-bottom: 6px;">Filing Lawyer:</label>
+                                    <div>
+                                        <input type="text" placeholder="Filing Lawyer" name="cmbFillingLawyer" id="cmbFillingLawyer" class="form-control" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="txtFlowyerContact" style="margin-bottom: 6px;">Contact No:</label>
+                                    <div>
+                                        <input type="text" disabled placeholder="Filing Lawyer Contact No" name="txtFlowyerContact" id="txtFlowyerContact" style="width: 60%; height: 28px;" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="cmbOppositeParty" style="margin-bottom: 6px;">Opposite Party:</label>
+                                    <div>
+                                        <input type="text" placeholder="Opposite Party" name="cmbOppositeParty" id="cmbOppositeParty" class="form-control" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="txtOppositePartyCont">Contact No:</label>
+                                    <div>
+                                        <input type="text" disabled placeholder="Opposite Party Contact No" name="txtOppositePartyCont" id="txtOppositePartyCont" style="width: 60%; height: 28px;" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="cmbOppositeLawyer">Opposite Lawyer:</label>
+                                    <div>
+                                        <input type="text" id="cmbOppositeLawyer" placeholder="Opposite Lawyer" class="form-control" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="txtOlowyerContact" style="margin-bottom: 6px;">Contact No:</label>
+                                    <div>
+                                        <input type="text" disabled placeholder="Opposite Lawyer Contact No" name="txtOlowyerContact" id="txtOlowyerContact" style="width: 60%; height: 28px;" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="cmbOnBeHalf" style="margin-bottom: 6px;">On Behalf Of:</label>
+                                    <div class="comboBox">
+                                        <input id="cmbOnBeHalf" placeholder="--Select On BeHalf Of --" style="width: 60%; height: 28px;" required validationmessage="*" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-4">        
+                                
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="cmbAssignLawyer">Assign Lawyer:</label>
+                                    <div class="comboBox">
+                                        <input id="cmbAssignLawyer" placeholder="--Select Assign Lawyer--" style="width: 60%; height: 28px;" required validationmessage="*"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="cmbCompany">Ref. Company:</label>
+                                    <div class="comboBox">
+                                        <input id="cmbCompany" placeholder="--Select Company--" style="width: 60%; height: 28px;"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="cmbUnit">Reference:</label>
+                                    <div class="comboBox">
+                                        <input id="cmbUnit" placeholder="--Select Reference--" style="width: 60%; height: 28px;"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="txtDiscription">Short Description:</label>
+                                    <div class="">
+                                        <textarea placeholder="Short Description" name="txtDiscription" id="txtDiscription" style="width: 60%; height: 84px; resize: none;" required validationmessage="*" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" style="margin-bottom: 6px;" for="cmbStatus">Status:</label>
+                                    <div class="comboBox">
+                                        <input id="cmbStatus" placeholder="--Select Status--" style="width: 60%; height: 28px;"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 displayNone form-group" id="divStatus">
+                                        <label class="control-label" for="txtStatusDate" style="margin-bottom: 6px;">Status Date:</label>
+                                        <div>
+                                            <input type="text" placeholder="Status Date" name="txtStatusDate" id="txtStatusDate" style="width: 63%; height: 28px;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-top: 10px; margin-left: 9px;">
+                                    <label for="chkIsPublish" style="margin-left: -22px;"> Is Publish:</label>
+                                    <input type="checkbox" id="chkIsPublish" name="chkIsPublish" value="chkIsPublish" style="margin-left: 31px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 displayNone" id="divCaseFileDocuments">
+                <div class="panel-body">
+                    <div class="row" style="margin-top: 1px;">
+                        <div class="col-md-12 col-xs-12">
+                            @Html.Partial("../LEGAL/Case_File/_UploadDocument")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

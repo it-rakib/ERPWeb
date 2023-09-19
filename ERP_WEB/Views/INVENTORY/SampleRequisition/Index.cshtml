@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Sample Requisition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/SampleRequisition/SampleRequisitionSettings.js")
+
+<div class="row">
+    <div id="divSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/SampleRequisition/_SampleRequisitionSummary")
+    </div>
+    <div id="divDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/SampleRequisition/_SampleRequisitionDetails")
+    </div>
+</div>
+
+<div class="displayNone" id="popupStyleSearch">
+    @Html.Partial("../INVENTORY/SampleRequisition/_StyleListSearch")
+</div>
+

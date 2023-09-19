@@ -1,0 +1,29 @@
+﻿@Scripts.Render("~/Scripts/MERCHN/PurSupplierItem/PurSupplierItemDetails.js")
+
+<div class="bs-example">
+    <div class="well well-sm">
+        Supplier Item Permission
+    </div>
+    <div id="tabstrip">
+        <ul>
+            <li class="k-state-active">
+                Items Permission
+            </li>
+        </ul>
+        <div>
+            @Html.Partial("../MERCHN/PurSupplierItem/PurSupplierItemPermission")
+        </div>
+
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="list-group ">
+                <li class="list-group-item centerAlign">
+                    <button id="btnSaveUser" class="k-button-success" type="button"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                    <button id="btnClear" class="k-button-danger" type="button"><span class="glyphicon glyphicon-repeat"></span> Clear</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

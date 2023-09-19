@@ -1,0 +1,115 @@
+﻿@Scripts.Render("~/Scripts/INVENTORY/LoanReturnInfo/LoanReturnDetails.js")
+@Scripts.Render("~/Scripts/INVENTORY/LoanReturnInfo/StyleListSearch.js")
+
+<style>
+    .comboBox {
+        width: 100%;
+    }
+
+    .datePicker {
+        width: 100%;
+    }
+
+    .txt {
+        width: 100%;
+        height: 28px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="well well-sm">LOAN RETURN</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-7">
+                            <label class="col-md-4 col-xs-4 control-label" id="lblMessage" style="line-height: 20px; color: red; font-weight: bold; font-size: 18px !important; float: right;"></label>
+                        </div>
+                        <div class="col-md-5 col-xs-4">
+                            <button id="btnSave" class="k-button-success" style="float: right;"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                            <button id="btnBackToList" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-4">
+                            <div class="form-horizontal">
+                                <input type="hidden" id="hdnIssueId"/>
+                                <input type="hidden" id="hdnIssueDetailsId"/>
+                                <div class="form-group required">
+                                    <label class="col-md-4 col-xs-4 control-label" for="dtLReturnDate">Date:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" class="datePicker" name="dtLReturnDate" id="dtLReturnDate" required validationmessage="Required" disabled/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtLReturnNo">Loan Return No:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" class="form-control txt" name="txtLReturnNo" id="txtLReturnNo" autocomplete="off" disabled/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 col-xs-4 control-label" for="cmbTransType">Transaction Type:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <select type="text" style="width: 100%; height: 28px;" name="cmbTransType" id="cmbTransType" disabled>
+                                            <option value="10" selected="selected"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-horizontal">
+                                <div class="form-group required">
+                                    <label class="col-md-4 col-xs-4 control-label" for="cmbFromStore">Return From:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" style="width: 100%; height: 28px;" name="cmbFromStore" id="cmbFromStore" required validationmessage="Required" disabled/>
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="col-md-4 col-xs-4 control-label" for="cmbToStore">Return To:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <input type="text" style="width: 100%; height: 28px;" name="cmbToStore" id="cmbToStore" required validationmessage="Required"/>
+                                    </div>
+                                </div>
+                                <div class="form-group required" id="divStyle" title="Select Issue From To Enable Style">
+                                    <label class="col-md-4 col-xs-4 control-label" id="lblSearchSt" for="txtSrcStyle">Style No:</label>
+                                    <div class="col-md-7 col-xs-7">
+                                        <div class="input-group add-on">
+                                            <input type="hidden" class="hiddenId" id="hdnRequisitionId" value="00000000-0000-0000-0000-000000000000"/>
+                                            <input type="hidden" class="hiddenId" id="hdnStyleId" value="00000000-0000-0000-0000-000000000000"/>
+                                            <input type="hidden" class="hiddenId" id="hdnStyleDetailsId" value="00000000-0000-0000-0000-000000000000"/>
+                                            <input id="txtSrcStyle" name="txtSrcStyle" type="text" placeholder="--Select Style--" class="form-control txt" autocomplete="off" disabled/>
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-xs btn-info" style="height:28px;" type="button" id="btnSearchStyle"><i class="glyphicon glyphicon-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-4 col-xs-4 control-label" for="txtRemarks">Remarks:</label>
+                                    <div class="col-md-7 col-xs-7 ">
+                                        <textarea id="txtRemarks" name="txtRemarks" type="text" placeholder="Remarks" style="width:100%;" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.Partial("../Inventory/LoanReturnInfo/_LoanReturnItemList")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

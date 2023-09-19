@@ -1,0 +1,234 @@
+﻿
+@{
+    ViewBag.Title = "Land Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .row {
+        margin-bottom: 5px;
+    }
+</style>
+<script src="https://kendo.cdn.telerik.com/2022.2.510/js/jszip.min.js"></script>
+
+@Scripts.Render("~/Scripts/Land/LandReport/LandReportSettings.js")
+@Scripts.Render("~/Scripts/Land/LandReport/LandReportSummary.js")
+
+<div class="row">
+    <div class="panel panel-default bs-example">
+        <div class="well well-sm text-center">Land Summary</div>
+        @*<div style="border-style: solid; border-color: #286090; border-width: 1px">
+                <div class="row">
+                    <div class="col-md-3 col-xs-3">
+                        <label class="col-md-12 col-xs-12 control-label" for="lblReportType" style="line-height: 20px;">Report Type::</label>
+                    </div>
+                    <div class="col-md-9 col-xs-9">
+                        <div id="LandReportType">
+                            <input type="checkbox" id="districtCommon" class="cmnClass" value="districtCommon">
+                            <label for="districtCommon"> All Common</label><br>
+
+                            <input type="checkbox" id="allDistrictCommon" class="cmnClass" value="allDistrictCommon">
+                            <label for="allDistrictCommon"> All District Wise</label><br>
+
+                            <input type="checkbox" id="allUpozilaCommon"  class="cmnClass" value="allUpozilaCommon">
+                            <label for="allUpozilaCommon"> All Upazila/Thana Wise</label><br>
+
+                            <input type="checkbox" id="allMouzaCommon" class="cmnClass" value="allMouzaCommon">
+                            <label for="allMouzaCommon"> All Mouza Wise</label><br>
+
+                            <input type="checkbox" id="allOwnerCommon"  class="cmnClass" value="allOwnerCommon">
+                            <label for="allOwnerCommon"> All Owner Wise</label><br>
+
+                            <input type="checkbox" id="allFileCommon"  class="cmnClass" value="allFileCommon">
+                            <label for="allFileCommon"> All File Code/No Wise</label><br>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        <br />
+        <div class="row">
+            <div class="col-md-3 col-xs-3">
+                <div class="form-group">
+                    <label class="control-label" style="margin-top: 4px" for="cmbCmnDivision">Division</label>
+                    <div class="comboBox">
+                        <input id="cmbCmnDivision" placeholder="--Select Division--" style="width: 80%; height: 28px;" required validationmessage="*" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-3">
+                <div class="form-group">
+                    <label class="control-label" style="margin-top: 4px" for="cmbCmnDistrict">District</label>
+                    <div class="comboBox">
+                        <input id="cmbCmnDistrict" placeholder="--Select District--" style="width: 80%; height: 28px;" required validationmessage="*" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-3">
+                <div class="form-group">
+                    <label class="control-label" style="margin-top: 4px" for="cmbCmnUpozila">Upazila/Thana</label>
+                    <div class="">
+                        <input id="cmbCmnUpozila" placeholder="--Select Upozila--" style="width: 80%; height: 28px;" required validationmessage="*" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-3">
+                <div class="form-group">
+                    <label class="control-label" style="margin-top: 4px" for="cmbCmnMouza">Mouza</label>
+                    <div class="comboBox">
+                        <input id="cmbCmnMouza" placeholder="--Select Mouza--" style="width: 80%; height: 28px;" required validationmessage="*" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-xs-3">
+                <div class="form-group">
+                    <label class="control-label" style="margin-top : 4px" for="cmbOwnerInfo">Name of The Owner</label>
+                    <div class="comboBox">
+                        <input id="cmbOwnerInfo" placeholder="--Select Owner Name--" style="width: 80%; height:28px;" required validationmessage="*" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="divLandSummaryDivision" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryDivision")
+    </div>
+
+    <div id="divLandSummaryDivisionMutation" class="col-md-12 col-xs-12 displayNone">
+        <div class="well well-sm text-left">Division Mutation Summary</div>
+        @Html.Partial("../Land/LandReport/_LandMutationSummaryDivision")
+    </div>
+
+    <div id="divLandSummaryDistrict" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryDistrict")
+    </div>
+    <div id="divLandSummaryDistrictMutation" class="col-md-12 col-xs-12 displayNone">
+        <div class="well well-sm text-left">District Mutation Summary</div>
+        @Html.Partial("../Land/LandReport/_LandMutationSummaryDistrict")
+    </div>
+    @*<div id="divLandSummaryDistrictSingle" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryDistrictSingle")
+    </div>
+
+    <div id="divLandSummaryDistrictWise" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryDistrictWise")
+    </div>*@
+
+    <div id="divLandSummaryUpazila" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryUpazila")
+    </div>
+    <div id="divLandMutationSummaryUpazila" class="col-md-12 col-xs-12 displayNone">
+        <div class="well well-sm text-left">Upozila Mutation Summary</div>
+        @Html.Partial("../Land/LandReport/_LandMutationSummaryUpazila")
+    </div>
+
+    <div id="divLandSummaryUpazilaSingle" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryUpazilaSingle")
+    </div>
+
+    <div id="divLandSummaryMouza" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryMouza")
+    </div>
+    <div id="divLandMutationSummaryMouza" class="col-md-12 col-xs-12 displayNone">
+        <div class="well well-sm text-left">Mouza Mutation Summary</div>
+        @Html.Partial("../Land/LandReport/_LandMutationSummaryMouza")
+    </div>
+    <div id="divLandSummaryMouzaSingle" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryMouzaSingle")
+    </div>
+
+    <div id="divLandSummaryOwnerMouzaCommon" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryOwnerMouzaCommon")
+    </div>
+
+    <div id="divLandSummaryFileDeedOwnerMouzaCommon" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryFileDeedOwnerMouzaCommon")
+    </div>
+
+    <div id="divLandSummaryOwner" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryOwner")
+    </div>
+    <div id="divLandSummaryOwnerMutation" class="col-md-12 col-xs-12 displayNone">
+        <div class="well well-sm text-left">Owner Mutation Summary</div>
+        @Html.Partial("../Land/LandReport/_LandSummaryOwnerMutation")
+    </div>
+    <div id="divLandSummaryCompany" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryCompany")
+    </div>
+
+    <div id="divLandSummaryPerson" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryPerson")
+    </div>
+
+    <div id="divLandSummaryOwnerDistrict" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryOwnerDistrict")
+    </div>
+
+    <div id="divLandSummaryOwnerUpazila" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryOwnerUpazila")
+    </div>
+
+    <div id="divLandSummaryOwnerMouza" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryOwnerMouza")
+    </div>
+
+    <div id="divLandSummaryOwnerDeed" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryOwnerDeed")
+    </div>
+    <div id="divLandSummaryAllCommon" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryAllCommon")
+    </div>
+    <div id="divLandSummaryUpozilaWise" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryUpozilaWise")
+    </div>
+    <div id="divLandSummaryAllMouzaWise" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryAllMouzaWise")
+    </div>
+    <div id="divLandSummaryAllOwnerWise" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryAllOwnerWise")
+    </div>
+    <div id="divLandMutationSummaryOwnerWise" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandMutationSummaryOwnerWise")
+    </div>
+    <div id="divLandSummaryOwnerWiseSingle" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandSummaryOwnerWiseSingle")
+    </div>
+    <div id="divLandSummaryOwnerWiseMutationSingle" class="col-md-12 col-xs-12 displayNone">
+        @Html.Partial("../Land/LandReport/_LandMutationSummaryOwnerWiseMutationSingle")
+    </div>
+</div>
+<!--<div class="row">
+    <label class="col-md-4 col-xs-4">Report Type:</label>
+    <div class="col-md-4 col-xs-4">
+        <!--<select id="dropdownlist" style="width: 400px">
+        <option value="0" selected>--Select Report Type--</option>
+        <option value="districtCommon">All Common</option>
+        <option value="districtWiseCommon">All District Wise</option>-->
+<!--@*<option value="districtWiseSingle">District Wise Single</option>*@-->
+<!--<!--<option value="upazilaCommon">All Upazila/Thana Wise</option>-->
+<!--@*<option value="upazilaSingle">Upazila/Thana Wise Single</option>*@-->
+<!--<!--<option value="mouzaCommon">All Mouza Wise</option>-->
+<!--@*<option value="mouzaSingle">Mouza Wise Single</option>*@-->
+<!--<!--<option value="ownerMouzaCommon">All Owner Wise</option>
+<option value="fileDeedOwnerMouzaCommon">All File Code/No Wise</option>-->
+<!--@*<option value="companyCommon">Company Wise Common</option>*@
+@*<option value="personCommon">Person Wise Common</option>*@
+@*<option value="ownerMouzaCommon">All Owner & Mouza Wise</option>*@
+@*<option value="ownerDistrict">Owner Wise District Summary</option>
+<option value="ownerUpazila">Owner Wise Upazila Summary</option>
+<option value="ownerMouza">Owner Wise Mouza Summary</option>
+<option value="ownerDeedNo">Owner Wise Deed Summary</option>*@-->
+<!--</select>-->
+<!--</div>
+    <div class="col-md-2 col-xs-2">
+        <button class="k-button" id="btnShow" style="width: 100px">Show</button>
+    </div>
+</div>-->

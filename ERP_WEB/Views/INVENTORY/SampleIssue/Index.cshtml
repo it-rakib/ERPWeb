@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Sample Issue";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/SampleIssue/SampleIssueSettings.js")
+
+<div class="row">
+    <div id="divSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/SampleIssue/_SampleIssueSummary")
+    </div>
+    <div id="divDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/SampleIssue/_SampleIssueDetails")
+    </div>
+</div>
+
+<div class="displayNone" id="popupRequisitionSearch">
+    @Html.Partial("../INVENTORY/SampleIssue/_RequisitionListSearch")
+</div>
+<div class="displayNone" id="popupStyleSearch">
+    @Html.Partial("../INVENTORY/SampleIssue/_StyleListSearch")
+</div>

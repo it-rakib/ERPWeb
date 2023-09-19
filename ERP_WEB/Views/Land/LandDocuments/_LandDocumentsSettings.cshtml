@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Land Documents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .row {
+        margin-bottom: 5px;
+    }
+</style>
+
+<link href="~/Scripts/NewsTicker/ticker-style.css" rel="stylesheet" />
+<script src="~/Scripts/NewsTicker/jquery.ticker.js"></script>
+
+@Scripts.Render("~/Scripts/Land/LandDocuments/LandDocumentsSettings.js")
+<div class="row">
+    <div id="divLandDocumentSummary" class="col-md-12 displayNone">
+        @Html.Partial("../Land/LandDocuments/_LandDocumentsSummary")
+    </div>
+
+    <div id="divLandDocumentDetails" class="col-md-12">
+        @Html.Partial("../Land/LandDocuments/_LandDocumentsDetails")
+    </div>
+</div>

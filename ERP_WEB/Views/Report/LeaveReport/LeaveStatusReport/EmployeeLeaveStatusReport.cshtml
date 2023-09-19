@@ -1,0 +1,139 @@
+﻿@Scripts.Render("~/Scripts/HRM/Reports/LeaveReport/LeaveStatusReport/LeaveStatusReport.js")
+@Scripts.Render("~/Scripts/HRM/Reports/LeaveReport/LeaveStatusReport/LeaveInfoSummary.js")
+@Scripts.Render("~/Scripts/HRM/Reports/LeaveReport/LeaveStatusReport/LeaveTakenSummary.js")
+@Scripts.Render("~/Scripts/HRM/Reports/LeaveReport/LeaveStatusReport/LateLeaveDeductionSummary.js")
+@Scripts.Render("~/Scripts/HRM/Reports/LeaveReport/LeaveStatusReport/EarnLeaveDeductionSummary.js")
+
+<style type="text/css">
+    .ob-center {
+        text-align: center !important;
+    }
+
+    .k-header {
+        text-align: center !important;
+    }
+</style>
+<div class="row">
+    <div class="col-md-1 col-xs-12"></div>
+    <div class="col-md-10 col-xs-12">
+        <div class="well well-sm">Leave Status</div>
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <table class="table" style="margin-bottom: 0 !important;">
+                            <tr>
+                                <td><label for="txtLeaveYear">Year:</label></td>
+                                <td><input type="text" placeholder="Year" class="form-control" name="txtLeaveYear" style="width: 100%; height: 26px;" id="txtLeaveYear"></td>
+                                <td><label for="txtEmpId">Emp ID:</label></td>
+                                <td><input type="text" placeholder="Emp ID" class="form-control" name="txtEmpId" style="width: 100%; height: 26px;" id="txtEmpId"></td>
+                                <td><button id="btnSearchLeaveStatus" style="width: 100px;" class="k-button">Load</button></td>
+                                <td><button id="btnAnnualLeaveStatus" style="width: 100px;" class="k-button">Print</button></td>
+                                @*<td><button id="btnPrintAtt" style="width: 100px;" class="k-button">Print</button></td>*@
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-12 k-block">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-3 col-xs-6 control-label">Employee ID:</label>
+                                    <div class="col-md-9 col-xs-6">
+                                        <label class="control-label" id="lblEmpId"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-xs-6 control-label">Name:</label>
+                                    <div class="col-md-9 col-xs-6">
+                                        <label class="control-label" id="lblName_vw"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-xs-6 control-label">Card No:</label>
+                                    <div class="col-md-9 col-xs-6">
+                                        <label class="control-label" id="lblEmpPunchId"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-xs-6 control-label">Unit:</label>
+                                    <div class="col-md-9 col-xs-6">
+                                        <label class="control-label" id="lblCompany"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-12 k-block">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-3 col-xs-6 control-label">Join Date:</label>
+                                    <div class="col-md-9 col-xs-6">
+                                        <label class="control-label" id="lblJoinDate_vw"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-xs-6  control-label">Designation:</label>
+                                    <div class="col-md-9 col-xs-6">
+                                        <label class="control-label" id="lblDesignation_1_vw"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-xs-6 control-label">Department:</label>
+                                    <div class="col-md-9 col-xs-6">
+                                        <label class="control-label" id="lblDepartment_1_vw"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-xs-6 control-label">Section:</label>
+                                    <div class="col-md-9 col-xs-6">
+                                        <label class="control-label" id="lblSection_vw"></label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spacer5"></div>
+                <div class="k-block">
+                    <div class="k-header"><b>LEAVE ALLOCATION SUMMARY</b></div>
+                    <div id="grdEmployeeLeaveAllocationSummary">
+                    </div>
+                </div>
+
+                <div class="spacer5"></div>
+                <div class="k-block">
+                    <div class="k-header"><b>LEAVE INFORMATION SUMMARY</b></div>
+                    <div id="grdEmployeeLeaveTakenSummary">
+                    </div>
+                </div>
+
+                <div class="spacer5"></div>
+                <div class="k-block">
+                    <div class="k-header"><b>LEAVE DEDUCTION FOR LATE</b></div>
+                    <div id="grdEmployeeLeaveDeductionLateSummary">
+                    </div>
+                </div>
+                <div class="spacer5 "></div>
+                <div class="k-block">
+                    <div class="k-header"><b>LEAVE DEDUCTION FOR EARN LEAVE PAYMENT & FESTIVAL HOLIDAYS</b></div>
+                    <div id="grdEmployeeLeaveDeductionEarnLeaveSummary">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1 col-xs-12"></div>
+</div>
+
+

@@ -1,0 +1,30 @@
+﻿
+@Scripts.Render("~/Scripts/Core/User/UserSummary.js")
+
+<div class="panel panel-default bs-example">
+    <div class="well well-sm">
+        User Summary
+    </div>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2 control-label" id="lblSearchUser" style="text-decoration: underline; font-weight: bold; color: blue" for="cmbUser">Search User:</label>
+            <div class="col-md-3 col-xs-3">
+                <div class="input-group add-on">
+                    <input type="text" placeholder="Employee ID/Name" class="form-control" style="width: 100%; height: 28px;" name="Employee" id="txtSrcUser" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-info" type="button" id="btnSearchUser"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-xs-5">
+                <input type="text" placeholder="User" style="width: 100%; height: 28px;" name="cmbUser" id="cmbUser" />
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div id="grdUserSummary">
+        </div>
+    </div>
+</div>
+
+

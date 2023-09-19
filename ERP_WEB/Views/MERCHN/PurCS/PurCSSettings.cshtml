@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Purchase CS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/PurCS/PurCSSettings.js?" + @jsVer)
+
+<div class="row">
+    <div id="divPurCSSummary" class="col-lg-12 displayNone">
+        @Html.Partial("../MERCHN/PurCS/_PurCSSummary")
+    </div>
+    <div id="divPurCSDetails" class="col-lg-12 ">
+        @Html.Partial("../MERCHN/PurCS/_PurCSDetails")
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@Scripts.Render("~/Scripts/INVENTORY/InventoryReceive/ReceivedItemList.js")
+<style type="text/css">
+    .editable {
+        background-color: skyblue;
+    }
+    .non-editable {
+        pointer-events: none;
+        opacity: 0.8;
+    }
+    .row {
+        margin-bottom: 5px;
+    }
+    .k-grid .k-group-col {
+        width: 5px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="well well-sm">
+               RECEIVED ITEM INFORMATION
+            </div>
+            <div class="panel-body">
+                <div id="grdReceivedItemSummary">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

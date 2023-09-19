@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Sub Register Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/Land/CmnSubRegOffice/CmnSubRegOfficeSettings.js")
+<div class="row">
+    <div id="divCmnSubRegOfficeDetails" class="col-md-6">
+        @Html.Partial("../Land/CmnSubRegOffice/_CmnSubRegOfficeDetails")
+    </div>
+    <div id="divCmnSubRegOfficeSummary" class="col-md-6">
+        @Html.Partial("../Land/CmnSubRegOffice/_CmnSubRegOfficeSummary")
+    </div>
+</div>

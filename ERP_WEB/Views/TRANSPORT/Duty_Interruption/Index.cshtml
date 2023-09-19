@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Duty Interruption";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/Scripts/TRANSPORT/Duty_Interruption/Duty_InterruptionSettings.js")
+<div class="row">
+    <div id="divDutyDetails" class="col-md-12">
+
+        @Html.Partial("../TRANSPORT/Duty_Interruption/_Duty_InterruptionDetails")
+        @Html.Partial("../TRANSPORT/Duty_Interruption/_Duty_InterruptionSummary")
+    </div>
+</div>

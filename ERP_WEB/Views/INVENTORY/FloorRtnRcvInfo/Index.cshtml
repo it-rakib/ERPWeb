@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Floor Return Receive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/INVENTORY/FloorRtnRcvInfo/FloorRtnRcvSettings.js")
+
+<div class="row">
+    <div id="divSummary" class="col-lg-12">
+        @Html.Partial("../INVENTORY/FloorRtnRcvInfo/_FloorRtnRcvSummary")
+    </div>
+    <div id="divDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../INVENTORY/FloorRtnRcvInfo/_FloorRtnRcvDetails")
+    </div>
+</div>

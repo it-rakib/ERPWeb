@@ -1,0 +1,15 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/COMMERCIAL/ExportInvoice/ExportInvoiceSummary.js?" + @jsVer)
+
+<div class="panel panel-default bs-example">
+    <div class="well well-sm">
+        EXPORT INVOICE SUMMARY
+    </div>
+    <div class="panel-body">
+        <button class="k-button" id="btnAddNewExportInvoice"><span class="fa fa-plus"></span> Add New</button>
+        <div class="spacer4"></div>
+        <div id="grdExportInvoiceSummary">
+        </div>
+    </div>
+</div>
+

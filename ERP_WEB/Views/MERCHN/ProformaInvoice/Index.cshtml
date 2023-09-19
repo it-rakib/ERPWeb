@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Proforma Invoice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/ProformaInvoice/ProformaInvoiceSettings.js?" + @jsVer)
+
+<div class="row">
+
+    <div id="divPIDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../MERCHN/ProformaInvoice/_ProformaInvoiceDetails")
+    </div>
+    <div id="divPISummary" class="col-lg-12">
+            @Html.Partial("../MERCHN/ProformaInvoice/_ProformaInvoiceSummary")
+    </div>
+</div>
+

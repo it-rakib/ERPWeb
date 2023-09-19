@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Item Category Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/MerchItemCategory/MerchItemCategorySettings.js")
+<div class="row">
+    <div id="divMerchItemCategory" class="col-md-12">
+        @Html.Partial("../MERCHN/MerchItemCategory/_MerchItemCategoryDetails")
+        @Html.Partial("../MERCHN/MerchItemCategory/_MerchItemCategorySummary")
+    </div>
+</div>

@@ -1,0 +1,14 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/POPacking/POPackingSummary.js?" + @jsVer)
+<div class="panel panel-default bs-example">
+    <div class="well well-sm">
+        PO PACKING SUMMARY
+    </div>
+    <div class="panel-body">
+        <button class="k-button" id="btnAddNewPOPacking"><span class="fa fa-plus"></span> Add New</button>
+        <div class="spacer4"></div>
+        <div id="grdPOPackingSummary">
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Jurisdiction Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/LEGAL/Jurisdiction/JurisdictionSettings.js")
+<div class="row">
+    <div id="divJurisdictionDetails" class="col-md-12">
+
+        @Html.Partial("../LEGAL/Jurisdiction/_jurisdictionDetails")
+        @Html.Partial("../LEGAL/Jurisdiction/_jurisdictionSummary")
+    </div>
+</div>
+
+
+

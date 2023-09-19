@@ -1,0 +1,191 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/COMMERCIAL/ComUDInfo/UDSummary.js?" + @jsVer)
+
+
+
+<div class="row" style="margin-top: 2px; margin-bottom: 2px;">
+    <div class="col-md-6">
+        <input type="hidden" id="hdnBBLCId" value="00000000-0000-0000-0000-000000000000"/>
+        <input type="hidden" id="hdnSCId" value="00000000-0000-0000-0000-000000000000"/>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtBBLCId">BB/ImportLC Id</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtBBLCId" name="txtBBLCId" class="form-control txt" type="text" autocomplete="off" placeholder="BBLC Id" readonly="readonly"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtBBLCNo">BB/ImportLC No</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtBBLCNo" name="txtBBLCNo" class="form-control txt" type="text" autocomplete="off" placeholder="BBLC No"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="BBLCDate">BB/ImportLC Date</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="BBLCDate" name="BBLCDate" type="text" class="datePicker" placeholder="BBLC Date"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboLCType">LC Type</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboLCType" name="cboLCType" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboSCNo">SC No.</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboSCNo" name="cboSCNo" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="">SC Amt.</label>
+                <div class="col-md-5 col-xs-5 " style="padding-right: 0;">
+                    <label class="form-control" style="width: 90%; height: 22px; text-align: left;" id="lblSCAmt"></label>
+
+                </div>
+
+                <div class="col-md-2 col-xs-2 " style="padding-left: 0;">
+                    <label class="form-control" style="width: 100%; height: 22px; text-align: left;" id="lblCurrancy"></label>
+
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboOpenBank">Openning Bank</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboOpenBank" name="cboOpenBank" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtBBLCAmt">BBLC Amount</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="txtBBLCAmt" name="txtBBLCAmt" type="text" class="txt" autocomplete="off" placeholder="BBLC Amount" readonly="readonly"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboBBLCCurrency">BBLC Currency</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboBBLCCurrency" name="cboBBLCCurrency" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboPayTerm">Pay Term</label>
+                <div class="col-md-7 col-xs-7">
+                    <select id="cboPayTerm" name="cboPayTerm" class="comboBox"></select>
+                </div>
+            </div>
+            @*<div class="form-group">
+                    <label class="col-md-4 col-xs-4 control-label" for="cboBankFacility">Bank Facility</label>
+                    <div class="col-md-7 col-xs-7">
+                        <select id="cboBankFacility" name="cboBankFacility" class="comboBox"></select>
+                    </div>
+                </div>*@
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboCompany">Company</label>
+                <div class="col-md-7 col-xs-7">
+                    <select id="cboCompany" name="cboCompany" class="comboBox"></select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboPurpose">Purpose</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboPurpose" name="cboPurpose" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="ltShipDate">Latest Ship Date</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="ltShipDate" name="ltShipDate" type="text" class="datePicker" placeholder="Latest Ship Date"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="lCExpiryDate">LC Expiry Date</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <input id="lCExpiryDate" name="lCExpiryDate" type="text" class="datePicker" placeholder="LC Expiry Date"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboExpiryPlc">Expiry Place</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboExpiryPlc" name="cboExpiryPlc" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtShippingMrk">Shipping Mark</label>
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtShippingMrk" name="txtShippingMrk" class="form-control txt" type="text" autocomplete="off" placeholder="Shipping Mark"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboAdvisingBank">Advising Bank</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboAdvisingBank" name="cboAdvisingBank" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtTenor">Tenor</label>
+                <div class="col-md-6 col-xs-6">
+                    <input id="txtTenor" name="txtTenor" class="txt" type="text" autocomplete="off" placeholder="Tenor"/>
+
+                </div>
+                <label for="txtTenor">Days</label>
+
+
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboSupplier">Supplier Name</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboSupplier" name="cboSupplier" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboSupplierBank">Supplier's Bank</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboSupplierBank" name="cboSupplierBank" class="comboBox"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="txtCoverNote">CoverNote No</label>
+
+                <div class="col-md-7 col-xs-7">
+                    <input id="txtCoverNote" name="txtCoverNote" class="form-control txt" type="text" autocomplete="off" placeholder="CoverNote No"/>
+                </div>
+            </div>
+            @*<div class="form-group">
+                    <label class="col-md-4 col-xs-4 control-label" for="cboInsuranceCo">Insurance Company</label>
+                    <div class="col-md-7 col-xs-7 ">
+                        <select id="cboInsuranceCo" name="cboInsuranceCo" class="comboBox"></select>
+                    </div>
+                </div>*@
+            <div class="form-group">
+                <label class="col-md-4 col-xs-4 control-label" for="cboTradeTerm">Trade Term</label>
+                <div class="col-md-7 col-xs-7 ">
+                    <select id="cboTradeTerm" name="cboTradeTerm" class="comboBox"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="divBBModal" style="display:none;">
+    <div class="row">
+        <div class="col-md-12">
+            @Html.Partial("../COMMERCIAL/ComUDInfo/_UDSummary")
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button id="btnBBLCClose" class="btn btn-danger" style="float:right;margin-right:10px;margin-top:10px;">Close</button>
+        </div>
+    </div>
+</div>

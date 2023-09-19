@@ -1,0 +1,15 @@
+SELECT 
+  --dbo.CmnDistrict.DistrictName, 
+  --dbo.CmnUpozila.UpozilaName, 
+  dbo.LandOwnersDetail.MouzaId,
+  --dbo.CmnMouza.MouzaName,
+  COUNT(dbo.LandMaster.DeedNo) DeedQty, 
+  SUM(dbo.LandOwnersDetail.LandAmount) TotalLand
+FROM 
+  dbo.CmnDistrict 
+  INNER JOIN dbo.CmnUpozila ON dbo.CmnDistrict.DistrictId = dbo.CmnUpozila.DistrictId 
+  INNER JOIN dbo.CmnMouza ON dbo.CmnUpozila.UpozilaId = dbo.CmnMouza.UpozilaId 
+  INNER JOIN dbo.LandMaster ON dbo.CmnDistrict.DistrictId = dbo.LandMaster.DistrictId
+  INNER JOIN dbo.LandOwnersDetail on dbo.LandMaster.LandMasterId = dbo.LandOwnersDetail.LandMasterId
+WHERE dbo.LandMaster.IsBayna = 0
+Group By dbo.LandOwnersDetail.MouzaId

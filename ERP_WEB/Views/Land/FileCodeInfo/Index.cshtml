@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "FileCode Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/Land/FileCodeInfo/FileCodeInfoSettings.js")
+<div class="row">
+    <div id="divFileCodeDetails" class="col-md-6">
+        @Html.Partial("../Land/FileCodeInfo/_FileCodeInfoDetails")
+    </div>
+
+    <div id="divFileCodeSummary" class="col-md-6">
+        @Html.Partial("../Land/FileCodeInfo/_FileCodeInfoSummary")
+    </div>
+</div>

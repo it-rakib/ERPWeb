@@ -1,0 +1,30 @@
+﻿
+@Scripts.Render("~/Scripts/HRM/Reports/EmployeeProfileReport/EmployeeProfileReport.js")
+
+
+<div class="bs-example" id="empProfileDiv">
+    <div class="row">
+        <div class="col-md-6 col-xs-6">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-3 control-label" id="lblSearchEmp" style="text-decoration: underline; font-weight: bold; color: blue" for="cmbEmployee">Search Employee:</label>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="input-group add-on">
+                            <input type="text" placeholder="Employee ID/Name" class="form-control" style="width: 100%; height: 28px;" name="Employee" id="txtSrcEmployee" />
+                            <div class="input-group-btn">
+                                <button class="btn btn-info" type="button" id="btnSearchEmployee"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-xs-5">
+                        <input type="text" style="width: 100%; height: 28px;" name="Employee" id="cmbEmployee" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <button id="btnEmployeeProfile" class="btn btn-primary" type="button">Generate</button>
+        </div>
+    </div>
+</div>
+

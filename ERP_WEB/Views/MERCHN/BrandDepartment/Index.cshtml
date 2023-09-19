@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Brand Department";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/BrandDepartment/BrandDepartmentSettings.js")
+<div class="row">
+    <div id="divBrandDepartmentDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/BrandDepartment/_BrandDepartmentDetails")
+
+        @Html.Partial("../MERCHN/BrandDepartment/_BrandDepartmentSummary")
+    </div>
+</div>
+
+@*<link href="~/Content/FlatUI/flatui.css" rel="stylesheet" />
+    <script src="~/Scripts/Common/merchant.common.js"></script>
+    <script src="~/Scripts/MERCHN/BrandDeparment/BrandDeparment.js"></script>
+
+    <fieldset class="col-md-12">
+        <legend data-toggle="collapse" href="#AddNewStyleInformations" role="button" aria-expanded="false" aria-controls="collapseExample">Brand Department</legend>
+        <div class="row">
+            <div class="col-md-3">
+                <select id="cboBuyer" class="comboBox"></select>
+            </div>
+            <div class="col-md-3">
+                <select id="cboBrand" class="comboBox"></select>
+            </div>
+            <div class="col-md-3">
+                <input id="dtTest" type="text" />
+                <button id="btnTest">Click</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="gridMain"></div>
+            </div>
+        </div>
+    </fieldset>*@

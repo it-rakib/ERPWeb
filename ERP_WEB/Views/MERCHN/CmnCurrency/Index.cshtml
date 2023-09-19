@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Currency Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/Currency/CurrencySetting.js")
+
+<div class="row">
+    <div id="divCurrencyDetails" class="col-lg-12">
+        @Html.Partial("../MERCHN/CmnCurrency/_CurrencyDetails")
+        @Html.Partial("../MERCHN/CmnCurrency/_CurrencySummary")
+    </div>
+</div>

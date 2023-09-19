@@ -1,0 +1,139 @@
+﻿<link href="~/Content/FlatUI/flatui.css" rel="stylesheet" />
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/PurQuotationRcv/PurQuotationRcvDetails.js?" + @jsVer)
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="pnlUl">
+                            <li class="k-state-active">
+                                Purchase Quotation
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="spacer5"></div>
+                                            <input type="hidden" class="hiddenId" id="hdnQuotationId" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="spacer5"></div>
+                                            <button id="btnSave" class="k-button-success" style="float: right;"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                                            <button id="btnReset" class="k-button-success" style="float: right;"><i class="fa fa-save" style="margin-right: 4px;"></i>Reset</button>
+                                            <button id="btnBack" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="spacer5"></div>
+                                            <select id="cboSupplier" class="comboBox"></select>
+                                            <div class="spacer5"></div>
+                                            <div id="gridSizeColorBreakdown"></div>
+                                            <div class="spacer5"></div>
+                                            <div class="k-card">
+                                                <div class="k-card-header">Terms & Conditions</div>
+                                                <div class="k-card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="col-md-12 col-xs-12 control-label" style="text-align:left !important;" for="dtValidityDate">ValidityDate:</label>
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <input type="text" id="dtValidityDate" name="dtValidityDate" style="width:100%;" placeholder="Validity Date" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="col-md-12 col-xs-12 control-label" style="text-align:left !important;" for="txtQuotationNo">Quotation No:</label>
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <input type="text" id="txtQuotationNo" name="txtQuotationNo" placeholder="Quotation No" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="col-md-12 col-xs-12 control-label" style="text-align:left !important;" for="cboPaymentTerms">Payment Terms:</label>
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <input type="text" id="cboPaymentTerms" class="comboBox" name="cboPaymentTerms" placeholder="Payment Terms" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="col-md-12 col-xs-12 control-label" style="text-align:left !important;" for="cboTenure">Tenure :</label>
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <input type="text" id="cboTenure" class="comboBox" name="cboTenure" placeholder="Tenure" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="col-md-12 col-xs-12 control-label" style="text-align: left !important;" for="cboLCOrBankCharge">LC / Bank Charge:</label>
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <input type="text" id="cboLCOrBankCharge" class="comboBox" name="cboLCOrBankCharge" placeholder="LC / Bank Charge"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="col-md-12 col-xs-12 control-label" style="text-align: left !important;" for="dtPossibleETD">Possible ETD:</label>
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <input type="text" id="dtPossibleETD" name="dtPossibleETD" style="width: 100%;" placeholder="Possible ETD"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="col-md-12 col-xs-12 control-label" style="text-align: left !important;" for="cboShipmentTerms">Shipment Terms:</label>
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <input type="text" id="cboShipmentTerms" class="comboBox" name="cboShipmentTerms" placeholder="Shipment Terms"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="col-md-12 col-xs-12 control-label" style="text-align: left !important;" for="txtRemarks">Remarks:</label>
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <input type="text" id="txtRemarks" name="txtRemarks" placeholder="Remarks"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="col-md-12 col-xs-12 control-label" style="text-align:left !important;" for="cboCurrency">Currency:</label>
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <input type="text" id="cboCurrency" class="comboBox" name="cboCurrency" placeholder="Currency" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="spacer5"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="k-state-active">
+                                Purchase Quotation List
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="gridSupplierPurQuotationRcvSummary"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<input id="txt1stNo" type="text" placeholder="First Number"/>
+<input id="txt2ndNo" type="text" placeholder="Second Number"/>
+<input id="txtResult" type="text" placeholder="Result" disabled/>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#txt1stNo, #txt2ndNo").keyup(function () {
+            var first = parseInt($("#txt1stNo").val());            var second = parseInt($("#txt2ndNo").val());            if (isNaN(first) || first == "" || !Number.isInteger(first)) first = 0;            if (isNaN(second) || second == "" || !Number.isInteger(second)) second = 0;            $("#txtResult").val(first + second);
+        });
+    });
+</script>

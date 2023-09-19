@@ -1,0 +1,98 @@
+﻿
+@Scripts.Render("~/Scripts/TRANSPORT/Insurance/InsuranceDetails.js")
+<style>
+
+    .k-multiselect-wrap, .k-floatwrap {
+        height: 34px;
+    }
+</style>
+<div class="bs-example">
+    <div class="well well-sm">Insurance Details</div>
+    <div id="menuDetailsDiv" class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="hidden" id="hdInsuranceId" value="0" />
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbInsuranceCompany">Company:</label>
+                            <div class="col-md-6 col-xs-6 comboBox">
+                                <input id="cmbInsuranceCompany" placeholder="--Select Insurance Company--" style="width: 100%; height: 34px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbVehicle">Vehicle:</label>
+                            <div class="col-md-6 col-xs-6 comboBox">
+                                <input id="cmbVehicle" placeholder="--Select Vehicle--" style="width: 100%; height: 34px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="cmbRecurringPeriod">Recurring Period:</label>
+                            <div class="col-md-6 col-xs-6 comboBox">
+                                <input id="cmbRecurringPeriod" placeholder="--Select Recurring Period--" style="width: 100%; height: 34px;" required validationmessage="*" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" style="margin-bottom: 6px" for="txtPolicyNumber">PolicyNumber:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input type="text" placeholder="Policy Number" name="txtPolicyNumber" id="txtPolicyNumber" class="form-control" style=" width: 100%; height: 34px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" style="margin-bottom: 6px" for="txtChargePayable">Charge Payable:</label>
+                            <div class="">
+                                <input type="text" placeholder="ChargePayable" name="txtChargePayable" id="txtChargePayable" style=" width: 46.6%; height: 34px; margin-left: 15px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" style="margin-bottom: 6px;" for="txtStartDate">Start Date:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input id="txtStartDate" type="text" placeholder="Start Date" name="txtStartDate" style="width: 100%; height: 34px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" style="margin-bottom: 6px;" for="txtEndDate">End Date:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input id="txtEndDate" type="text" placeholder="End Date" name="txtEndDate" style="width: 100%; height: 34px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" style="margin-bottom: 6px;" for="txtRecurringDate">Recurring Date:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <input id="txtRecurringDate" type="text" placeholder="Recurring Date" name="txtRecurringDate" style="width: 100%; height: 34px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" style="margin-bottom: 6px" for="txtDeductable">Deductable:</label>
+                            <div class=" col-md-6 col-xs-6">
+                                <input type="text" placeholder="Deductable" name="txtDeductable" id="txtDeductable" style="width: 100%; height: 34px;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtRemarks" style="margin-bottom: 6px;">Remarks:</label>
+                            <div class="col-md-6 col-xs-6">
+                                <textarea type="text" placeholder="Remarks" name="txtRemarks" id="txtRemarks" class="form-control" style="width: 100%; height: 34px; resize: none;" required validationmessage="*"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <ul class="list-group ">
+                            <li class="list-group-item centerAlign">
+                                <button id="btnSave" class="btn btn-primary" type="button">Save</button>
+                                <button id="btnClearAll" class="btn btn-primary">Clear</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

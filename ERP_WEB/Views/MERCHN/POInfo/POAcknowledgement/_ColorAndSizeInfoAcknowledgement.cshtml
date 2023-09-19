@@ -1,0 +1,11 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/POInfo/POAcknowledgement/ColorSizeSummaryAcknowledgement.js?" + @jsVer)
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="grdColorSizeSummaryAcknowledgement"></div>
+    </div>
+</div>
+

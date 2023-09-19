@@ -1,0 +1,52 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/Style/Search/GlobalSearchDetails.js?" + @jsVer)
+<div class="col-md-12">
+    <ul id="pnlMaster">
+        <li class="k-state-active">
+            MASTER / PROJECTED STYLE
+            <div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="spacer5"></div>
+                        <div class="col-md-5" style="padding-left: 0;">
+                        </div>
+                        <div class="col-md-3" style="margin-top: 0px;" hidden>
+                            <input type="text" style="width: 60%; height: 28px;" id="cboStyleSearch" hidden />                           
+                        </div>
+                        <div class="col-md-3" style="margin-top: 0px;">
+                            <label class="form-control" style="width: 90%; height: 28px;text-align: left;" id="projected"></label>
+                        </div>
+
+                        <div class="col-md-4">
+                            <button id="btnBack" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer5"></div>
+            </div>
+        </li>
+        <li class="k-state-active">
+            STYLE INFORMATIONS
+            <div>
+                <div class="row">
+                    <div class="col-md-8">
+                        @Html.Partial("../MERCHN/Style/StyleApprovedReject/_StyleARInfo")
+                    </div>
+                    <div class="col-md-4">
+                        @Html.Partial("../MERCHN/Style/_StyleSizeColorImage")
+                    </div>
+                </div>
+                
+            </div>
+        </li>
+        @*<li class="k-state-active">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div>
+                    @Html.Partial("../MERCHN/Style/StyleApprovedReject/_ApproveRejection")
+                </div>
+            </div>
+            
+        </li>*@
+    </ul>
+</div>

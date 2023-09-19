@@ -1,0 +1,67 @@
+﻿<link href="~/Content/FlatUI/flatui.css" rel="stylesheet" />
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/PurRFQ/PurRFQDetails.js?" + @jsVer)
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="bs-example">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="pnlUl">
+                            <li class="k-state-active">
+                                Purchase Request For Quotation (RFQ)
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="spacer5"></div>
+                                            <input type="hidden" class="hiddenId" id="hdnRFQId" />
+                                            <div class="col-md-6">
+                                                <div class="form-group lp">
+                                                    <label class="col-md-4 col-xs-4 control-label" for="txtRFQNo">RFQ No:</label>
+                                                    <div class="col-md-7 col-xs-7 ">
+                                                        <input type="text" id="txtRFQNo" name="txtRFQNo" placeholder="RFQ No" disabled />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group lp">
+                                                    <label class="col-md-4 col-xs-4 control-label" for="dtRFQDate">RFQ Date:</label>
+                                                    <div class="col-md-7 col-xs-7 ">
+                                                        <input type="text" id="dtRFQDate" class="datePicker" name="dtRFQDate" placeholder="RFQ Date" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="spacer5"></div>
+                                            <button id="btnSave" class="k-button-success" style="float: right;"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                                            <button id="btnBack" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div id="gridDemandItems" style="margin-bottom:10px;"></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="spacer5"></div>
+                                            <div id="gridSelectedItems" style="margin-bottom:10px;"></div>
+                                            <div class="spacer5"></div>
+                                            <div class="k-card">
+                                                <div class="k-card-header">Suppliers</div>
+                                                <div class="k-card-body">
+                                                    <div id="divSupplier"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

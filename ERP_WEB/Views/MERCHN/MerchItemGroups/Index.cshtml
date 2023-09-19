@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Item Group Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/MerchItemGroups/ItemGroupSettings.js")
+<div class="row">
+    <div id="divColorDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/MerchItemGroups/_ItemGroupDetails")
+        @Html.Partial("../MERCHN/MerchItemGroups/_ItemGroupSummary")
+    </div>
+</div>

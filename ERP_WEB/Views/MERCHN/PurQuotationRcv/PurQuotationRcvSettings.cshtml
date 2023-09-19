@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Purchase Request For Quotation Receive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/PurQuotationRcv/PurQuotationRcvSettings.js?" + @jsVer)
+
+<div class="row">
+    <div id="divQuotationRcvSummary" class="col-lg-12">
+        @Html.Partial("../MERCHN/PurQuotationRcv/_PurQuotationRcvSummary")
+    </div>
+    <div id="divQuotationRcvDetails" class="col-lg-12 displayNone">
+        @Html.Partial("../MERCHN/PurQuotationRcv/_PurQuotationRcvDetails")
+    </div>
+</div>

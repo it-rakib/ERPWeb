@@ -1,0 +1,186 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+
+@Scripts.Render("~/Scripts/Land/Dashboard/LandMasterReport.js?" + @jsVer)
+
+<style>
+    #chartdivLandSummaryDistrict {
+        width: 100%;
+        height: 300px;
+        font-size: 11px;
+    }
+
+    .amcharts-pie-slice {
+        transform: scale(1);
+        transform-origin: 50% 50%;
+        transition-duration: 0.3s;
+        transition: all .3s ease-out;
+        -webkit-transition: all .3s ease-out;
+        -moz-transition: all .3s ease-out;
+        -o-transition: all .3s ease-out;
+        cursor: pointer;
+        box-shadow: 0 0 30px 0 #000;
+    }
+
+        .amcharts-pie-slice:hover {
+            transform: scale(1.1);
+            filter: url(#shadow);
+        }
+
+    .boxDiv:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        cursor: pointer;
+        /*opacity: .4;*/
+        background-color: rgba(138, 173, 244, 0.2);
+        transition: 0.25s ease-in;
+    }
+
+    .boxDiv {
+        transition: 0.25s linear;
+    }
+
+    .k-panelbar > .k-item > .k-link, .k-panel > .k-item > .k-link {
+        background-color: #59b1d1 !important;
+        /* background-color: #286090 !important; */
+        color: white !important;
+        font-weight: bold !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-3 col-xs-3">
+        <div class="dbTopDiv boxDiv row" id="divActiveLandAcres">
+            <div class="db2ndDiv"><span class="spnHead">Land</span></div>
+            <div style="height: 60px; float: left; width: 100%;">
+                <span style="color: #06b70d;" class="infoSpan fa fa-location-arrow"></span>
+                <span class="infoSpanCount" id="">Total Land (Acres): <span id="spnTotalLandAmountAcres">0</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-xs-3">
+        <div class="dbTopDiv boxDiv row" id="divActiveTotalMutatedLand">
+            <div class="db2ndDiv"><span class="spnHead">Mutated Land</span></div>
+            <div style="height: 60px; float: left; width: 100%;">
+                <span style="color: #06b70d;" class="infoSpan fa fa-location-arrow"></span>
+                <span class="infoSpanCount" id="">Total Land (Acres): <span id="spnTotalMutatedLandAcres">0</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-xs-3">
+        <div class="dbTopDiv boxDiv row" id="divActiveTotalLandPurchaseAmount">
+            <div class="db2ndDiv"><span class="spnHead">Price of Land(Deed)</span></div>
+            <div style="height: 60px; float: left; width: 100%;">
+                <span style="color: #06b70d;" class="infoSpan fa-money"></span>
+                <span class="infoSpanCount" id="">Total Price(TK): <span id="spnTotalLandPurchaseAmount">0</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-xs-3">
+        <div class="dbTopDiv boxDiv row" id="divActiveLandDeed">
+            <div class="db2ndDiv"><span class="spnHead">Deed</span></div>
+            <div style="height: 60px; float: left; width: 100%;">
+                <span style="color: #06b70d;" class="infoSpan fa fa-file "></span>
+                <span class="infoSpanCount" id="">Total Deed: <span id="spnTotalDeed">0</span></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 col-xs-3">
+        <div class="dbTopDiv boxDiv row" id="divActiveDistrict">
+            <div class="db2ndDiv"><span class="spnHead">District</span></div>
+            <div style="height: 60px; float: left; width: 100%;">
+                <span style="color: #06b70d;" class="infoSpan fa fa-globe"></span>
+                <span class="infoSpanCount" id="">Total District: <span id="spnTotalDistrict">0</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-xs-3">
+        <div class="dbTopDiv boxDiv row" id="divActiveUpozila">
+            <div class="db2ndDiv"><span class="spnHead">Upazila/Thana</span></div>
+            <div style="height: 60px; float: left; width: 100%;">
+                <span style="color: #06b70d;" class="infoSpan fa fa-globe"></span>
+                <span class="infoSpanCount" id="">Total Upazila/Thana: <span id="spnTotalUpozila">0</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-xs-3">
+        <div class="dbTopDiv boxDiv row" id="divActiveMouza">
+            <div class="db2ndDiv"><span class="spnHead">Mouza</span></div>
+            <div style="height: 60px; float: left; width: 100%;">
+                <span style="color: #06b70d;" class="infoSpan fa fa-globe"></span>
+                <span class="infoSpanCount" id="">Total Mouza: <span id="spnTotalMouza">0</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-xs-3">
+        <div class="dbTopDiv boxDiv row" id="divActiveCompany">
+            <div class="db2ndDiv"><span class="spnHead">Company</span></div>
+            <div style="height: 60px; float: left; width: 100%;">
+                <span style="color: #06b70d;" class="infoSpan fa fa-solid fa-building"></span>
+                <span class="infoSpanCount" id="">Total Company: <span id="spnTotalCompany">0</span></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 col-xs-3">
+        <div class="dbTopDiv boxDiv row" id="divActivePerson">
+            <div class="db2ndDiv"><span class="spnHead">Owner</span></div>
+            <div style="height: 60px; float: left; width: 100%;">
+                <span style="color: #06b70d;" class="infoSpan fa fa-users"></span>
+                <span class="infoSpanCount" id="">Total Owner: <span id="spnTotalPerson">0</span></span>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="well well-sm text-center" style="background: #59B1CE !important; padding: 6px !important; ">Land Summary: District Wise</div>
+    <div class="col-md-6 col-xs-6">
+        <div class="panel panel-default bs-example" style="height: 300px;">
+            <div class="panel-body">
+                <div id="grdLandSummaryDistrict"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-6" style="border: 1px solid #286893;">
+        <div id="chartdivLandSummaryDistrict"></div>
+    </div>
+</div>
+
+<div class="displayNone" id="popupUpozilaByDistrictIdSummary">
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="bs-example">
+                <div class="panel-body">
+                    <div class="spacer5"></div>
+                    <div id="grdUpozilaByDistrictIdSummary"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-xs-6">
+        <div class="well well-sm text-center" style="background: #59B1CE !important; padding: 6px !important; ">Land Summary: Person Wise</div>
+        <div class="panel panel-default bs-example" style="height: 300px;">
+            <div class="panel-body">
+                <div id="grdLandSummaryPerson"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-6">
+        <div class="well well-sm text-center" style="background: #59B1CE !important; padding: 6px !important; ">Land Summary: Company Wise</div>
+        <div class="panel panel-default bs-example" style="height: 300px;">
+            <div class="panel-body">
+                <div id="grdLandSummaryCompany"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,49 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/Style/StyleDetails.js?" + @jsVer)
+<div class="col-md-12">
+    <ul id="pnlMaster">
+        <li class="k-state-active">
+            SELECT MASTER / PROJECTED STYLE
+            <div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="spacer5"></div>
+                        <div class="col-md-5" style="padding-left: 0;">
+                            <label class="col-md-4 col-xs-4 control-label" for="txtSearchKey" style="line-height: 16px;">Search Style:</label>
+                            <div class="input-group add-on">
+                                <input type="text" autocomplete="off" placeholder="Type style no (master / projected)" class="form-control" style="width: 100%; height: 28px;" name="Style" id="txtSearchKey" />
+                                <div class="input-group-btn">
+                                    <button class="btn btn-info" type="button" id="btnSearchStyle"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="margin-top: 0px;">
+                            <input type="text" id="cboStyleSearch" class="comboBox" />
+                        </div>
+                        <div class="col-md-4">
+                            <button id="btnSave" class="k-button-success" style="float: right;"><i class="fa fa-save" style="margin-right: 4px;"></i>Save</button>
+                            <button id="btnBack" class="k-button-danger" style="float: right;"><i class="fa fa-backward" style="margin-right: 4px;"></i>Back</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="col-md-12 col-xs-12 control-label" style="line-height: 20px; color: green; font-weight: bold; font-size: 18px !important; float: left;" id="lblMessage"></label>
+                    </div>
+                </div>
+                <div class="spacer5"></div>
+            </div>
+        </li>
+        <li class="k-state-active">
+            ADD / UPDATE STYLE INFORMATIONS
+            <div>
+                <div class="row">
+                    <div class="col-md-8">
+                        @Html.Partial("../MERCHN/Style/_StyleInfo")
+                    </div>
+                    <div class="col-md-4">
+                        @Html.Partial("../MERCHN/Style/_StyleSizeColorImage")
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

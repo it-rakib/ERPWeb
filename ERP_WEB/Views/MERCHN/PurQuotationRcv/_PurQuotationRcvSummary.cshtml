@@ -1,0 +1,13 @@
+﻿@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+@Scripts.Render("~/Scripts/MERCHN/PurQuotationRcv/PurQuotationRcvSummary.js?" + @jsVer)
+
+<div class="panel panel-default bs-example">
+    <div class="well well-sm">
+        Quotation Receive Summary
+    </div>
+    <div class="panel-body">
+        <div class="spacer5"></div>
+        <div id="gridPurQuotationRcvSummary"></div>
+    </div>
+</div>
+

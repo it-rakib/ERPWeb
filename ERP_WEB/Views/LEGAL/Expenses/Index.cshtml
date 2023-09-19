@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Expense Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/Scripts/LEGAL/Expenses/ExpensesSettings.js")
+
+<div class="row">
+    <div id="divExpenseDetails" class="col-lg-12">
+        @Html.Partial("../LEGAL/Expenses/_ExpensesDetails")
+    </div>
+
+    <div id="divExpenseSummary" class="col-lg-12">
+        @Html.Partial("../LEGAL/Expenses/_ExpensesSummary")
+    </div>
+</div>
+
+

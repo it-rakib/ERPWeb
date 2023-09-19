@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Style";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/FlatUI/flatui.css" rel="stylesheet" />
+
+@{ string jsVer = @System.Configuration.ConfigurationManager.AppSettings["JSVer"];}
+<script src="~/Scripts/MERCHN/Style/StyleApprovedReject/StyleARSettings.js?@jsVer"></script>
+
+<div class="row">
+    <div id="divStyleSummary" class="col-md-12">
+        @Html.Partial("../MERCHN/Style/StyleApprovedReject/_StyleARSummary")
+    </div>
+    <div id="divStyleDetails" class="col-md-12 displayNone">
+        @Html.Partial("../MERCHN/Style/StyleApprovedReject/_StyleARDetails")
+    </div>
+</div>

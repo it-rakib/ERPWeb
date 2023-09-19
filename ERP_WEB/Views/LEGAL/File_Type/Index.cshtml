@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "File Type Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/LEGAL/File_Type/FileTypeSettings.js")
+<div class="row">
+    <div id="divFileTypeDetails" class="col-md-12">
+
+        @Html.Partial("../LEGAL/File_Type/_FileTypeDetails")
+
+        @Html.Partial("../LEGAL/File_Type/_FileTypeSummary")
+    </div>
+</div>
+
+
+

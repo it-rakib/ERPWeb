@@ -1,0 +1,11 @@
+﻿@{ 
+    ViewBag.Title = "Countries Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/MERCHN/Country/CountrySettings.js");
+<div class="row">
+    <div id="divCountryDetails" class="col-md-12">
+        @Html.Partial("../MERCHN/Country/_CountryDetails")
+        @Html.Partial("../MERCHN/Country/_CountrySummary")
+    </div>
+</div>
